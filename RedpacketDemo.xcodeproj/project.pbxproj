@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		923AA1511D95282400A097B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 923AA1501D95282400A097B1 /* main.m */; };
+		923AA1541D95282400A097B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 923AA1531D95282400A097B1 /* AppDelegate.m */; };
+		923AA1571D95282400A097B1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 923AA1561D95282400A097B1 /* ViewController.m */; };
+		923AA15C1D95282400A097B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923AA15B1D95282400A097B1 /* Assets.xcassets */; };
+		923AA15F1D95282400A097B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923AA15D1D95282400A097B1 /* LaunchScreen.storyboard */; };
+		923AA1671D95283E00A097B1 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 923AA1661D95283E00A097B1 /* ViewController.xib */; };
+		923AA1971D9531EF00A097B1 /* libRedpacketLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA18D1D9531EF00A097B1 /* libRedpacketLib.a */; };
+		923AA1981D9531EF00A097B1 /* RedPacketResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 923AA1941D9531EF00A097B1 /* RedPacketResource.bundle */; };
+		923AA1A31D953A0100A097B1 /* AlipaySDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA19F1D953A0100A097B1 /* AlipaySDK.a */; };
+		923AA1A41D953A0100A097B1 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 923AA1A21D953A0100A097B1 /* AlipaySDK.bundle */; };
+		923AA1A61D953A2A00A097B1 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1A51D953A2A00A097B1 /* CoreTelephony.framework */; };
+		923AA1A81D953A6300A097B1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1A71D953A6300A097B1 /* libc++.tbd */; };
+		923AA1AA1D953A6B00A097B1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1A91D953A6B00A097B1 /* libz.tbd */; };
+		923AA1AC1D953A7300A097B1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1AB1D953A7300A097B1 /* SystemConfiguration.framework */; };
+		923AA1AE1D953A7E00A097B1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1AD1D953A7E00A097B1 /* QuartzCore.framework */; };
+		923AA1B01D953A8C00A097B1 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1AF1D953A8C00A097B1 /* CoreText.framework */; };
+		923AA1B21D953A9500A097B1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1B11D953A9500A097B1 /* CoreGraphics.framework */; };
+		923AA1B41D953A9E00A097B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1B31D953A9E00A097B1 /* UIKit.framework */; };
+		923AA1B61D953AB600A097B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1B51D953AB600A097B1 /* Foundation.framework */; };
+		923AA1B81D953ABD00A097B1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1B71D953ABD00A097B1 /* CFNetwork.framework */; };
+		923AA1BA1D953AC700A097B1 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1B91D953AC700A097B1 /* CoreMotion.framework */; };
+		DEB85566268AD075906F3C00 /* libPods-RedpacketDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65565201F48F7A152EF6ACC6 /* libPods-RedpacketDemo.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1C30C8F7475EDAE8930D2900 /* Pods-RedpacketDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedpacketDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RedpacketDemo/Pods-RedpacketDemo.release.xcconfig"; sourceTree = "<group>"; };
+		65565201F48F7A152EF6ACC6 /* libPods-RedpacketDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RedpacketDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		923AA14C1D95282400A097B1 /* RedpacketDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedpacketDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		923AA1501D95282400A097B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		923AA1521D95282400A097B1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		923AA1531D95282400A097B1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		923AA1551D95282400A097B1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		923AA1561D95282400A097B1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		923AA15B1D95282400A097B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		923AA15E1D95282400A097B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		923AA1601D95282400A097B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		923AA1661D95283E00A097B1 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		923AA18D1D9531EF00A097B1 /* libRedpacketLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libRedpacketLib.a; sourceTree = "<group>"; };
+		923AA18E1D9531EF00A097B1 /* RedpacketErrorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedpacketErrorCode.h; sourceTree = "<group>"; };
+		923AA18F1D9531EF00A097B1 /* RedpacketLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedpacketLib.h; sourceTree = "<group>"; };
+		923AA1901D9531EF00A097B1 /* RedpacketMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedpacketMessageModel.h; sourceTree = "<group>"; };
+		923AA1911D9531EF00A097B1 /* RedpacketOpenConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedpacketOpenConst.h; sourceTree = "<group>"; };
+		923AA1921D9531EF00A097B1 /* RedpacketViewControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedpacketViewControl.h; sourceTree = "<group>"; };
+		923AA1941D9531EF00A097B1 /* RedPacketResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RedPacketResource.bundle; sourceTree = "<group>"; };
+		923AA1951D9531EF00A097B1 /* YZHRedpacketBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZHRedpacketBridge.h; sourceTree = "<group>"; };
+		923AA1961D9531EF00A097B1 /* YZHRedpacketBridgeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZHRedpacketBridgeProtocol.h; sourceTree = "<group>"; };
+		923AA19F1D953A0100A097B1 /* AlipaySDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = AlipaySDK.a; sourceTree = "<group>"; };
+		923AA1A01D953A0100A097B1 /* AlipaySDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlipaySDK.h; sourceTree = "<group>"; };
+		923AA1A11D953A0100A097B1 /* APayAuthInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APayAuthInfo.h; sourceTree = "<group>"; };
+		923AA1A21D953A0100A097B1 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		923AA1A51D953A2A00A097B1 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		923AA1A71D953A6300A097B1 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		923AA1A91D953A6B00A097B1 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		923AA1AB1D953A7300A097B1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		923AA1AD1D953A7E00A097B1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		923AA1AF1D953A8C00A097B1 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		923AA1B11D953A9500A097B1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		923AA1B31D953A9E00A097B1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		923AA1B51D953AB600A097B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		923AA1B71D953ABD00A097B1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		923AA1B91D953AC700A097B1 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		F05AD7BB19DECFBD13135DB3 /* Pods-RedpacketDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedpacketDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RedpacketDemo/Pods-RedpacketDemo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		923AA1491D95282400A097B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				923AA1BA1D953AC700A097B1 /* CoreMotion.framework in Frameworks */,
+				923AA1B81D953ABD00A097B1 /* CFNetwork.framework in Frameworks */,
+				923AA1B61D953AB600A097B1 /* Foundation.framework in Frameworks */,
+				923AA1B41D953A9E00A097B1 /* UIKit.framework in Frameworks */,
+				923AA1B21D953A9500A097B1 /* CoreGraphics.framework in Frameworks */,
+				923AA1B01D953A8C00A097B1 /* CoreText.framework in Frameworks */,
+				923AA1AE1D953A7E00A097B1 /* QuartzCore.framework in Frameworks */,
+				923AA1AC1D953A7300A097B1 /* SystemConfiguration.framework in Frameworks */,
+				923AA1AA1D953A6B00A097B1 /* libz.tbd in Frameworks */,
+				923AA1A81D953A6300A097B1 /* libc++.tbd in Frameworks */,
+				923AA1A61D953A2A00A097B1 /* CoreTelephony.framework in Frameworks */,
+				DEB85566268AD075906F3C00 /* libPods-RedpacketDemo.a in Frameworks */,
+				923AA1971D9531EF00A097B1 /* libRedpacketLib.a in Frameworks */,
+				923AA1A31D953A0100A097B1 /* AlipaySDK.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12F8D2269CF6B050068D7334 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				923AA1B91D953AC700A097B1 /* CoreMotion.framework */,
+				923AA1B71D953ABD00A097B1 /* CFNetwork.framework */,
+				923AA1B51D953AB600A097B1 /* Foundation.framework */,
+				923AA1B31D953A9E00A097B1 /* UIKit.framework */,
+				923AA1B11D953A9500A097B1 /* CoreGraphics.framework */,
+				923AA1AF1D953A8C00A097B1 /* CoreText.framework */,
+				923AA1AD1D953A7E00A097B1 /* QuartzCore.framework */,
+				923AA1AB1D953A7300A097B1 /* SystemConfiguration.framework */,
+				923AA1A91D953A6B00A097B1 /* libz.tbd */,
+				923AA1A71D953A6300A097B1 /* libc++.tbd */,
+				923AA1A51D953A2A00A097B1 /* CoreTelephony.framework */,
+				65565201F48F7A152EF6ACC6 /* libPods-RedpacketDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		923AA1431D95282400A097B1 = {
+			isa = PBXGroup;
+			children = (
+				923AA19D1D953A0100A097B1 /* AliPay */,
+				923AA18B1D9531EF00A097B1 /* RedpacketStaticLib */,
+				923AA14E1D95282400A097B1 /* RedpacketDemo */,
+				923AA14D1D95282400A097B1 /* Products */,
+				CF06FFB308AA18E8BD1CBA74 /* Pods */,
+				12F8D2269CF6B050068D7334 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		923AA14D1D95282400A097B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				923AA14C1D95282400A097B1 /* RedpacketDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		923AA14E1D95282400A097B1 /* RedpacketDemo */ = {
+			isa = PBXGroup;
+			children = (
+				923AA1521D95282400A097B1 /* AppDelegate.h */,
+				923AA1531D95282400A097B1 /* AppDelegate.m */,
+				923AA1551D95282400A097B1 /* ViewController.h */,
+				923AA1561D95282400A097B1 /* ViewController.m */,
+				923AA1661D95283E00A097B1 /* ViewController.xib */,
+				923AA15B1D95282400A097B1 /* Assets.xcassets */,
+				923AA15D1D95282400A097B1 /* LaunchScreen.storyboard */,
+				923AA1601D95282400A097B1 /* Info.plist */,
+				923AA14F1D95282400A097B1 /* Supporting Files */,
+			);
+			path = RedpacketDemo;
+			sourceTree = "<group>";
+		};
+		923AA14F1D95282400A097B1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				923AA1501D95282400A097B1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		923AA18B1D9531EF00A097B1 /* RedpacketStaticLib */ = {
+			isa = PBXGroup;
+			children = (
+				923AA18C1D9531EF00A097B1 /* lib */,
+				923AA18E1D9531EF00A097B1 /* RedpacketErrorCode.h */,
+				923AA18F1D9531EF00A097B1 /* RedpacketLib.h */,
+				923AA1901D9531EF00A097B1 /* RedpacketMessageModel.h */,
+				923AA1911D9531EF00A097B1 /* RedpacketOpenConst.h */,
+				923AA1921D9531EF00A097B1 /* RedpacketViewControl.h */,
+				923AA1931D9531EF00A097B1 /* resources */,
+				923AA1951D9531EF00A097B1 /* YZHRedpacketBridge.h */,
+				923AA1961D9531EF00A097B1 /* YZHRedpacketBridgeProtocol.h */,
+			);
+			path = RedpacketStaticLib;
+			sourceTree = "<group>";
+		};
+		923AA18C1D9531EF00A097B1 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				923AA18D1D9531EF00A097B1 /* libRedpacketLib.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		923AA1931D9531EF00A097B1 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				923AA1941D9531EF00A097B1 /* RedPacketResource.bundle */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		923AA19D1D953A0100A097B1 /* AliPay */ = {
+			isa = PBXGroup;
+			children = (
+				923AA19E1D953A0100A097B1 /* AlipayLib */,
+				923AA1A21D953A0100A097B1 /* AlipaySDK.bundle */,
+			);
+			path = AliPay;
+			sourceTree = "<group>";
+		};
+		923AA19E1D953A0100A097B1 /* AlipayLib */ = {
+			isa = PBXGroup;
+			children = (
+				923AA19F1D953A0100A097B1 /* AlipaySDK.a */,
+				923AA1A01D953A0100A097B1 /* AlipaySDK.h */,
+				923AA1A11D953A0100A097B1 /* APayAuthInfo.h */,
+			);
+			path = AlipayLib;
+			sourceTree = "<group>";
+		};
+		CF06FFB308AA18E8BD1CBA74 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F05AD7BB19DECFBD13135DB3 /* Pods-RedpacketDemo.debug.xcconfig */,
+				1C30C8F7475EDAE8930D2900 /* Pods-RedpacketDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		923AA14B1D95282400A097B1 /* RedpacketDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 923AA1631D95282400A097B1 /* Build configuration list for PBXNativeTarget "RedpacketDemo" */;
+			buildPhases = (
+				9AC7CBF8D4198AAC211AF8E3 /* [CP] Check Pods Manifest.lock */,
+				923AA1481D95282400A097B1 /* Sources */,
+				923AA1491D95282400A097B1 /* Frameworks */,
+				923AA14A1D95282400A097B1 /* Resources */,
+				BD5A27184357051644F55376 /* [CP] Embed Pods Frameworks */,
+				56190487E7FA645618885E09 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RedpacketDemo;
+			productName = RedpacketDemo;
+			productReference = 923AA14C1D95282400A097B1 /* RedpacketDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		923AA1441D95282400A097B1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Mr.Yang;
+				TargetAttributes = {
+					923AA14B1D95282400A097B1 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = PUEB48NTQQ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 923AA1471D95282400A097B1 /* Build configuration list for PBXProject "RedpacketDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 923AA1431D95282400A097B1;
+			productRefGroup = 923AA14D1D95282400A097B1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				923AA14B1D95282400A097B1 /* RedpacketDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		923AA14A1D95282400A097B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				923AA1A41D953A0100A097B1 /* AlipaySDK.bundle in Resources */,
+				923AA1981D9531EF00A097B1 /* RedPacketResource.bundle in Resources */,
+				923AA15F1D95282400A097B1 /* LaunchScreen.storyboard in Resources */,
+				923AA15C1D95282400A097B1 /* Assets.xcassets in Resources */,
+				923AA1671D95283E00A097B1 /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56190487E7FA645618885E09 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RedpacketDemo/Pods-RedpacketDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9AC7CBF8D4198AAC211AF8E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BD5A27184357051644F55376 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RedpacketDemo/Pods-RedpacketDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		923AA1481D95282400A097B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				923AA1571D95282400A097B1 /* ViewController.m in Sources */,
+				923AA1541D95282400A097B1 /* AppDelegate.m in Sources */,
+				923AA1511D95282400A097B1 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		923AA15D1D95282400A097B1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				923AA15E1D95282400A097B1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		923AA1611D95282400A097B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		923AA1621D95282400A097B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		923AA1641D95282400A097B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F05AD7BB19DECFBD13135DB3 /* Pods-RedpacketDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PUEB48NTQQ;
+				INFOPLIST_FILE = RedpacketDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RedpacketLib/lib",
+					"$(PROJECT_DIR)/RedpacketStaticLib/lib",
+					"$(PROJECT_DIR)/AliPay/AlipayLib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "-----.RedpacketDemo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		923AA1651D95282400A097B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C30C8F7475EDAE8930D2900 /* Pods-RedpacketDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PUEB48NTQQ;
+				INFOPLIST_FILE = RedpacketDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RedpacketLib/lib",
+					"$(PROJECT_DIR)/RedpacketStaticLib/lib",
+					"$(PROJECT_DIR)/AliPay/AlipayLib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "-----.RedpacketDemo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		923AA1471D95282400A097B1 /* Build configuration list for PBXProject "RedpacketDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				923AA1611D95282400A097B1 /* Debug */,
+				923AA1621D95282400A097B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		923AA1631D95282400A097B1 /* Build configuration list for PBXNativeTarget "RedpacketDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				923AA1641D95282400A097B1 /* Debug */,
+				923AA1651D95282400A097B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 923AA1441D95282400A097B1 /* Project object */;
+}
