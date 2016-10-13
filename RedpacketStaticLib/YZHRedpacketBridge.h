@@ -26,6 +26,11 @@
  */
 @property (nonatomic, copy)  NSString *redacketURLScheme;
 
+/**
+ *  支持私有化部署后的域名变动
+ */
+@property (nonatomic, copy) NSString *urlHost;
+
 + (YZHRedpacketBridge *)sharedBridge;
 
 @end

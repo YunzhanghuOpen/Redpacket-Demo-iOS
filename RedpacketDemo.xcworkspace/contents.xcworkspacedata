@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../yzh-redpacket/RedpacketRequestDataLib/RedpacketRequestDataLib.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../yzh-redpacket/RedpacketLib/RedpacketLib.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:RedpacketDemo.xcodeproj">
    </FileRef>
    <FileRef
