@@ -1,9 +1,11 @@
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
- 
+Pods/ 
 Pods/
 .gitignore
+ 
+Pods/Target Support Files/
 
 ## Build generated
 build/
