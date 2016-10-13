@@ -20,13 +20,19 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - RedPacketAlipay (15.0.2)
+  - RedpacketLib (3.2.0):
+    - RedPacketAlipay
 
 DEPENDENCIES:
   - AFNetworking (= 2.5.4)
+  - RedpacketLib
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  RedPacketAlipay: a5de6db2e2671fc9255d6d396be869e3ba2f0489
+  RedpacketLib: 6c0c08eafb8748895582d19d77f0c52da67b79b3
 
-PODFILE CHECKSUM: c69bdd545f5d15c8e00efac6036b730e3d8e5266
+PODFILE CHECKSUM: 1c56251198b2ad6f2a32a513caf2519ba0860023
 
 COCOAPODS: 1.0.1

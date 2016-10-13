@@ -8,5 +8,8 @@ target 'RedpacketDemo' do
   # Pods for RedpacketDemo
 
     pod 'AFNetworking', '2.5.4'
+    
+    pod 'RedpacketLib'
+    
 
 end
