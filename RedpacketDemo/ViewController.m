@@ -12,7 +12,7 @@
 #import "YZHRedpacketBridge.h"
 #import <AFHTTPRequestOperationManager.h>
 
-static NSString *requestUrl = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
+static NSString *requestUrl = @"https://rpv2.yunzhanghu.com/api/sign?duid=";//@"http://10.3.158.63:443/api/sign?duid=";
 
 @implementation NSDictionary (ValueForKey)
 
@@ -28,12 +28,13 @@ static NSString *requestUrl = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
 @interface ViewController () <YZHRedpacketBridgeDelegate, YZHRedpacketBridgeDataSource, RedpacketViewControlDelegate>
 {
     BOOL _isTest1;
-
 }
 
 @property (nonatomic, strong) RedpacketViewControl *viewControl;
 
 @property (nonatomic, strong) RedpacketMessageModel *redpacketModel;
+
+@property (nonatomic, strong)   IBOutlet UITextField *userInfoField;
 
 @end
 
@@ -66,9 +67,11 @@ static NSString *requestUrl = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
     [self loadUser];
 }
 
-- (IBAction)sendRedpacket:(id)sender
+
+#pragma mark -
+- (IBAction)changeViewController:(id)sender
 {
-    [_viewControl presentRedPacketViewControllerWithType:RPSendRedPacketViewControllerGroup memberCount:3];
+    [_viewControl presentChangeMoneyViewController];
 }
 
 - (IBAction)grabRedpacket:(id)sender
@@ -77,11 +80,34 @@ static NSString *requestUrl = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
 }
 
 #pragma mark - RedpacketSend
+- (IBAction)sendSingleRedpacket:(id)sender
+{
+    [_viewControl presentRedPacketViewControllerWithType:RPSendRedPacketViewControllerSingle memberCount:0];
+}
 
+- (IBAction)sendGroupRedpacket:(id)sender
+{
+    [_viewControl presentRedPacketViewControllerWithType:RPSendRedPacketViewControllerGroup memberCount:0];
+}
 
+- (IBAction)sendMemberRedpacket:(id)sender
+{
+    [_viewControl presentRedPacketViewControllerWithType:RPSendRedPacketViewControllerMember memberCount:3];
+}
 
+#pragma mark - Transfer
 
-#pragma mark - 
+- (IBAction)transferViewControllerSender:(id)sender
+{
+    [_viewControl presentTransferViewControllerWithReceiver:self.userTest2Info];
+}
+
+- (IBAction)transerDetailSender:(id)sender
+{
+    [_viewControl presentTransferDetailViewController:self.redpacketModel];
+}
+
+#pragma mark -
 
 - (RedpacketUserInfo *)userTest1Info
 {
@@ -100,7 +126,6 @@ static NSString *requestUrl = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
     
     return userInfo;
 }
-
 
 - (NSArray <RedpacketUserInfo *>*)groupMembers
 {
