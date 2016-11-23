@@ -118,8 +118,7 @@ typedef void(^RedpacketSendBlock)(RedpacketMessageModel *model);
 /**
  *  弹出转账界面
  *
- *  @param rpType 红包页面类型
- *  @param count  群红包群人数
+ *  @param userInfo 红包页面类型
  */
 - (void)presentTransferViewControllerWithReceiver:(RedpacketUserInfo *)userInfo;
 

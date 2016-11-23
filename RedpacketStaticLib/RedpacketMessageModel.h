@@ -179,9 +179,9 @@ typedef NS_ENUM(NSInteger, RedpacketStatusType) {
 /**
  *  是否是红包被抢的消息
  *
- *  @param redpacketDic
+ *  @param redpacketDic 红包字典
  *
- *  @return
+ *  @return YES
  */
 + (BOOL)isRedpacketTakenMessage:(NSDictionary *)redpacketDic;
 
