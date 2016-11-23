@@ -7,7 +7,7 @@
     "82CBDC087A6F613CAD4621A5793B220E3F46D112" : 9223372036854775807,
     "56097B1FF94FC9C10541CCC7E44BD2BBE15C421F" : 9223372036854775807
   },
-  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4BAFCB40-F482-448A-8F3B-1DFFCFC67C62",
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F18049E4-361B-4AF4-A3A8-B9A7304B19E5",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "82CBDC087A6F613CAD4621A5793B220E3F46D112" : "yzh-redpacket\/",
     "56097B1FF94FC9C10541CCC7E44BD2BBE15C421F" : "Redpacket-Demo-iOS\/"
@@ -17,7 +17,7 @@
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "RedpacketDemo.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:YunzhanghuOpen\/Redpacket-Demo-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:youran1024\/Redpacket-Demo-iOS.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "56097B1FF94FC9C10541CCC7E44BD2BBE15C421F"
     },
