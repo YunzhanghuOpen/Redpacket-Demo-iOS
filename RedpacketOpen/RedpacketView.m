@@ -111,6 +111,37 @@
 
 - (void)configWithRedpacketMessageModel:(RedpacketMessageModel *)redpacketMessage
 {
+    
+    NSString *title;
+    NSString *subTitle;
+    NSString *orgTitle;
+    
+    if (redpacketMessage.redpacketType == RedpacketTransfer) {
+        
+        title = redpacketMessage.isRedacketSender ? @"对方已收到转账" : @"已收到对方转账";
+        subTitle = [NSString stringWithFormat:@"%.2f元", redpacketMessage.trans];
+        orgTitle = @"环信转账";
+        
+    }else {
+        
+        title = redpacketMessage.redpacket.redpacketGreeting;
+        subTitle = @"查看红包";
+        orgTitle = redpacketMessage.redpacket.redpacketOrgName;
+        
+        if (redpacketMessage.redpacketType == RedpacketTypeMember) {
+            
+            self.typeLable.hidden = NO;
+            self.typeLable.text = @"专属红包";
+            
+        }else {
+        
+            self.typeLable.hidden = YES;
+            
+        }
+        
+    }
+    
+    
     self.greetingLabel.text = redpacketMessage.redpacket.redpacketGreeting;
     self.orgLabel.text = redpacketMessage.redpacket.redpacketOrgName;
     
@@ -118,7 +149,6 @@
     self.bubbleBackgroundView.frame = CGRectMake(-8, 0, 198, 94);
     UIImage *image;
     
-#pragma mark - Redpacket
     UserInfo *currentUser = [RedpacketUser currentUser].userInfo;
     BOOL isSender = [currentUser.userId isEqualToString:redpacketMessage.redpacketSender.userId];
     if (!isSender) {
@@ -131,10 +161,12 @@
         
     }
     
-    self.bubbleBackgroundView.image = [image resizableImageWithCapInsets:UIEdgeInsetsMake(70, 9, 25, 20)];
+    self.bubbleBackgroundView.image = image;//[image resizableImageWithCapInsets:UIEdgeInsetsMake(70, 9, 25, 20)];
     
     if (redpacketMessage.redpacketType == RedpacketTypeMember) {
+        
         self.typeLable.text = @"专属红包";
+        
     }else {
         self.typeLable.hidden = YES;
     }
