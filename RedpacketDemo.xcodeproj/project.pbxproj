@@ -44,6 +44,7 @@
 		92D5AC221DC33A1C0038A5D9 /* AlipaySDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D5AC1E1DC33A1C0038A5D9 /* AlipaySDK.a */; };
 		92D5AC231DC33A1C0038A5D9 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 92D5AC211DC33A1C0038A5D9 /* AlipaySDK.bundle */; };
 		DEB85566268AD075906F3C00 /* libPods-RedpacketDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65565201F48F7A152EF6ACC6 /* libPods-RedpacketDemo.a */; };
+		E7C249D21DED308000FE087D /* RedPacketLuckView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C249D11DED308000FE087D /* RedPacketLuckView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -121,6 +122,8 @@
 		92D5AC1F1DC33A1C0038A5D9 /* AlipaySDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlipaySDK.h; sourceTree = "<group>"; };
 		92D5AC201DC33A1C0038A5D9 /* APayAuthInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APayAuthInfo.h; sourceTree = "<group>"; };
 		92D5AC211DC33A1C0038A5D9 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		E7C249D01DED308000FE087D /* RedPacketLuckView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedPacketLuckView.h; sourceTree = "<group>"; };
+		E7C249D11DED308000FE087D /* RedPacketLuckView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedPacketLuckView.m; sourceTree = "<group>"; };
 		F05AD7BB19DECFBD13135DB3 /* Pods-RedpacketDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedpacketDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RedpacketDemo/Pods-RedpacketDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -291,6 +294,8 @@
 				9241AF2A1DBB6990006FEB44 /* RedpacketConfig.m */,
 				9251E2481DE2EBF5009BEAF4 /* RedpacketView.h */,
 				9251E2491DE2EBF5009BEAF4 /* RedpacketView.m */,
+				E7C249D01DED308000FE087D /* RedPacketLuckView.h */,
+				E7C249D11DED308000FE087D /* RedPacketLuckView.m */,
 				9269B9D41DBB54D3001BC8A9 /* RedpacketTakenMessageTipCell.h */,
 				9269B9D51DBB54D3001BC8A9 /* RedpacketTakenMessageTipCell.m */,
 			);
@@ -431,7 +436,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BD5A27184357051644F55376 /* [CP] Embed Pods Frameworks */ = {
@@ -466,6 +471,7 @@
 				9269B9D71DBB54D3001BC8A9 /* RedpacketTakenMessageTipCell.m in Sources */,
 				923AA1541D95282400A097B1 /* AppDelegate.m in Sources */,
 				9251E24A1DE2EBF5009BEAF4 /* RedpacketView.m in Sources */,
+				E7C249D21DED308000FE087D /* RedPacketLuckView.m in Sources */,
 				92006F951DE428B1004B8299 /* AboutMeViewController.m in Sources */,
 				923AA1511D95282400A097B1 /* main.m in Sources */,
 			);
