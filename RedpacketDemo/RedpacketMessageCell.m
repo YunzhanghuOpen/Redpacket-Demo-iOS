@@ -9,6 +9,8 @@
 #import "RedpacketMessageCell.h"
 #import "RedpacketUser.h"
 #import "RedpacketView.h"
+#import "RedPacketLuckView.h"
+
 
 #define HeaderImageWith     40.0f
 #define RedpacketMargin     15.0f
@@ -17,7 +19,9 @@
 
 @interface RedpacketMessageCell ()
 
-@property (nonatomic, strong) RedpacketView *redpacketView;
+@property (nonatomic, strong) RedpacketView     *redpacketView;
+@property (nonatomic, strong) RedPacketLuckView *redpacketLuckView;
+@property (nonatomic, strong) RedpacketMessageModel *redpacketMessageModel;
 
 @end
 
@@ -51,6 +55,29 @@
 - (void)configWithRedpacketMessageModel:(RedpacketMessageModel *)model
                         andRedpacketDic:(NSDictionary *)redpacketDic
 {
+    if (model.redpacketType == RedpacketTypeAmount) {
+        
+        [_redpacketView removeFromSuperview];
+        if (!_redpacketLuckView) {
+            _redpacketLuckView = [RedPacketLuckView new];
+        }
+        [self.contentView addSubview:_redpacketLuckView];
+        
+        [_redpacketLuckView configWithRedpacketMessageModel:model];
+        
+    }else {
+        
+        [_redpacketLuckView removeFromSuperview];
+        if (!_redpacketView) {
+            _redpacketView = [RedpacketView new];
+        }
+        
+        [self.contentView addSubview:_redpacketView];
+        
+        [_redpacketView configWithRedpacketMessageModel:model
+                                        andRedpacketDic:redpacketDic];
+    }
+    
     UserInfo *currentUser = [RedpacketUser currentUser].userInfo;
     
     if (model.isRedacketSender) {
@@ -65,15 +92,18 @@
         
     }
     
-    [_redpacketView configWithRedpacketMessageModel:model
-                                    andRedpacketDic:redpacketDic];
-    
-    [self swapSide:model.isRedacketSender];
+    [self swapSide:model.isRedacketSender withRedpacketModel:model];
     
 }
 
-- (void)swapSide:(BOOL)isSender
+- (void)swapSide:(BOOL)isSender withRedpacketModel:(RedpacketMessageModel *)model
 {
+    UIView *adjustView = _redpacketView;
+    
+    if (model.redpacketType == RedpacketTypeAmount) {
+        adjustView = _redpacketLuckView;
+    }
+    
     if (isSender) {
         
         CGRect windowFrame = [UIScreen mainScreen].bounds;
@@ -91,10 +121,10 @@
         frame.size.height = LabelHeight;
         _userNickNameLabel.frame = frame;
         
-        frame = _redpacketView.frame;
+        frame = adjustView.frame;
         frame.origin.x = windowWith - RedpacketMargin * 2 - CGRectGetWidth(frame) - HeaderImageWith;
         frame.origin.y = RedpacketMargin * 2;
-        _redpacketView.frame = frame;
+        adjustView.frame = frame;
         
     }else {
         
@@ -110,16 +140,20 @@
         frame.size.height = LabelHeight;
         _userNickNameLabel.frame = frame;
         
-        frame = _redpacketView.frame;
+        frame = adjustView.frame;
         frame.origin.x = RedpacketMargin * 2 + HeaderImageWith;
         frame.origin.y = RedpacketMargin * 2;
-        _redpacketView.frame = frame;
+        adjustView.frame = frame;
     }
 }
 
-+ (CGFloat)heightForRedpacketMessageCell
++ (CGFloat)heightForRedpacketMessageCell:(RedpacketMessageModel *)model
 {
-    return [RedpacketView redpacketViewHeight];
+    if (model.redpacketType == RedpacketTypeAmount) {
+        return [RedPacketLuckView heightForRedpacketMessageCell] + 30;
+    }
+    
+    return [RedpacketView redpacketViewHeight] + 30;
 }
 
 @end

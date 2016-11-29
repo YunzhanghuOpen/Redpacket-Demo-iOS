@@ -13,6 +13,7 @@
 #import "RedpacketSingleViewController.h"
 #import "RedpacketGroupViewController.h"
 #import "AboutMeViewController.h"
+#import "RedpacketUserLoginViewController.h"
 
 
 @interface RedpacketFucListViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -28,6 +29,17 @@
     [super viewWillAppear:animated];
 
     self.title = [RedpacketUser currentUser].userInfo.userNickName;
+    
+    [self showLoginViewController];
+}
+
+- (void)showLoginViewController
+{
+    if (![RedpacketUser currentUser].userInfo) {
+        RedpacketUserLoginViewController *loginController = [[RedpacketUserLoginViewController alloc] initWithNibName:NSStringFromClass([RedpacketUserLoginViewController class]) bundle:[NSBundle mainBundle]];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginController];
+        [self presentViewController:nav animated:YES completion:nil];
+    }
 }
 
 - (void)viewDidLoad
@@ -39,6 +51,20 @@
     
     self.tableview.scrollEnabled    = NO;
     self.tableview.bounces          = NO;
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    [button setTitle:@"退出" forState:UIControlStateNormal];
+    [button sizeToFit];
+    [button addTarget:self action:@selector(loginOutClicked) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *userLoginOut = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.leftBarButtonItem = userLoginOut;
+}
+
+- (void)loginOutClicked
+{
+    [[RedpacketUser currentUser] loginOut];
+    
+    [self showLoginViewController];
 }
 
 #pragma mark - 

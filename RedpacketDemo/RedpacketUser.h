@@ -26,14 +26,15 @@
 
 @property (nonatomic, strong)             UserInfo *userInfo;
 @property (nonatomic, strong)             UserInfo *talkingUserInfo;
-@property (nonatomic, strong, readonly)   NSArray <UserInfo *> *users;
+@property (nonatomic, strong, readonly)   NSMutableArray <UserInfo *> *users;
 
 +  (RedpacketUser *)currentUser;
 
-- (void)changeUserWithUser1;
-- (void)changeUserWithUser2;
-- (void)changeUserWithUser3;
+- (void)loginWithSender:(NSString *)sender
+            andReceiver:(NSString *)receiver;
 
 - (void)changeUserBetweenUser1AndUser2;
+
+- (void)loginOut;
 
 @end

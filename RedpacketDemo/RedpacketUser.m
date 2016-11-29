@@ -8,6 +8,10 @@
 
 #import "RedpacketUser.h"
 
+#define RedpacketSenderID       @"redpacketSenderId"
+#define RedpacketReceiverID     @"redpacketReceiverId"
+
+
 @implementation UserInfo
 
 + (UserInfo *)configWithUserId:(NSString *)userId
@@ -28,11 +32,12 @@
 @interface RedpacketUser ()
 
 
-
 @end
 
 
 @implementation RedpacketUser
+@synthesize users = _users;
+
 
 + (RedpacketUser *)currentUser
 {
@@ -48,33 +53,81 @@
 - (instancetype)init
 {
     self = [super init];
+    
     if (self) {
-        
-        _userInfo = self.users[0];
-        _talkingUserInfo = self.users[1];
-        
+        [self readParamers];
     }
 
     return self;
 }
 
-- (void)changeUserWithUser1
+- (void)saveParamSenderID:(NSString *)senderID
+            andReceiverID:(NSString *)receiverID
 {
-    _userInfo = self.users[0];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (senderID.length && receiverID.length) {
+        [defaults setValue:senderID forKey:RedpacketSenderID];
+        [defaults setValue:receiverID forKey:RedpacketReceiverID];
+    }else {
+        [defaults removeObjectForKey:RedpacketSenderID];
+        [defaults removeObjectForKey:RedpacketReceiverID];
+    }
+    
+    [defaults synchronize];
 }
 
-
-- (void)changeUserWithUser2
+- (void)readParamers
 {
-   _userInfo = self.users[1];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *senderId = [defaults valueForKey:RedpacketSenderID];
+    NSString *receiverId = [defaults valueForKey:RedpacketReceiverID];
+    
+    if (senderId && receiverId) {
+        [self loginWithSender:senderId
+                  andReceiver:receiverId];
+    }
+}
+
+- (void)loginOut
+{
+    _users = nil;
+    _userInfo = nil;
+    _talkingUserInfo = nil;
+    
+    [self saveParamSenderID:@""
+              andReceiverID:@""];
     
 }
 
-- (void)changeUserWithUser3
+- (void)loginWithSender:(NSString *)senderID
+            andReceiver:(NSString *)receiverID
 {
-   _userInfo = self.users[2];
+    if (!(senderID && receiverID)) {
+        return;
+    }
+    
+    UserInfo *senderUser = [UserInfo configWithUserId:senderID
+                                             userName:senderID
+                                        andUserAvatar:@"UserHeader_user1.jpg"];
+    
+    UserInfo *receiverUser = [UserInfo configWithUserId:receiverID
+                                               userName:receiverID
+                                          andUserAvatar:@"UserHeader_user2.jpg"];
+    
+    if (!_users) {
+        _users = [@[] mutableCopy];
+    }
+    
+    [_users addObject:senderUser];
+    [_users addObject:receiverUser];
+    
+    _userInfo = self.users[0];
+    _talkingUserInfo = self.users[1];
+    
+    [self saveParamSenderID:senderID
+              andReceiverID:receiverID];
+    
 }
-
 
 - (void)changeUserBetweenUser1AndUser2
 {
@@ -91,16 +144,4 @@
     }
 }
 
-- (NSArray <UserInfo *> *)users
-{
-    UserInfo *user1 = [UserInfo configWithUserId:@"test1" userName:@"user1" andUserAvatar:@"UserHeader_user1.jpg"];
-    UserInfo *user2 = [UserInfo configWithUserId:@"test2" userName:@"user2" andUserAvatar:@"UserHeader_user2.jpg"];
-    UserInfo *user3 = [UserInfo configWithUserId:@"user3" userName:@"user3" andUserAvatar:@""];
-    
-    return @[
-             user1,
-             user2,
-             user3
-            ];
-}
 @end

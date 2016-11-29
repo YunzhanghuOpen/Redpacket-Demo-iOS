@@ -19,16 +19,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
 #pragma mark - 第一步初始化SDK
     [RedpacketConfig sharedConfig];
     
 #pragma mark - END
     
     RedpacketFucListViewController *listVC = [[RedpacketFucListViewController alloc] initWithNibName:NSStringFromClass([RedpacketFucListViewController class]) bundle:[NSBundle mainBundle]];
-    
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:listVC];
-    
-    self.window = [UIWindow new];
     
     self.window.rootViewController = nav;
     

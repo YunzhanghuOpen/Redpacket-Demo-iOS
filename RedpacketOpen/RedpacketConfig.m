@@ -267,8 +267,9 @@ static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
 {
     NSDictionary *redpacketMessageDict = [dict valueForKey:@"1"];
     
+    RedpacketMessageModel *redpacketMessageModel = [RedpacketMessageModel redpacketMessageModelWithDic:redpacketMessageDict];
     if (redpacketMessageDict) {
-        return [RedpacketMessageCell heightForRedpacketMessageCell];
+        return [RedpacketMessageCell heightForRedpacketMessageCell:redpacketMessageModel];
         
     }else {
         return [RedpacketTakenMessageTipCell heightForRedpacketMessageTipCell];

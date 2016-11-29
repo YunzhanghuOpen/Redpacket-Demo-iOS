@@ -7,7 +7,6 @@
 //
 
 #import "RedpacketView.h"
-#import "RedpacketUser.h"
 
 #define RedpacketMessageFontSize     14
 #define RedpacketSubMessageFontSize  12
@@ -45,13 +44,13 @@
     self =  [super initWithFrame:RedpacketViewRect];
     if (self) {
     
-        [self initialize:NO];
+        [self initialize];
     }
 
     return self;
 }
 
-- (void)initialize:(BOOL)isSender
+- (void)initialize
 {
     self.bubbleBackgroundView = [[UIImageView alloc] initWithFrame:self.bounds];
     [self addSubview:self.bubbleBackgroundView];

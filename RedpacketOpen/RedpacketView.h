@@ -17,7 +17,6 @@
 @property(strong, nonatomic) UILabel *orgLabel;
 @property(strong, nonatomic) UILabel *typeLable;
 @property(strong, nonatomic) UIImageView *iconView;
-@property(strong, nonatomic) UIImageView *orgIconView;
 @property(strong, nonatomic) UIImageView *bubbleBackgroundView;
 
 + (CGFloat)redpacketViewHeight;

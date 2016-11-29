@@ -19,6 +19,6 @@
 - (void)configWithRedpacketMessageModel:(RedpacketMessageModel *)model
                         andRedpacketDic:(NSDictionary *)redpacketDic;
 
-+ (CGFloat)heightForRedpacketMessageCell;
++ (CGFloat)heightForRedpacketMessageCell:(RedpacketMessageModel *)model;
 
 @end
