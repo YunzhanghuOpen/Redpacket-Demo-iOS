@@ -201,6 +201,11 @@ static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
     [_viewControl presentTransferViewControllerWithReceiver:userInfo];
 }
 
+- (void)presentTransferDetailViewController:(RedpacketMessageModel *)model
+{
+    [_viewControl presentTransferDetailViewController:model];
+}
+
 /** RPSendRedPacketViewControllerGroup 为普通群红包，RPSendRedPacketViewControllerMember 为包含定向功能的群红包 */
 - (void)presentGroupRedpacketSendViewControllerWithMemeberCount:(NSInteger)count
 {
@@ -222,8 +227,14 @@ static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
 - (void)grabRedpacket:(NSDictionary *)redpacketDic
 {
     RedpacketMessageModel *messageModel = [RedpacketMessageModel redpacketMessageModelWithDic:redpacketDic];
+ 
+    if (messageModel.messageType == RedpacketMessageTypeTransfer) {
+        [self presentTransferDetailViewController:messageModel];
+        
+    }else {
+        [_viewControl redpacketCellTouchedWithMessageModel:messageModel];
+    }
     
-    [_viewControl redpacketCellTouchedWithMessageModel:messageModel];
 }
 
 - (UITableViewCell *)cellForRedpacketMessageDict:(NSDictionary *)dict
@@ -235,7 +246,7 @@ static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
         RedpacketMessageModel *redpacketMessageModel = [RedpacketMessageModel redpacketMessageModelWithDic:redpacketMessageDict];
         RedpacketMessageCell *cell = [[RedpacketMessageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        [cell configWithRedpacketMessageModel:redpacketMessageModel];
+        [cell configWithRedpacketMessageModel:redpacketMessageModel andRedpacketDic:redpacketMessageDict];
         
         return cell;
         

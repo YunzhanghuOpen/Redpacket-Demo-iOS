@@ -37,8 +37,9 @@
         _headerImageView.layer.masksToBounds = YES;
         _headerImageView.layer.cornerRadius = HeaderImageWith / 2.0f;
         
-        _redpacketView = [[RedpacketView alloc] init];
+        _redpacketView = [RedpacketView new];
         
+        [self.contentView addSubview:_redpacketView];
         [self.contentView addSubview:_userNickNameLabel];
         [self.contentView addSubview:_headerImageView];
         [self.contentView addSubview:_redpacketView];
@@ -48,14 +49,11 @@
 }
 
 - (void)configWithRedpacketMessageModel:(RedpacketMessageModel *)model
+                        andRedpacketDic:(NSDictionary *)redpacketDic
 {
-    [_redpacketView configWithRedpacketMessageModel:model];
-    
     UserInfo *currentUser = [RedpacketUser currentUser].userInfo;
     
-    BOOL isSender = [currentUser.userId isEqualToString:model.redpacketSender.userId];
-    
-    if (isSender) {
+    if (model.isRedacketSender) {
         
         [_headerImageView setImage:[UIImage imageNamed:currentUser.userAvatar]];
         _userNickNameLabel.text = [RedpacketUser currentUser].talkingUserInfo.userNickName;
@@ -67,7 +65,10 @@
         
     }
     
-    [self swapSide:isSender];
+    [_redpacketView configWithRedpacketMessageModel:model
+                                    andRedpacketDic:redpacketDic];
+    
+    [self swapSide:model.isRedacketSender];
     
 }
 
@@ -91,7 +92,7 @@
         _userNickNameLabel.frame = frame;
         
         frame = _redpacketView.frame;
-        frame.origin.x = windowWith - RedpacketMargin * 2 - CGRectGetWidth(frame);
+        frame.origin.x = windowWith - RedpacketMargin * 2 - CGRectGetWidth(frame) - HeaderImageWith;
         frame.origin.y = RedpacketMargin * 2;
         _redpacketView.frame = frame;
         
@@ -118,7 +119,7 @@
 
 + (CGFloat)heightForRedpacketMessageCell
 {
-    return [RedpacketView heightForRedpacketMessageCell];
+    return [RedpacketView redpacketViewHeight];
 }
 
 @end

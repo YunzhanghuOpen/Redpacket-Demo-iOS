@@ -18,10 +18,11 @@
 @property(strong, nonatomic) UILabel *typeLable;
 @property(strong, nonatomic) UIImageView *iconView;
 @property(strong, nonatomic) UIImageView *orgIconView;
-@property(nonatomic, strong) UIImageView *bubbleBackgroundView;
+@property(strong, nonatomic) UIImageView *bubbleBackgroundView;
 
-+ (CGFloat)heightForRedpacketMessageCell; 
++ (CGFloat)redpacketViewHeight;
 
-- (void)configWithRedpacketMessageModel:(RedpacketMessageModel *)model;
+- (void)configWithRedpacketMessageModel:(RedpacketMessageModel *)redpacketMessage
+                        andRedpacketDic:(NSDictionary *)redpacketDic;
 
 @end

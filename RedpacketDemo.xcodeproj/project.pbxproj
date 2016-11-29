@@ -39,8 +39,6 @@
 		9251E24A1DE2EBF5009BEAF4 /* RedpacketView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9251E2491DE2EBF5009BEAF4 /* RedpacketView.m */; };
 		9269B9D71DBB54D3001BC8A9 /* RedpacketTakenMessageTipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9269B9D51DBB54D3001BC8A9 /* RedpacketTakenMessageTipCell.m */; };
 		9298AD0B1DBB6145000C0CAF /* RedpacketCellResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9298AD0A1DBB6145000C0CAF /* RedpacketCellResource.bundle */; };
-		92D5AC221DC33A1C0038A5D9 /* AlipaySDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D5AC1E1DC33A1C0038A5D9 /* AlipaySDK.a */; };
-		92D5AC231DC33A1C0038A5D9 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 92D5AC211DC33A1C0038A5D9 /* AlipaySDK.bundle */; };
 		DEB85566268AD075906F3C00 /* libPods-RedpacketDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65565201F48F7A152EF6ACC6 /* libPods-RedpacketDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -106,10 +104,6 @@
 		9269B9D41DBB54D3001BC8A9 /* RedpacketTakenMessageTipCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedpacketTakenMessageTipCell.h; sourceTree = "<group>"; };
 		9269B9D51DBB54D3001BC8A9 /* RedpacketTakenMessageTipCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedpacketTakenMessageTipCell.m; sourceTree = "<group>"; };
 		9298AD0A1DBB6145000C0CAF /* RedpacketCellResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RedpacketCellResource.bundle; sourceTree = "<group>"; };
-		92D5AC1E1DC33A1C0038A5D9 /* AlipaySDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = AlipaySDK.a; sourceTree = "<group>"; };
-		92D5AC1F1DC33A1C0038A5D9 /* AlipaySDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlipaySDK.h; sourceTree = "<group>"; };
-		92D5AC201DC33A1C0038A5D9 /* APayAuthInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APayAuthInfo.h; sourceTree = "<group>"; };
-		92D5AC211DC33A1C0038A5D9 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		F05AD7BB19DECFBD13135DB3 /* Pods-RedpacketDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedpacketDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RedpacketDemo/Pods-RedpacketDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,7 +113,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9242B6DD1DD44BB500FE7C9D /* libsqlite3.tbd in Frameworks */,
-				92D5AC221DC33A1C0038A5D9 /* AlipaySDK.a in Frameworks */,
 				923AA1BA1D953AC700A097B1 /* CoreMotion.framework in Frameworks */,
 				923AA1B81D953ABD00A097B1 /* CFNetwork.framework in Frameworks */,
 				923AA1B61D953AB600A097B1 /* Foundation.framework in Frameworks */,
@@ -240,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				9242B6D71DD44BAA00FE7C9D /* WeChat */,
-				92D5AC1C1DC33A1C0038A5D9 /* AliPay */,
 				9298AD0A1DBB6145000C0CAF /* RedpacketCellResource.bundle */,
 				9241AF291DBB6990006FEB44 /* RedpacketConfig.h */,
 				9241AF2A1DBB6990006FEB44 /* RedpacketConfig.m */,
@@ -251,26 +243,6 @@
 			);
 			path = RedpacketOpen;
 			sourceTree = SOURCE_ROOT;
-		};
-		92D5AC1C1DC33A1C0038A5D9 /* AliPay */ = {
-			isa = PBXGroup;
-			children = (
-				92D5AC1D1DC33A1C0038A5D9 /* AlipayLib */,
-				92D5AC211DC33A1C0038A5D9 /* AlipaySDK.bundle */,
-			);
-			name = AliPay;
-			path = ../AliPay;
-			sourceTree = "<group>";
-		};
-		92D5AC1D1DC33A1C0038A5D9 /* AlipayLib */ = {
-			isa = PBXGroup;
-			children = (
-				92D5AC1E1DC33A1C0038A5D9 /* AlipaySDK.a */,
-				92D5AC1F1DC33A1C0038A5D9 /* AlipaySDK.h */,
-				92D5AC201DC33A1C0038A5D9 /* APayAuthInfo.h */,
-			);
-			path = AlipayLib;
-			sourceTree = "<group>";
 		};
 		CF06FFB308AA18E8BD1CBA74 /* Pods */ = {
 			isa = PBXGroup;
@@ -311,7 +283,7 @@
 		923AA1441D95282400A097B1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Mr.Yang;
 				TargetAttributes = {
 					923AA14B1D95282400A097B1 = {
@@ -350,7 +322,6 @@
 				92006F8A1DE3F5C7004B8299 /* RedpacketFucListViewController.xib in Resources */,
 				92006F961DE428B1004B8299 /* AboutMeViewController.xib in Resources */,
 				9298AD0B1DBB6145000C0CAF /* RedpacketCellResource.bundle in Resources */,
-				92D5AC231DC33A1C0038A5D9 /* AlipaySDK.bundle in Resources */,
 				923AA15C1D95282400A097B1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,7 +356,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BD5A27184357051644F55376 /* [CP] Embed Pods Frameworks */ = {
@@ -457,6 +428,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -505,6 +477,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
