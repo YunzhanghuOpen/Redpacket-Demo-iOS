@@ -11,6 +11,10 @@
 
 @interface RedPacketLuckView : UIView
 
+@property(strong, nonatomic) UILabel *greetingLabel;
+@property(strong, nonatomic) UIImageView *bubbleBackgroundView;
+
+
 + (CGFloat)heightForRedpacketMessageCell;
 - (void)configWithRedpacketMessageModel:(RedpacketMessageModel *)model;
 
