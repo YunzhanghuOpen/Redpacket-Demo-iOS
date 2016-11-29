@@ -9,7 +9,7 @@ target 'RedpacketDemo' do
 
     pod 'AFNetworking', '2.5.4'
     
-    #pod 'RedpacketLib'
+    pod 'RedpacketLib'
     
     pod 'MLeaksFinder'
     

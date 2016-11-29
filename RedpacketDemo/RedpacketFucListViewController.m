@@ -74,18 +74,23 @@
 
 - (void)invokeFunctionsAtIndex:(NSInteger)index
 {
-    if (index == 4) {
-        
-        [[RedpacketConfig sharedConfig] presentChangeViewControllerInController:self];
-        return;
-    }
+    
+    static NSString *systemRedpacketInstruction = @"系统红包简介：\n系统红包请联系我们：BD@yunzhanghu.com";
+    static NSString *advertRedpacketInstruction = @"广告红包简介：\n广告红包请联系我们：BD@yunzhanghu.com";
     
     UIViewController * controller = nil;
+    
     switch (index) {
             
         case 0: controller = [RedpacketSingleViewController controllerWithControllerType:NO]; break;
             
         case 1: controller = [RedpacketGroupViewController controllerWithControllerType:YES]; break;
+            
+        case 2: [self alertMessage:systemRedpacketInstruction]; break;
+            
+        case 3: [self alertMessage:advertRedpacketInstruction]; break;
+            
+        case 4: [[RedpacketConfig sharedConfig] presentChangeViewControllerInController:self]; break;
             
         case 5: controller = [[AboutMeViewController alloc] initWithNibName:@"AboutMeViewController" bundle:[NSBundle mainBundle]]; break;
             
@@ -96,6 +101,13 @@
         [self.navigationController pushViewController:controller animated:YES];
     }
     
+}
+
+- (void)alertMessage:(NSString *)message
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:message delegate:nil cancelButtonTitle:@"我知道了" otherButtonTitles:nil];
+    
+    [alert show];
 }
 
 - (NSArray *)functions

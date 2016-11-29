@@ -1,4 +1,4 @@
-      //
+//
 //  RedpacketMessageCell.h
 //  LeanChat
 //
@@ -16,7 +16,8 @@
 @property (nonatomic, strong)   UIImageView *headerImageView;
 @property (nonatomic, strong)   UILabel     *userNickNameLabel;
 
-- (void)configWithRedpacketMessageModel:(RedpacketMessageModel *)model;
+- (void)configWithRedpacketMessageModel:(RedpacketMessageModel *)model
+                        andRedpacketDic:(NSDictionary *)redpacketDic;
 
 + (CGFloat)heightForRedpacketMessageCell;
 

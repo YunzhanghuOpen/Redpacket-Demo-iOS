@@ -51,7 +51,7 @@
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="-291" y="-173"/>
+            <point key="canvasLocation" x="-467" y="-175"/>
         </view>
     </objects>
 </document>
