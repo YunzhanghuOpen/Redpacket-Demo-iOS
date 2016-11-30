@@ -31,6 +31,11 @@
 
 #define REDPACKETBUNDLE(name) [NSString stringWithFormat:@"RedpacketCellResource.bundle/%@", name]
 
+@interface RedpacketView ()
+
+@property (nonatomic, strong)   RedpacketMessageModel *messageModel;
+
+@end
 
 @implementation RedpacketView
 
@@ -97,6 +102,10 @@
 - (void)configWithRedpacketMessageModel:(RedpacketMessageModel *)redpacketMessage
                         andRedpacketDic:(NSDictionary *)redpacketDic
 {
+    if (redpacketMessage == _messageModel) return;
+    
+    _messageModel = redpacketMessage;
+    
     NSString *title;
     NSString *subTitle;
     NSString *orgTitle;
@@ -138,15 +147,17 @@
     image = [image resizableImageWithCapInsets:RedpacketImageInset];
     self.bubbleBackgroundView.image = image;
     
-    [self layoutSubviewsWithModel:redpacketMessage];
+    [self layoutIfNeeded];
 }
 
-- (void)layoutSubviewsWithModel:(RedpacketMessageModel *)model
+- (void)layoutSubviews
 {
+    [super layoutSubviews];
+    
     CGRect frame;
     CGSize iconSize;
     
-    if (model.messageType == RedpacketMessageTypeTransfer) {
+    if (_messageModel.messageType == RedpacketMessageTypeTransfer) {
         iconSize = CGSizeMake(RedpacketIconHeight, RedpacketIconHeight);
         
     }else {
@@ -177,7 +188,7 @@
     frame.origin.x = RedpacketViewWidth - RedpacketLeftMargin;
     self.typeLable.frame = frame;
     
-    if (!model.isRedacketSender) {
+    if (!_messageModel.isRedacketSender) {
         for (UIView *view in self.bubbleBackgroundView.subviews) {
             
             CGRect frame = view.frame;
@@ -186,7 +197,6 @@
             view.frame = frame;
         }
     }
-    
 }
 
 @end

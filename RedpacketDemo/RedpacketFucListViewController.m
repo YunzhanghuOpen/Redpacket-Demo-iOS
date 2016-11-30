@@ -84,6 +84,11 @@
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
     
     UILabel *titleLabel = [UILabel new];
+    titleLabel.autoresizingMask =   UIViewAutoresizingFlexibleWidth |
+                                    UIViewAutoresizingFlexibleHeight|
+                                    UIViewAutoresizingFlexibleLeftMargin |
+                                    UIViewAutoresizingFlexibleRightMargin;
+    
     titleLabel.frame = cell.contentView.frame;
     titleLabel.textAlignment = NSTextAlignmentCenter;
     [cell.contentView addSubview:titleLabel];
@@ -100,9 +105,8 @@
 
 - (void)invokeFunctionsAtIndex:(NSInteger)index
 {
-    
-    static NSString *systemRedpacketInstruction = @"系统红包简介：\n系统红包请联系我们：BD@yunzhanghu.com";
-    static NSString *advertRedpacketInstruction = @"广告红包简介：\n广告红包请联系我们：BD@yunzhanghu.com";
+    static NSString *systemRedpacketInstruction = @"系统红包简介：\n系统红包以系统管理员的身份给用户发拼手气群红包，特别适合开发者们做运营活动使用。";
+    static NSString *advertRedpacketInstruction = @"广告红包简介：\n广告红包使用云账户的商户端进行广告计划和品牌主红包素材配置，计划开始执行时，给符合条件的用户发放一个品牌红包，增加品牌曝光量。";
     
     UIViewController * controller = nil;
     

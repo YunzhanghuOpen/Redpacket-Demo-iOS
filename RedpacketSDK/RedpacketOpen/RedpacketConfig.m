@@ -19,7 +19,7 @@
 #define Test 0
 
 #if Test
-//https://rpv2.yunzhanghu.com/api/demo-sign
+
 //https://rpv2.yunzhanghu.com/api/demo-sign?uid=9527&token=123
 
 //参数：
