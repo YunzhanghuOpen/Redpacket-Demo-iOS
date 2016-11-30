@@ -83,7 +83,7 @@
     if (model.isRedacketSender) {
         
         [_headerImageView setImage:[UIImage imageNamed:currentUser.userAvatar]];
-        _userNickNameLabel.text = [RedpacketUser currentUser].talkingUserInfo.userNickName;
+        _userNickNameLabel.text = [RedpacketUser currentUser].userInfo.userNickName;
         
     }else {
      
@@ -123,7 +123,7 @@
         
         frame = adjustView.frame;
         frame.origin.x = windowWith - RedpacketMargin * 2 - CGRectGetWidth(frame) - HeaderImageWith;
-        frame.origin.y = RedpacketMargin * 2;
+        frame.origin.y = RedpacketMargin * 3;
         adjustView.frame = frame;
         
     }else {
@@ -142,7 +142,7 @@
         
         frame = adjustView.frame;
         frame.origin.x = RedpacketMargin * 2 + HeaderImageWith;
-        frame.origin.y = RedpacketMargin * 2;
+        frame.origin.y = RedpacketMargin * 3;
         adjustView.frame = frame;
     }
 }
@@ -150,7 +150,7 @@
 + (CGFloat)heightForRedpacketMessageCell:(RedpacketMessageModel *)model
 {
     if (model.redpacketType == RedpacketTypeAmount) {
-        return [RedPacketLuckView heightForRedpacketMessageCell] + 30;
+        return [RedPacketLuckView heightForRedpacketMessageCell] + 50;
     }
     
     return [RedpacketView redpacketViewHeight] + 30;

@@ -14,6 +14,7 @@
 #import "RedpacketMessageCell.h"
 #import "RedpacketTakenMessageTipCell.h"
 #import "RedpacketUser.h"
+#import "WXApi.h"
 
 #define Test 0
 
@@ -36,6 +37,7 @@ static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
 
 #endif
 
+#define WechatPayAppID      @"wx634a5f53be1b66bd"
 
 @implementation NSDictionary (ValueForKey)
 
@@ -77,6 +79,8 @@ static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
     self = [super init];
     
     if (self) {
+        
+        [WXApi registerApp:WechatPayAppID withDescription:@"RedpacketSDK-iOS"];
         
         [YZHRedpacketBridge sharedBridge].delegate = self;
         [YZHRedpacketBridge sharedBridge].dataSource = self;
@@ -152,7 +156,6 @@ static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
                                                                               }] start];
         }
 }
-
 
 - (void)configWithSignDict:(NSDictionary *)dict andBlock:(FetchRegisitParamBlock)fetchBlock
 {

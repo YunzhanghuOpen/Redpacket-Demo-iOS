@@ -36,6 +36,39 @@
     return YES;
 }
 
+#ifdef REDPACKET_AVALABLE
 
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    [self redpacket_applicationDidBecomeActive:application];
+}
+
+// NOTE: iOS9.0之前使用的API接口
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    [self redpacket_application:application
+                        openURL:url
+              sourceApplication:sourceApplication
+                     annotation:annotation];
+    
+    return YES;
+}
+
+//// NOTE: iOS9.0之后使用新的API接口
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary<NSString*, id> *)options
+{
+    [self redpacket_application:app
+                        openURL:url
+                        options:options];
+    
+    return YES;
+}
+
+#endif
 
 @end

@@ -8,6 +8,12 @@
 
 #import "RedPacketLuckView.h"
 
+
+#define RedpacketViewHeight     140.0f
+#define RedpacketViewWidth      116.0f
+
+#define REDPACKETBUNDLE(name) [NSString stringWithFormat:@"RedpacketCellResource.bundle/%@", name]
+
 @interface RedPacketLuckView()
 @property (nonatomic,strong)UIButton * receiveButton;
 @end
@@ -17,11 +23,11 @@
 const CGFloat RedPacketLuckViewGreetingFontSize = 14;
 
 + (CGFloat)heightForRedpacketMessageCell {
-    return 140;
+    return RedpacketViewHeight;
 }
 
 - (instancetype)init {
-    self = [super init];
+    self = [super initWithFrame:CGRectMake(0, 0, RedpacketViewWidth, RedpacketViewHeight)];
     if (self) {
         self.bubbleBackgroundView = [[UIImageView alloc] initWithFrame:self.bounds];
         [self addSubview:self.bubbleBackgroundView];
@@ -50,6 +56,7 @@ const CGFloat RedPacketLuckViewGreetingFontSize = 14;
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    
     self.bubbleBackgroundView.frame = self.bounds;
     
     self.greetingLabel.frame = CGRectMake(25, 70, self.frame.size.width - 50, 36);
@@ -58,12 +65,12 @@ const CGFloat RedPacketLuckViewGreetingFontSize = 14;
 }
 
 - (void)configWithRedpacketMessageModel:(RedpacketMessageModel *)model {
-    BOOL isSender = model.isRedacketSender;
-
-    NSString * imageName = [NSString stringWithFormat:@"RedpacketCellResource.bundle/%@", isSender?@"em_random_chat_bg":@"em_random_chatfrom_bg"];
-    self.bubbleBackgroundView.image = [UIImage imageNamed:imageName];
-    self.greetingLabel.text = model.redpacket.redpacketGreeting;
     
+    NSString * imageName =  model.isRedacketSender ? @"em_random_chat_bg" : @"em_random_chatfrom_bg";
+    
+    self.bubbleBackgroundView.image = [UIImage imageNamed:REDPACKETBUNDLE(imageName)];
+    
+    self.greetingLabel.text = model.redpacket.redpacketGreeting;
 }
 
 @end

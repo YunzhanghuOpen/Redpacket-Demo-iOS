@@ -66,18 +66,16 @@
 
 - (void)configWithRedpacketMessageModel:(RedpacketMessageModel *)redpacketModel
 {
-    if ([redpacketModel.currentUser.userId isEqualToString:redpacketModel.redpacketSender.userId]
-        || [redpacketModel.currentUser.userId isEqualToString:redpacketModel.redpacketReceiver.userId]) {
-        
-        self.bgView.hidden = NO;
-        self.tipMessageLabel.text = [NSString stringWithFormat:@"你领取了%@的红包", redpacketModel.redpacketSender.userNickname];
-        
+    NSString *message;
+    if (redpacketModel.isRedacketSender) {
+        message = [NSString stringWithFormat:@"%@领取了你的红包", redpacketModel.redpacketReceiver.userNickname];
+       
     }else {
-        
-        self.tipMessageLabel.text = nil;
-        self.bgView.hidden = YES;
-        
+        message = [NSString stringWithFormat:@"你领取了%@的红包", redpacketModel.redpacketSender.userNickname];
     }
+    
+    self.bgView.hidden = NO;
+    self.tipMessageLabel.text = message;
     
     [self setNeedsLayout];
 }
