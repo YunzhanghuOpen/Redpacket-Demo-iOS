@@ -244,17 +244,17 @@
 		929F120C1DEDA076000C0EE8 /* RedpacketOpen */ = {
 			isa = PBXGroup;
 			children = (
+				929F12371DEEDBAD000C0EE8 /* Resource */,
 				929F120D1DEDA076000C0EE8 /* AppDelegate+Redpacket.h */,
 				929F120E1DEDA076000C0EE8 /* AppDelegate+Redpacket.m */,
-				929F120F1DEDA076000C0EE8 /* RedpacketCellResource.bundle */,
 				929F12101DEDA076000C0EE8 /* RedpacketConfig.h */,
 				929F12111DEDA076000C0EE8 /* RedpacketConfig.m */,
 				929F12131DEDA076000C0EE8 /* RedPacketLuckView.h */,
 				929F12141DEDA076000C0EE8 /* RedPacketLuckView.m */,
-				929F12151DEDA076000C0EE8 /* RedpacketTakenMessageTipCell.h */,
-				929F12161DEDA076000C0EE8 /* RedpacketTakenMessageTipCell.m */,
 				929F12171DEDA076000C0EE8 /* RedpacketView.h */,
 				929F12181DEDA076000C0EE8 /* RedpacketView.m */,
+				929F12151DEDA076000C0EE8 /* RedpacketTakenMessageTipCell.h */,
+				929F12161DEDA076000C0EE8 /* RedpacketTakenMessageTipCell.m */,
 			);
 			path = RedpacketOpen;
 			sourceTree = "<group>";
@@ -267,6 +267,14 @@
 				929F12271DEDA076000C0EE8 /* WXApiObject.h */,
 			);
 			path = WeChat;
+			sourceTree = "<group>";
+		};
+		929F12371DEEDBAD000C0EE8 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				929F120F1DEDA076000C0EE8 /* RedpacketCellResource.bundle */,
+			);
+			name = Resource;
 			sourceTree = "<group>";
 		};
 		CF06FFB308AA18E8BD1CBA74 /* Pods */ = {

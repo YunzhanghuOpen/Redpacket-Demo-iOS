@@ -12,7 +12,6 @@
 /**
  *  处理支付宝支付 和 微信支付
  */
-
 @interface AppDelegate (Redpacket) <WXApiDelegate>
 
 //  从后台直接唤起App时，如果App正在调用微信或者支付宝则取消支付

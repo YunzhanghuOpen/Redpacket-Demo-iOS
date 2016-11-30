@@ -21,7 +21,7 @@
     /**
      *  取消支付
      */
-//    [[NSNotificationCenter defaultCenter] postNotificationName:RedpacketCancelPayNotifaction object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:RedpacketCancelPayNotifaction object:nil];
 }
 
 // NOTE: iOS9.0之前使用的API接口

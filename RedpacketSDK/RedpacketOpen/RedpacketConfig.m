@@ -16,26 +16,7 @@
 #import "RedpacketUser.h"
 #import "WXApi.h"
 
-#define Test 0
-
-#if Test
-
-//https://rpv2.yunzhanghu.com/api/demo-sign?uid=9527&token=123
-
-//参数：
-//* uid：商户的用户 ID
-//* token：商户的 Token，目前仅用来表示“获取签名需先验证用户身份”，不做验证
-
-//static NSString *requestUrl1 = @"http://10.3.158.63:443/api/sign?duid=";
-static NSString *requestUrl1 = @"http://10.10.1.19/api/sign?duid=";
-
-//static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
-
-#else
-
 static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
-
-#endif
 
 #define WechatPayAppID      @"wx634a5f53be1b66bd"
 
@@ -131,6 +112,7 @@ static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
     self.grabBlock = grabBlock;
 }
 
+/** 签名接口调用， 签名接口写法见官网文档 */
 - (void)fetchUserSignWithUserID:(FetchRegisitParamBlock)fetchBlock
 {
     NSString *userId = [self redpacketUserInfo].userId;
@@ -159,10 +141,6 @@ static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
 
 - (void)configWithSignDict:(NSDictionary *)dict andBlock:(FetchRegisitParamBlock)fetchBlock
 {
-    if (![dict isKindOfClass:[NSDictionary class]]) {
-        
-        return;
-    }
     NSString *partner = [dict stringValueForKey:@"partner"];
     NSString *appUserId = [dict stringValueForKey:@"user_id"];
     NSString *timeStamp = [dict stringValueForKey:@"timestamp"];
@@ -176,8 +154,8 @@ static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
     fetchBlock(model);
 }
 
-#pragma mark - SDK获取Token
-
+#pragma mark Redpacket
+/** 红包SDK回调此函数进行注册 */
 - (void)redpacketFetchRegisitParam:(FetchRegisitParamBlock)fetchBlock withError:(NSError *)error
 {
     NSLog(@"RequestToken");
