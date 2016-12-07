@@ -75,12 +75,10 @@ EOM
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "RedPacketAlipay/AlipaySDK.bundle"
-  install_resource "RedpacketLib/RedpacketStaticLib/resources/RedPacket.bundle"
   install_resource "RedpacketLib/RedpacketStaticLib/resources/RedPacketResource.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "RedPacketAlipay/AlipaySDK.bundle"
-  install_resource "RedpacketLib/RedpacketStaticLib/resources/RedPacket.bundle"
   install_resource "RedpacketLib/RedpacketStaticLib/resources/RedPacketResource.bundle"
 fi
 

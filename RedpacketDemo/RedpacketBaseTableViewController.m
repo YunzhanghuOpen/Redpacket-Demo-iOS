@@ -11,7 +11,7 @@
 #import "RedpacketUser.h"
 #import "RedpacketMessageModel.h"
 #import "RedpacketViewControl.h"
-
+#import "RedpacketDefines.h"
 
 static NSString *kRedpacketsSaveKey     = @"redpacketSaveKey";
 static NSString *kRedpacketGroupSaveKey = @"redpacketGroupSaveKey";
@@ -37,12 +37,6 @@ static NSString *kRedpacketGroupSaveKey = @"redpacketGroupSaveKey";
         [[NSUserDefaults standardUserDefaults] setValue:_mutDatas forKey:key];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    self.title = [RedpacketUser currentUser].userInfo.userNickName;
 }
 
 - (void)viewDidLoad

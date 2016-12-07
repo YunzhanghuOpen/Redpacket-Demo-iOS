@@ -14,12 +14,13 @@
 #import "RedpacketGroupViewController.h"
 #import "AboutMeViewController.h"
 #import "RedpacketUserLoginViewController.h"
+#import "RedpacketDefines.h"
 
-
-@interface RedpacketFucListViewController () <UITableViewDelegate, UITableViewDataSource>
-
-@property (nonatomic, strong) IBOutlet UITableView *tableview;
-
+@interface RedpacketFucListViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *headBackgroundView;
+@property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *clearBtn;
 @end
 
 @implementation RedpacketFucListViewController
@@ -27,9 +28,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
-    self.title = [RedpacketUser currentUser].userInfo.userNickName;
-    
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
+    self.navigationController.navigationBar.barStyle       = UIBarStyleBlack;
+    self.nameLabel.text = [RedpacketUser currentUser].userInfo.userNickName;
     [self showLoginViewController];
 }
 
@@ -44,73 +45,59 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    [self.clearBtn addTarget:self action:@selector(loginOutClicked) forControlEvents:UIControlEventTouchUpInside];
+    self.headBackgroundView.backgroundColor = rpHexColor(0xd24f44);
+    [self addButtons];
+    [self.clearBtn setTitleColor:rpHexColor(0x44459a) forState:UIControlStateNormal];
     
-    self.tableview.delegate         = self;
-    self.tableview.dataSource       = self;
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = item;
     
-    self.tableview.scrollEnabled    = NO;
-    self.tableview.bounces          = NO;
+    UINavigationBar *navigationBar = self.navigationController.navigationBar;
+    [navigationBar setBackgroundImage:[[UIImage alloc] init]
+                       forBarPosition:UIBarPositionAny
+                           barMetrics:UIBarMetricsDefault];
+    [navigationBar setShadowImage:[UIImage new]];
+
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-    [button setTitle:@"退出" forState:UIControlStateNormal];
-    [button sizeToFit];
-    [button addTarget:self action:@selector(loginOutClicked) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *userLoginOut = [[UIBarButtonItem alloc] initWithCustomView:button];
-    self.navigationItem.leftBarButtonItem = userLoginOut;
+    [self.navigationController.navigationBar setBackgroundImage:[self navgationBarBackImage:rpHexColor(0xd24f44)] forBarMetrics:UIBarMetricsDefault];
 }
 
-- (void)loginOutClicked
+- (void)addButtons
 {
-    [[RedpacketUser currentUser] loginOut];
-    
-    [self showLoginViewController];
+    for (int i=0; i<[self functions].count ; i++) {
+        UIButton *btn = [[UIButton alloc]init];
+        [btn setTitleColor:rpHexColor(0xd24f44) forState:UIControlStateNormal];
+        [btn setBackgroundColor:[UIColor whiteColor]];
+        btn.tag = i;
+        btn.titleLabel.font = [UIFont fontWithName:@"" size:19];
+        [btn setTitle:[self functions][i] forState:UIControlStateNormal];
+        if (i<3) {
+            btn.frame = CGRectMake(i * [UIScreen mainScreen].bounds.size.width/3, 277, [UIScreen mainScreen].bounds.size.width/3, 100);
+        }else {
+            btn.frame = CGRectMake((i - 3) * [UIScreen mainScreen].bounds.size.width/3, 377, [UIScreen mainScreen].bounds.size.width/3, 100);
+        }
+        [self.view addSubview:btn];
+        [btn addTarget:self action:@selector(clickListBtn:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    UIView *lineHorizontal = [[UIView alloc]initWithFrame:CGRectMake(0, 377, [UIScreen mainScreen].bounds.size.width, .5)];
+    lineHorizontal.backgroundColor = rpHexColor(0xc7c7c7);
+    [self.view addSubview:lineHorizontal];
+    for (int i = 0; i < 2; i ++) {
+        UIView *lineVertical = [[UIView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/3*(1+i), 277, .5, 200)];
+        lineVertical.backgroundColor = rpHexColor(0xc7c7c7);
+        [self.view addSubview:lineVertical];
+    }
 }
 
-#pragma mark - 
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.functions.count;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 44.0f;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
-    
-    UILabel *titleLabel = [UILabel new];
-    titleLabel.autoresizingMask =   UIViewAutoresizingFlexibleWidth |
-                                    UIViewAutoresizingFlexibleHeight|
-                                    UIViewAutoresizingFlexibleLeftMargin |
-                                    UIViewAutoresizingFlexibleRightMargin;
-    
-    titleLabel.frame = cell.contentView.frame;
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    [cell.contentView addSubview:titleLabel];
-    
-    titleLabel.text = self.functions[indexPath.row];
-    
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self invokeFunctionsAtIndex:indexPath.row];
-}
-
-- (void)invokeFunctionsAtIndex:(NSInteger)index
+- (void)clickListBtn:(id)sender
 {
     static NSString *systemRedpacketInstruction = @"系统红包简介：\n系统红包以系统管理员的身份给用户发拼手气群红包，特别适合开发者们做运营活动使用。";
     static NSString *advertRedpacketInstruction = @"广告红包简介：\n广告红包使用云账户的商户端进行广告计划和品牌主红包素材配置，计划开始执行时，给符合条件的用户发放一个品牌红包，增加品牌曝光量。";
     
     UIViewController * controller = nil;
-    
-    switch (index) {
+    UIButton *btn = sender;
+    switch (btn.tag) {
             
         case 0: controller = [RedpacketSingleViewController controllerWithControllerType:NO]; break;
             
@@ -130,7 +117,14 @@
     if (controller != nil) {
         [self.navigationController pushViewController:controller animated:YES];
     }
+
+}
+
+- (void)loginOutClicked
+{
+    [[RedpacketUser currentUser] loginOut];
     
+    [self showLoginViewController];
 }
 
 - (void)alertMessage:(NSString *)message
@@ -151,5 +145,18 @@
              @"联系我们"
              ];
 }
+
+- (UIImage *)navgationBarBackImage:(UIColor *)color
+{
+    CGSize size = CGSizeMake(10, 10);
+    UIGraphicsBeginImageContextWithOptions(size, 0, [UIScreen mainScreen].scale);
+    [color set];
+    UIRectFill(CGRectMake(0, 0, size.width, size.height));
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
 
 @end

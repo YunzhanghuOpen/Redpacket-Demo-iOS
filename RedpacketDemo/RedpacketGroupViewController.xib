@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RedpacketGroupViewController">
             <connections>
+                <outlet property="headerBackImageView" destination="nnn-bs-7BT" id="O6z-T0-CPg"/>
+                <outlet property="headerImageView" destination="84s-sU-VLS" id="ag3-nw-G1N"/>
+                <outlet property="member" destination="iou-a6-GNs" id="nr3-KA-O0z"/>
+                <outlet property="nameLabel" destination="7fk-OY-isK" id="iEQ-bx-9VX"/>
+                <outlet property="redpacket" destination="7xs-lv-k6V" id="Gye-Oz-m2V"/>
                 <outlet property="talkTableView" destination="dGs-6q-uQ6" id="xIV-Rc-IkX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -17,30 +25,72 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dGs-6q-uQ6">
-                    <frame key="frameInset" minX="1" maxX="-1" maxY="172"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dGs-6q-uQ6">
+                    <rect key="frame" x="0.0" y="86" width="375" height="523"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xs-lv-k6V">
-                    <frame key="frameInset" minX="25" width="65" height="30" maxY="35"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xs-lv-k6V">
+                    <rect key="frame" x="16" y="617" width="45" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="OFB-8r-j4e"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
                     <state key="normal" title="红包"/>
                     <connections>
                         <action selector="groupRedpacketButtonClicked" destination="-1" eventType="touchUpInside" id="anP-kh-prq"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iou-a6-GNs">
-                    <frame key="frameInset" width="74" height="30" maxX="22" maxY="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iou-a6-GNs">
+                    <rect key="frame" x="269" y="617" width="90" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="uiR-1b-nTt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
                     <state key="normal" title="定向红包"/>
                     <connections>
                         <action selector="memberRedpacketButtonClicked" destination="-1" eventType="touchUpInside" id="9wY-5N-dyv"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nnn-bs-7BT">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo_header.png" translatesAutoresizingMaskIntoConstraints="NO" id="84s-sU-VLS">
+                    <rect key="frame" x="50" y="27" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="RWl-D0-Gba"/>
+                        <constraint firstAttribute="width" constant="32" id="kwC-b2-GK0"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fk-OY-isK">
+                    <rect key="frame" x="94" y="30.5" width="52.5" height="26.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="-62.5" y="-36.5"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="nnn-bs-7BT" secondAttribute="trailing" id="6eR-9V-bg3"/>
+                <constraint firstAttribute="bottom" secondItem="iou-a6-GNs" secondAttribute="bottom" constant="20" id="DTs-iT-9dh"/>
+                <constraint firstItem="84s-sU-VLS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="OZv-YO-V0Z"/>
+                <constraint firstAttribute="trailing" secondItem="iou-a6-GNs" secondAttribute="trailing" constant="16" id="Oj8-4i-znL"/>
+                <constraint firstItem="7fk-OY-isK" firstAttribute="centerY" secondItem="nnn-bs-7BT" secondAttribute="centerY" id="Tax-uN-ukM"/>
+                <constraint firstItem="nnn-bs-7BT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Yad-bf-Wtu"/>
+                <constraint firstItem="7xs-lv-k6V" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="cq0-Q7-OSa"/>
+                <constraint firstItem="84s-sU-VLS" firstAttribute="centerY" secondItem="nnn-bs-7BT" secondAttribute="centerY" id="f0d-hN-Ges"/>
+                <constraint firstItem="dGs-6q-uQ6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hA6-oV-bdl"/>
+                <constraint firstItem="7fk-OY-isK" firstAttribute="leading" secondItem="84s-sU-VLS" secondAttribute="trailing" constant="12" id="k8Z-jC-B0F"/>
+                <constraint firstItem="dGs-6q-uQ6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="86" id="kkd-PM-Wwd"/>
+                <constraint firstAttribute="trailing" secondItem="dGs-6q-uQ6" secondAttribute="trailing" id="sMo-cJ-dzQ"/>
+                <constraint firstAttribute="bottom" secondItem="7xs-lv-k6V" secondAttribute="bottom" constant="20" id="sZT-FV-XMr"/>
+                <constraint firstItem="nnn-bs-7BT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="t3n-jf-SBt"/>
+                <constraint firstItem="dGs-6q-uQ6" firstAttribute="top" secondItem="nnn-bs-7BT" secondAttribute="bottom" id="uKu-ih-8k7"/>
+                <constraint firstItem="iou-a6-GNs" firstAttribute="top" secondItem="dGs-6q-uQ6" secondAttribute="bottom" constant="8" id="xBB-xs-Whj"/>
+            </constraints>
+            <point key="canvasLocation" x="6" y="115"/>
         </view>
     </objects>
+    <resources>
+        <image name="demo_header.png" width="56" height="56"/>
+    </resources>
 </document>
