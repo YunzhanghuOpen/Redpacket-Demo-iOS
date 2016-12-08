@@ -112,6 +112,11 @@ static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
     self.grabBlock = grabBlock;
 }
 
+- (void)changeReceiverInfo:(RedpacketUserInfo *)info
+{
+    _viewControl.converstationInfo = info;
+}
+
 /** 签名接口调用， 签名接口写法见官网文档 */
 - (void)fetchUserSignWithUserID:(FetchRegisitParamBlock)fetchBlock
 {

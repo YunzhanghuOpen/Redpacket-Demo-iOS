@@ -30,6 +30,8 @@ typedef void(^RedpacketGrabPacketBlock)(NSDictionary *dict);
                             redpacketSendBlock:(RedpacketSendPacketBlock)sendBlock
                          andRedpacketGrabBlock:(RedpacketGrabPacketBlock)grabBlock;
 
+- (void)changeReceiverInfo:(RedpacketUserInfo *)info;
+
 @end
 
 

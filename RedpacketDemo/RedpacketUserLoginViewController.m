@@ -11,7 +11,9 @@
 #import "RedpacketDefines.h"
 #import "RedpacketFucListViewController.h"
 
-@interface RedpacketUserLoginViewController ()
+@interface RedpacketUserLoginViewController (){
+    BOOL _iskeyBoard;
+}
 @property (weak, nonatomic) IBOutlet UILabel *fistLabel;
 @property (weak, nonatomic) IBOutlet UILabel *secondLabel;
 @property (weak, nonatomic) IBOutlet UILabel *thirdLabel;
@@ -33,25 +35,35 @@
     self.thirdLabel.textColor = rpHexColor(0x999999);
     [self.comeInBtn setTitleColor:rpHexColor(0x44459A) forState:UIControlStateNormal];
     self.navigationController.navigationBarHidden = YES;
+    _iskeyBoard = NO;
 }
 
 -(CGFloat)keyboardEndingFrameHeight:(NSDictionary *)userInfo
 {
-    return 40;
+    CGRect keyboardEndingUncorrectedFrame = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey]CGRectValue];
+    CGRect keyboardEndingFrame = [self.receiver convertRect:keyboardEndingUncorrectedFrame fromView:self.view];
+    CGFloat height = keyboardEndingFrame.size.height - ([UIScreen mainScreen].bounds.size.height -486);
+    if (height > 0) {
+        return height;
+    }
+    return ([UIScreen mainScreen].bounds.size.height -486) - keyboardEndingFrame.size.height;
+    
 }
-
 -(void)keyboardWillDisappear:(NSNotification *)notification
 {
-
+    _iskeyBoard = NO;
     self.view.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
 }
 
 -(void)keyboardWillAppear:(NSNotification *)notification
 {
-    CGRect currentFrame = self.view.frame;
-    CGFloat change = [self keyboardEndingFrameHeight:[notification userInfo]];
-    currentFrame.origin.y = currentFrame.origin.y - change ;
-    self.view.frame = currentFrame;
+    if (!_iskeyBoard) {
+        CGRect currentFrame = self.view.frame;
+        CGFloat change = [self keyboardEndingFrameHeight:[notification userInfo]];
+        currentFrame.origin.y = currentFrame.origin.y - change ;
+        self.view.frame = currentFrame;
+        _iskeyBoard = YES;
+    }
 }
 
 - (void)tapGestureClicked
@@ -65,10 +77,8 @@
         
         [[RedpacketUser currentUser] loginWithSender:_sender.text
                                          andReceiver:_receiver.text];
-
-        
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated

@@ -87,7 +87,7 @@
         
     }else {
      
-        [_headerImageView setImage:[UIImage imageNamed:currentUser.userAvatar]];
+        [_headerImageView setImage:[UIImage imageNamed:[RedpacketUser currentUser].talkingUserInfo.userAvatar]];
         _userNickNameLabel.text = [RedpacketUser currentUser].talkingUserInfo.userNickName;
         
     }

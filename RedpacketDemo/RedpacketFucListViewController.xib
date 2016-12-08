@@ -30,39 +30,36 @@
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="demo_header.png" translatesAutoresizingMaskIntoConstraints="NO" id="fP9-TS-MvI">
-                    <rect key="frame" x="151" y="11" width="75" height="75"/>
+                    <rect key="frame" x="159.5" y="11" width="57" height="57"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="75" id="LmF-Fw-Rg1"/>
-                        <constraint firstAttribute="height" constant="75" id="t86-GC-YZO"/>
+                        <constraint firstAttribute="height" constant="57" id="3dX-wO-EbG"/>
+                        <constraint firstAttribute="width" constant="57" id="h8v-p7-Ysy"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2C-Pd-UwB">
-                    <rect key="frame" x="143" y="571" width="90" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="MD6-DX-reV"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
-                    <state key="normal" title="清除用户"/>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31e-ED-WXX">
-                    <rect key="frame" x="7" y="125" width="361" height="34"/>
+                    <rect key="frame" x="7" y="106" width="361" height="34"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="28"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2C-Pd-UwB">
+                    <rect key="frame" x="143" y="608" width="90" height="39"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                    <state key="normal" title="清除用户"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fP9-TS-MvI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="0.5" id="CBL-LO-ZSt"/>
-                <constraint firstItem="31e-ED-WXX" firstAttribute="top" secondItem="fP9-TS-MvI" secondAttribute="bottom" constant="39" id="Ep7-JK-KXX"/>
-                <constraint firstAttribute="trailing" secondItem="31e-ED-WXX" secondAttribute="trailing" constant="7" id="HCx-2b-PIL"/>
-                <constraint firstItem="31e-ED-WXX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="7" id="Hi7-iZ-MBJ"/>
+                <constraint firstItem="fP9-TS-MvI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="11" id="4Rr-Zp-0iu"/>
+                <constraint firstAttribute="bottom" secondItem="D2C-Pd-UwB" secondAttribute="bottom" constant="20" id="Mfk-C7-CPx"/>
+                <constraint firstItem="fP9-TS-MvI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="0.5" id="Nia-iR-XE7"/>
+                <constraint firstItem="D2C-Pd-UwB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="0.5" id="O3d-gg-Ltr"/>
+                <constraint firstItem="31e-ED-WXX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="7" id="QMa-4S-XAF"/>
                 <constraint firstAttribute="trailing" secondItem="eJM-N0-kyQ" secondAttribute="trailing" id="XGW-xz-LYa"/>
-                <constraint firstItem="D2C-Pd-UwB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="0.5" id="ZNC-2x-lYB"/>
                 <constraint firstItem="eJM-N0-kyQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dsc-TF-bye"/>
                 <constraint firstItem="eJM-N0-kyQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="f6u-de-LFW"/>
-                <constraint firstAttribute="bottom" secondItem="D2C-Pd-UwB" secondAttribute="bottom" constant="52" id="foF-rW-2cZ"/>
-                <constraint firstItem="fP9-TS-MvI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="11" id="hAe-qD-lp1"/>
+                <constraint firstAttribute="trailing" secondItem="31e-ED-WXX" secondAttribute="trailing" constant="7" id="gbr-uc-zdL"/>
+                <constraint firstItem="31e-ED-WXX" firstAttribute="top" secondItem="fP9-TS-MvI" secondAttribute="bottom" constant="38" id="w5Q-VF-Ckq"/>
             </constraints>
             <point key="canvasLocation" x="46.5" y="-95.5"/>
         </view>

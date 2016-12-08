@@ -61,6 +61,7 @@
 
     
     [self.navigationController.navigationBar setBackgroundImage:[self navgationBarBackImage:rpHexColor(0xd24f44)] forBarMetrics:UIBarMetricsDefault];
+    self.view.backgroundColor = rpHexColor(0xf3e9e8);
 }
 
 - (void)addButtons
@@ -70,21 +71,22 @@
         [btn setTitleColor:rpHexColor(0xd24f44) forState:UIControlStateNormal];
         [btn setBackgroundColor:[UIColor whiteColor]];
         btn.tag = i;
-        btn.titleLabel.font = [UIFont fontWithName:@"" size:19];
+        btn.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Light" size:19];
         [btn setTitle:[self functions][i] forState:UIControlStateNormal];
+        [btn setBackgroundImage:[self navgationBarBackImage:rpHexColor(0xdddddd)] forState:UIControlStateHighlighted];
         if (i<3) {
-            btn.frame = CGRectMake(i * [UIScreen mainScreen].bounds.size.width/3, 277, [UIScreen mainScreen].bounds.size.width/3, 100);
+            btn.frame = CGRectMake(i * [UIScreen mainScreen].bounds.size.width/3, 213, [UIScreen mainScreen].bounds.size.width/3, 100);
         }else {
-            btn.frame = CGRectMake((i - 3) * [UIScreen mainScreen].bounds.size.width/3, 377, [UIScreen mainScreen].bounds.size.width/3, 100);
+            btn.frame = CGRectMake((i - 3) * [UIScreen mainScreen].bounds.size.width/3, 313, [UIScreen mainScreen].bounds.size.width/3, 100);
         }
         [self.view addSubview:btn];
         [btn addTarget:self action:@selector(clickListBtn:) forControlEvents:UIControlEventTouchUpInside];
     }
-    UIView *lineHorizontal = [[UIView alloc]initWithFrame:CGRectMake(0, 377, [UIScreen mainScreen].bounds.size.width, .5)];
+    UIView *lineHorizontal = [[UIView alloc]initWithFrame:CGRectMake(0, 313, [UIScreen mainScreen].bounds.size.width, .5)];
     lineHorizontal.backgroundColor = rpHexColor(0xc7c7c7);
     [self.view addSubview:lineHorizontal];
     for (int i = 0; i < 2; i ++) {
-        UIView *lineVertical = [[UIView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/3*(1+i), 277, .5, 200)];
+        UIView *lineVertical = [[UIView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/3*(1+i), 213, .5, 200)];
         lineVertical.backgroundColor = rpHexColor(0xc7c7c7);
         [self.view addSubview:lineVertical];
     }

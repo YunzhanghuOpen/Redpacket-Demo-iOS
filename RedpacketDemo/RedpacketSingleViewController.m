@@ -57,6 +57,7 @@
     [self.redpacketRandom setTitleColor:rpHexColor(0xd24f44) forState:UIControlStateNormal];
     [self.transfer setTitleColor:rpHexColor(0xd24f44) forState:UIControlStateNormal];
     self.headerBackImageView.backgroundColor = rpHexColor(0xd24f44);
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -76,8 +77,11 @@
     [[RedpacketUser currentUser] changeUserBetweenUser1AndUser2];
     
     self.nameLabel.text = [NSString stringWithFormat:@"当前用户：%@",[RedpacketUser currentUser].userInfo.userNickName];
-    
     [self.talkTableView reloadData];
+    RedpacketUserInfo *userInfo = [RedpacketUserInfo new];
+    userInfo.userNickname = [RedpacketUser currentUser].talkingUserInfo.userNickName;
+    userInfo.userId = [RedpacketUser currentUser].talkingUserInfo.userId;
+    [[RedpacketConfig sharedConfig] changeReceiverInfo:userInfo];
 }
 
 

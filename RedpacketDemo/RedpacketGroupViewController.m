@@ -62,7 +62,6 @@
     [[RedpacketUser currentUser] changeUserBetweenUser1AndUser2];
     
     self.nameLabel.text = [NSString stringWithFormat:@"当前用户：%@",[RedpacketUser currentUser].userInfo.userNickName];
-    
     [self.talkTableView reloadData];
 }
 

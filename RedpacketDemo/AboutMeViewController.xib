@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutMeViewController">
             <connections>
+                <outlet property="bottomBtn" destination="DnQ-O2-2Mk" id="alA-9k-wuW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,55 +20,110 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yfD-Mm-k4Y">
-                    <frame key="frameInset" minY="94" width="375" height="219"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                    <subviews>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qti-kv-Dze">
-                            <frame key="frameInset" minX="15" width="348" height="226"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <string key="text">联系方式：
-
-客服热线: 400-6565-739
-
-业务咨询: BD@yunzhanghu.com
-
-客服QQ: 4006565739
-
-技术支持QQ群: 366135448</string>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" flightNumber="YES"/>
-                        </textView>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roB-Cq-xcT">
-                            <frame key="frameInset" minX="86" minY="135" height="30" maxX="89"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <connections>
-                                <action selector="mailToButtonClicked:" destination="-1" eventType="touchUpInside" id="QJf-wy-IuL"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYS-gq-QbO">
-                            <frame key="frameInset" minX="86" minY="94" height="33" maxX="114"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <connections>
-                                <action selector="telphoneButtonClicked:" destination="-1" eventType="touchUpInside" id="3M0-8X-cB1"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnQ-O2-2Mk">
-                    <frame key="frameInset" minX="49.84%" minY="356" width="62" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系我们" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWY-kn-bei">
+                    <rect key="frame" x="143.5" y="38" width="89.5" height="26.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4at-3h-WzM">
+                    <rect key="frame" x="157" y="95" width="117" height="33"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                    <state key="normal" title="400-6565-739">
+                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="telphoneButtonClicked:" destination="-1" eventType="touchUpInside" id="lZl-4K-lTU"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJN-RD-nv4">
+                    <rect key="frame" x="157" y="153" width="101" height="33"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                    <state key="normal" title="4006565739">
+                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="QQNumber:" destination="-1" eventType="touchUpInside" id="pRg-GK-knL"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnQ-O2-2Mk">
+                    <rect key="frame" x="139" y="606" width="98" height="41"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <state key="normal" title="访问官网"/>
                     <connections>
                         <action selector="webSiteButtonClicked:" destination="-1" eventType="touchUpInside" id="645-vI-DqL"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="客服热线：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZX2-07-2rw">
+                    <rect key="frame" x="70" y="101" width="87" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="业务咨询：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G03-E2-AcV">
+                    <rect key="frame" x="70" y="130" width="87" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gfc-YU-WG6">
+                    <rect key="frame" x="157" y="124" width="168" height="33"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                    <state key="normal" title="BD@yunzhanghu.com">
+                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="mailToButtonClicked:" destination="-1" eventType="touchUpInside" id="GCc-uw-udd"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="客服 QQ : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SoO-Xv-20v">
+                    <rect key="frame" x="70" y="159" width="87" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="技术支持QQ群: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53T-Sj-qqw">
+                    <rect key="frame" x="69.5" y="188" width="120.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phk-WF-hIe">
+                    <rect key="frame" x="190" y="182" width="90" height="33"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                    <state key="normal" title="366135448">
+                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="QQGroupNumber:" destination="-1" eventType="touchUpInside" id="Vv2-Zq-NmE"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="74" y="-324"/>
+            <constraints>
+                <constraint firstItem="ZX2-07-2rw" firstAttribute="top" secondItem="NWY-kn-bei" secondAttribute="bottom" constant="36.5" id="0OV-bs-vLP"/>
+                <constraint firstAttribute="bottom" secondItem="DnQ-O2-2Mk" secondAttribute="bottom" constant="20" id="1zb-AQ-1TN"/>
+                <constraint firstItem="4at-3h-WzM" firstAttribute="leading" secondItem="ZX2-07-2rw" secondAttribute="trailing" id="4T1-34-wMa"/>
+                <constraint firstItem="eJN-RD-nv4" firstAttribute="centerY" secondItem="SoO-Xv-20v" secondAttribute="centerY" id="A0y-6P-kda"/>
+                <constraint firstItem="G03-E2-AcV" firstAttribute="top" secondItem="ZX2-07-2rw" secondAttribute="bottom" constant="8" id="BTu-fS-iVI"/>
+                <constraint firstItem="eJN-RD-nv4" firstAttribute="leading" secondItem="SoO-Xv-20v" secondAttribute="trailing" id="CFw-aS-Ur5"/>
+                <constraint firstItem="phk-WF-hIe" firstAttribute="leading" secondItem="53T-Sj-qqw" secondAttribute="trailing" id="Jtc-RZ-VQD"/>
+                <constraint firstItem="SoO-Xv-20v" firstAttribute="top" secondItem="G03-E2-AcV" secondAttribute="bottom" constant="8" id="LAf-fr-62m"/>
+                <constraint firstItem="ZX2-07-2rw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-74" id="LOK-CA-cjJ"/>
+                <constraint firstItem="Gfc-YU-WG6" firstAttribute="centerY" secondItem="G03-E2-AcV" secondAttribute="centerY" id="M6I-dv-dn2"/>
+                <constraint firstItem="53T-Sj-qqw" firstAttribute="top" secondItem="eJN-RD-nv4" secondAttribute="bottom" constant="2" id="NeU-EY-M9v"/>
+                <constraint firstItem="SoO-Xv-20v" firstAttribute="width" secondItem="G03-E2-AcV" secondAttribute="width" id="PGN-hU-5aB"/>
+                <constraint firstItem="NWY-kn-bei" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="0.5" id="Uef-Zj-ACg"/>
+                <constraint firstItem="4at-3h-WzM" firstAttribute="centerY" secondItem="ZX2-07-2rw" secondAttribute="centerY" id="WJw-YM-oy0"/>
+                <constraint firstItem="Gfc-YU-WG6" firstAttribute="leading" secondItem="G03-E2-AcV" secondAttribute="trailing" id="WpS-Kx-o1y"/>
+                <constraint firstItem="DnQ-O2-2Mk" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="0.5" id="YcC-0u-uH9"/>
+                <constraint firstItem="phk-WF-hIe" firstAttribute="centerY" secondItem="53T-Sj-qqw" secondAttribute="centerY" id="dUO-Dz-mNs"/>
+                <constraint firstItem="G03-E2-AcV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-74" id="igE-43-LaB"/>
+                <constraint firstItem="NWY-kn-bei" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="38" id="lB5-iJ-tih"/>
+                <constraint firstItem="53T-Sj-qqw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-58" id="rwR-vB-KOT"/>
+                <constraint firstItem="SoO-Xv-20v" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-74" id="zej-E2-72g"/>
+            </constraints>
+            <point key="canvasLocation" x="-182.5" y="-462.5"/>
         </view>
     </objects>
 </document>

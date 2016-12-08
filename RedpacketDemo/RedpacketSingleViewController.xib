@@ -105,7 +105,7 @@
                 <constraint firstItem="59r-G3-NDJ" firstAttribute="centerY" secondItem="sIT-LW-UW2" secondAttribute="centerY" id="t3n-bC-Cgp"/>
                 <constraint firstItem="59r-G3-NDJ" firstAttribute="leading" secondItem="HUf-IX-cqA" secondAttribute="trailing" constant="12" id="t8B-lS-1BY"/>
             </constraints>
-            <point key="canvasLocation" x="-139" y="-21"/>
+            <point key="canvasLocation" x="-139.5" y="-21.5"/>
         </view>
     </objects>
     <resources>
