@@ -17,12 +17,13 @@
 + (UserInfo *)configWithUserId:(NSString *)userId
                       userName:(NSString *)userName
                  andUserAvatar:(NSString *)userAvatar
+                 andUserAvatarURL:(NSString *)userAvatarURL
 {
     UserInfo *info = [UserInfo new];
     info.userId = userId;
     info.userAvatar = userAvatar;
     info.userNickName = userName;
-
+    info.userAvatarURL = userAvatarURL;
     return info;
 }
 
@@ -108,11 +109,13 @@
     
     UserInfo *senderUser = [UserInfo configWithUserId:senderID
                                              userName:senderID
-                                        andUserAvatar:@"UserHeader_user1.jpg"];
+                                        andUserAvatar:@"UserHeader_user1.jpg"
+                            andUserAvatarURL:@"http://files.parsetfss.com/9346bbf1-a67c-404d-9456-78ba9f83de5f/tfss-2fc1576f-c9b3-4ac7-969a-15ea4582d6b9-image.png"];
     
     UserInfo *receiverUser = [UserInfo configWithUserId:receiverID
                                                userName:receiverID
-                                          andUserAvatar:@"UserHeader_user2.jpg"];
+                                          andUserAvatar:@"UserHeader_user2.jpg"
+                              andUserAvatarURL:@"http://files.parsetfss.com/9346bbf1-a67c-404d-9456-78ba9f83de5f/tfss-41bd8753-8d4e-480f-b5a3-a3207a74239e-image.png"];
     
     if (!_users) {
         _users = [@[] mutableCopy];

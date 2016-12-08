@@ -15,10 +15,12 @@
 @property (nonatomic, copy) NSString *userId;
 @property (nonatomic, copy) NSString *userAvatar;
 @property (nonatomic, copy) NSString *userNickName;
+@property (nonatomic, copy) NSString *userAvatarURL;
 
 + (UserInfo *)configWithUserId:(NSString *)userId
                       userName:(NSString *)userName
-                 andUserAvatar:(NSString *)userAvatar;
+                 andUserAvatar:(NSString *)userAvatar
+                 andUserAvatarURL:(NSString *)userAvatarURL;
 
 @end
 

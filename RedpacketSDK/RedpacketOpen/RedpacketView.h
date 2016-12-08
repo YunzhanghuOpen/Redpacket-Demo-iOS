@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RedpacketMessageModel.h"
 
-/** 默认红包视图*/
+/** 默认红包视图 */
 @interface RedpacketView : UIView
 
 @property(strong, nonatomic) UILabel *greetingLabel;

@@ -45,8 +45,7 @@
     RedpacketUserInfo *userInfo = [RedpacketUserInfo new];
     userInfo.userId = transferToUser.userId;
     userInfo.userNickname = transferToUser.userNickName;
-    userInfo.userAvatar = transferToUser.userAvatar;
-    
+    userInfo.userAvatar = transferToUser.userAvatarURL;
     [[RedpacketConfig sharedConfig] presentTransferViewController:userInfo];
 }
 
@@ -81,6 +80,7 @@
     RedpacketUserInfo *userInfo = [RedpacketUserInfo new];
     userInfo.userNickname = [RedpacketUser currentUser].talkingUserInfo.userNickName;
     userInfo.userId = [RedpacketUser currentUser].talkingUserInfo.userId;
+    userInfo.userAvatar = [RedpacketUser currentUser].talkingUserInfo.userAvatarURL;
     [[RedpacketConfig sharedConfig] changeReceiverInfo:userInfo];
 }
 

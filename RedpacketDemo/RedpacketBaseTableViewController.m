@@ -74,7 +74,7 @@ static NSString *kRedpacketGroupSaveKey = @"redpacketGroupSaveKey";
         
         UserInfo *talkingUser = [RedpacketUser currentUser].talkingUserInfo;
         conversionInfo.userId = talkingUser.userId;
-        conversionInfo.userAvatar = talkingUser.userAvatar;
+        conversionInfo.userAvatar = talkingUser.userAvatarURL;
         conversionInfo.userNickname = talkingUser.userNickName;
         
     }
@@ -112,7 +112,7 @@ static NSString *kRedpacketGroupSaveKey = @"redpacketGroupSaveKey";
         RedpacketUserInfo *user = [RedpacketUserInfo new];
         user.userId = userInfo.userId;
         user.userNickname = userInfo.userNickName;
-        user.userAvatar = userInfo.userAvatar;
+        user.userAvatar = userInfo.userAvatarURL;
         [groupInfos addObject:user];
     }
     

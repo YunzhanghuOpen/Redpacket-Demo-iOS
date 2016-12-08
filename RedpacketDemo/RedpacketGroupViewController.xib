@@ -46,7 +46,7 @@
                         <constraint firstAttribute="height" constant="30" id="uiR-1b-nTt"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
-                    <state key="normal" title="定向红包"/>
+                    <state key="normal" title="专属红包"/>
                     <connections>
                         <action selector="memberRedpacketButtonClicked" destination="-1" eventType="touchUpInside" id="9wY-5N-dyv"/>
                     </connections>
@@ -87,7 +87,7 @@
                 <constraint firstItem="dGs-6q-uQ6" firstAttribute="top" secondItem="nnn-bs-7BT" secondAttribute="bottom" id="uKu-ih-8k7"/>
                 <constraint firstItem="iou-a6-GNs" firstAttribute="top" secondItem="dGs-6q-uQ6" secondAttribute="bottom" constant="8" id="xBB-xs-Whj"/>
             </constraints>
-            <point key="canvasLocation" x="6" y="115"/>
+            <point key="canvasLocation" x="-628" y="-50"/>
         </view>
     </objects>
     <resources>

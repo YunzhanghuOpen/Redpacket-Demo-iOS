@@ -93,7 +93,7 @@ static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
     RedpacketUserInfo *userInfo = [RedpacketUserInfo new];
     userInfo.userId = [RedpacketUser currentUser].userInfo.userId;
     userInfo.userNickname = [RedpacketUser currentUser].userInfo.userNickName;
-    userInfo.userAvatar = [RedpacketUser currentUser].userInfo.userAvatar;
+    userInfo.userAvatar = [RedpacketUser currentUser].userInfo.userAvatarURL;
     
     return userInfo;
 }
