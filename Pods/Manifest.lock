@@ -25,14 +25,14 @@ PODS:
     - FBRetainCycleDetector
   - PLeakSniffer (0.1.0)
   - RedPacketAlipay (15.0.2)
-  - RedpacketLib (3.3.2):
+  - RedpacketLib (3.4.0):
     - RedPacketAlipay
 
 DEPENDENCIES:
   - AFNetworking (= 2.5.4)
   - MLeaksFinder
   - PLeakSniffer
-  - RedpacketLib
+  - RedpacketLib (~> 3.4.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
@@ -40,8 +40,8 @@ SPEC CHECKSUMS:
   MLeaksFinder: 0850e2f2abc7227adc4d4e2d1992b431264eb4d5
   PLeakSniffer: f7eb13cd3a36150e0a2fd5fe8a33ca83bd2646d4
   RedPacketAlipay: a5de6db2e2671fc9255d6d396be869e3ba2f0489
-  RedpacketLib: 53d0542249e2196f6756d597c13b29e281e2c771
+  RedpacketLib: ac4c0e8892bf4559dd55b32d7256e216724dd4a8
 
-PODFILE CHECKSUM: b7bf2fd6cdf1a56da62d1b9cedfdb5eec4e986f6
+PODFILE CHECKSUM: bcb5750bb6ebeda20412f357e06cce0e279d34f4
 
 COCOAPODS: 1.1.1

@@ -109,7 +109,7 @@
             
         case 3: [self alertMessage:advertRedpacketInstruction]; break;
             
-        case 4: [[RedpacketConfig sharedConfig] presentChangeViewControllerInController:self]; break;
+        case 4: [RedpacketViewControl presentChangePocketViewControllerFromeController:self]; break;
             
         case 5: controller = [[AboutMeViewController alloc] initWithNibName:@"AboutMeViewController" bundle:[NSBundle mainBundle]]; break;
             

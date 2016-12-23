@@ -14,7 +14,6 @@
 #import "RedpacketMessageCell.h"
 #import "RedpacketTakenMessageTipCell.h"
 #import "RedpacketUser.h"
-#import "WXApi.h"
 
 static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
 
@@ -61,28 +60,10 @@ static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
     
     if (self) {
         
-        [WXApi registerApp:WechatPayAppID withDescription:@"RedpacketSDK-iOS"];
-        
         [YZHRedpacketBridge sharedBridge].delegate = self;
         [YZHRedpacketBridge sharedBridge].dataSource = self;
         [YZHRedpacketBridge sharedBridge].isDebug = YES;
         
-        _viewControl = [RedpacketViewControl new];
-        
-        __weak RedpacketConfig *weakSelf = self;
-        [_viewControl setRedpacketGrabBlock:^(RedpacketMessageModel *messageModel) {
-            
-            if (weakSelf.grabBlock) {
-                weakSelf.grabBlock(messageModel.redpacketMessageModelToDic);
-            }
-            
-        } andRedpacketBlock:^(RedpacketMessageModel *model) {
-            
-            if (weakSelf.sendBlock) {
-                weakSelf.sendBlock(model.redpacketMessageModelToDic);
-            }
-            
-        }];   
     }
     
     return self;
@@ -96,25 +77,6 @@ static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
     userInfo.userAvatar = [RedpacketUser currentUser].userInfo.userAvatarURL;
     
     return userInfo;
-}
-
-- (void)configViewControlWithCurrentController:(UIViewController *)controller
-                           viewControlDeleagte:(id <RedpacketViewControlDelegate>)delegate
-                           currentConversation:(RedpacketUserInfo *)info
-                            redpacketSendBlock:(RedpacketSendPacketBlock)sendBlock
-                         andRedpacketGrabBlock:(RedpacketGrabPacketBlock)grabBlock;
-{
-    _viewControl.conversationController = controller;
-    _viewControl.delegate = delegate;
-    _viewControl.converstationInfo = info;
-    
-    self.sendBlock = sendBlock;
-    self.grabBlock = grabBlock;
-}
-
-- (void)changeReceiverInfo:(RedpacketUserInfo *)info
-{
-    _viewControl.converstationInfo = info;
 }
 
 /** 签名接口调用， 签名接口写法见官网文档 */
@@ -172,57 +134,6 @@ static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
 
 @implementation RedpacketConfig (RedpacketControllers)
 
-- (void)presentRedpacketSendViewController
-{
-    [_viewControl presentRedPacketViewControllerWithType:RPSendRedPacketViewControllerSingle memberCount:0];
-}
-
-- (void)presentRandRedpacketSendViewController
-{
-    [_viewControl presentRedPacketViewControllerWithType:RPSendRedPacketViewControllerRand memberCount:0];
-}
-
-- (void)presentTransferViewController:(RedpacketUserInfo *)userInfo
-{
-    [_viewControl presentTransferViewControllerWithReceiver:userInfo];
-}
-
-- (void)presentTransferDetailViewController:(RedpacketMessageModel *)model
-{
-    [_viewControl presentTransferDetailViewController:model];
-}
-
-/** RPSendRedPacketViewControllerGroup 为普通群红包，RPSendRedPacketViewControllerMember 为包含定向功能的群红包 */
-- (void)presentGroupRedpacketSendViewControllerWithMemeberCount:(NSInteger)count
-{
-    [_viewControl presentRedPacketViewControllerWithType:RPSendRedPacketViewControllerGroup memberCount:count];
-}
-
-- (void)presentMemberGroupRedpacketViewControllerWithMemberCount:(NSInteger)count
-{
-    [_viewControl presentRedPacketViewControllerWithType:RPSendRedPacketViewControllerMember memberCount:count];
-}
-
-- (void)presentChangeViewControllerInController:(UIViewController *)viewController
-{
-    UIViewController *controller = [RedpacketViewControl changeMoneyController];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
-    [viewController presentViewController:nav animated:YES completion:nil];
-}
-
-- (void)grabRedpacket:(NSDictionary *)redpacketDic
-{
-    RedpacketMessageModel *messageModel = [RedpacketMessageModel redpacketMessageModelWithDic:redpacketDic];
- 
-    if (messageModel.messageType == RedpacketMessageTypeTransfer) {
-        [self presentTransferDetailViewController:messageModel];
-        
-    }else {
-        [_viewControl redpacketCellTouchedWithMessageModel:messageModel];
-    }
-    
-}
-
 - (UITableViewCell *)cellForRedpacketMessageDict:(NSDictionary *)dict
 {
     NSDictionary *redpacketMessageDict = [dict valueForKey:@"1"];
@@ -245,7 +156,7 @@ static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
         tipCell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         return tipCell;
-
+        
     }
 }
 

@@ -11,6 +11,7 @@
 #import "RedpacketMessageModel.h"
 #import "RedpacketUser.h"
 #import "RedpacketDefines.h"
+#import <RedpacketViewControl.h>
 
 @interface RedpacketSingleViewController ()
 
@@ -31,22 +32,17 @@
 
 - (IBAction)redpacketButtonClick:(id)sender
 {
-    [[RedpacketConfig sharedConfig] presentRedpacketSendViewController];
+    [self presentRedpacketViewController:RPRedpacketControllerTypeSingle];
 }
 
 - (IBAction)randRedpacketButtonClick:(id)sender
 {
-    [[RedpacketConfig sharedConfig] presentRandRedpacketSendViewController];
+    [self presentRedpacketViewController:RPRedpacketControllerTypeRand];
 }
 
 - (IBAction)transferButtonClick:(id)sender
 {
-    UserInfo *transferToUser = [RedpacketUser currentUser].talkingUserInfo;
-    RedpacketUserInfo *userInfo = [RedpacketUserInfo new];
-    userInfo.userId = transferToUser.userId;
-    userInfo.userNickname = transferToUser.userNickName;
-    userInfo.userAvatar = transferToUser.userAvatarURL;
-    [[RedpacketConfig sharedConfig] presentTransferViewController:userInfo];
+    [self presentRedpacketViewController:RPRedpacketControllerTypeTransfer];
 }
 
 - (void)viewDidLoad
@@ -81,7 +77,6 @@
     userInfo.userNickname = [RedpacketUser currentUser].talkingUserInfo.userNickName;
     userInfo.userId = [RedpacketUser currentUser].talkingUserInfo.userId;
     userInfo.userAvatar = [RedpacketUser currentUser].talkingUserInfo.userAvatarURL;
-    [[RedpacketConfig sharedConfig] changeReceiverInfo:userInfo];
 }
 
 

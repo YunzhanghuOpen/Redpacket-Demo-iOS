@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RedpacketViewControl.h"
 
 @interface RedpacketBaseTableViewController : UIViewController <
                                                                 UITableViewDelegate,
@@ -18,5 +19,11 @@
 @property (nonatomic, strong)          NSMutableArray   *mutDatas;
 
 + (instancetype)controllerWithControllerType:(BOOL)isGroup;
+
+/** 发红包页面 */
+- (void)presentRedpacketViewController:(RPRedpacketControllerType)controllerType
+              isSupportMemberRedpacket:(BOOL)isSupport;
+
+- (void)presentRedpacketViewController:(RPRedpacketControllerType)controllerType;
 
 @end

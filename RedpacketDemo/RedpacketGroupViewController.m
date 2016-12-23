@@ -26,14 +26,14 @@
 
 - (IBAction)groupRedpacketButtonClicked
 {
-    RedpacketUser *userInfo = [RedpacketUser currentUser];
-    [[RedpacketConfig sharedConfig] presentGroupRedpacketSendViewControllerWithMemeberCount:userInfo.users.count];
+    [self presentRedpacketViewController:RPRedpacketControllerTypeGroup
+                isSupportMemberRedpacket:NO];
 }
 
 - (IBAction)memberRedpacketButtonClicked
 {
-    RedpacketUser *userInfo = [RedpacketUser currentUser];
-    [[RedpacketConfig sharedConfig] presentMemberGroupRedpacketViewControllerWithMemberCount:userInfo.users.count];
+    [self presentRedpacketViewController:RPRedpacketControllerTypeTransfer
+                isSupportMemberRedpacket:YES];
 }
 
 - (void)viewDidLoad

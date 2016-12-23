@@ -58,7 +58,6 @@
 		9273C6B61DF695B7001DAE17 /* RedpacketView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9273C6B01DF695B7001DAE17 /* RedpacketView.m */; };
 		929F11FD1DED6295000C0EE8 /* RedpacketUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929F11FB1DED6295000C0EE8 /* RedpacketUserLoginViewController.m */; };
 		929F11FE1DED6295000C0EE8 /* RedpacketUserLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929F11FC1DED6295000C0EE8 /* RedpacketUserLoginViewController.xib */; };
-		929F12311DEDA076000C0EE8 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 929F12251DEDA076000C0EE8 /* libWeChatSDK.a */; };
 		DEB85566268AD075906F3C00 /* libPods-RedpacketDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65565201F48F7A152EF6ACC6 /* libPods-RedpacketDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -145,9 +144,6 @@
 		929F11FA1DED6295000C0EE8 /* RedpacketUserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedpacketUserLoginViewController.h; sourceTree = "<group>"; };
 		929F11FB1DED6295000C0EE8 /* RedpacketUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedpacketUserLoginViewController.m; sourceTree = "<group>"; };
 		929F11FC1DED6295000C0EE8 /* RedpacketUserLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RedpacketUserLoginViewController.xib; sourceTree = "<group>"; };
-		929F12251DEDA076000C0EE8 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
-		929F12261DEDA076000C0EE8 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
-		929F12271DEDA076000C0EE8 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		F05AD7BB19DECFBD13135DB3 /* Pods-RedpacketDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedpacketDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RedpacketDemo/Pods-RedpacketDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,7 +154,6 @@
 			files = (
 				9242B6DD1DD44BB500FE7C9D /* libsqlite3.tbd in Frameworks */,
 				923AA1BA1D953AC700A097B1 /* CoreMotion.framework in Frameworks */,
-				929F12311DEDA076000C0EE8 /* libWeChatSDK.a in Frameworks */,
 				923AA1B81D953ABD00A097B1 /* CFNetwork.framework in Frameworks */,
 				923AA1B61D953AB600A097B1 /* Foundation.framework in Frameworks */,
 				923AA1B41D953A9E00A097B1 /* UIKit.framework in Frameworks */,
@@ -312,20 +307,9 @@
 			isa = PBXGroup;
 			children = (
 				9273C6A41DF695B7001DAE17 /* RedpacketOpen */,
-				929F12241DEDA076000C0EE8 /* WeChat */,
 			);
 			path = RedpacketSDK;
 			sourceTree = SOURCE_ROOT;
-		};
-		929F12241DEDA076000C0EE8 /* WeChat */ = {
-			isa = PBXGroup;
-			children = (
-				929F12251DEDA076000C0EE8 /* libWeChatSDK.a */,
-				929F12261DEDA076000C0EE8 /* WXApi.h */,
-				929F12271DEDA076000C0EE8 /* WXApiObject.h */,
-			);
-			path = WeChat;
-			sourceTree = "<group>";
 		};
 		CF06FFB308AA18E8BD1CBA74 /* Pods */ = {
 			isa = PBXGroup;
