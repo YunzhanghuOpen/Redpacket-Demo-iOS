@@ -11,7 +11,8 @@
 #import "RedpacketMessageModel.h"
 #import "RedpacketUser.h"
 #import "RedpacketDefines.h"
-#import <RedpacketViewControl.h>
+#import  "RedpacketViewControl.h"
+
 
 @interface RedpacketSingleViewController ()
 

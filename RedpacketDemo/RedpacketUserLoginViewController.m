@@ -11,6 +11,7 @@
 #import "RedpacketDefines.h"
 #import "RedpacketFucListViewController.h"
 
+
 @interface RedpacketUserLoginViewController (){
     BOOL _iskeyBoard;
 }

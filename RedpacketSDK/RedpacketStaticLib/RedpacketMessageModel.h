@@ -73,10 +73,6 @@ typedef NS_ENUM(NSInteger, RedpacketStatusType) {
  *  红包个数
  */
 @property (nonatomic, assign) NSInteger redpacketCount;
-/**
- *  定向红包，红包接收者ID
- */
-@property (nonatomic, copy) NSString *toReceiverDuid;
 
 @property (nonatomic, copy) NSString *redpacketGreeting;
 @property (nonatomic, copy) NSString *redpacketOrgName;
@@ -94,9 +90,9 @@ typedef NS_ENUM(NSInteger, RedpacketStatusType) {
 @interface RedpacketMessageModel : NSObject <NSCopying>
 
 /**
- *  当前聊天窗口(环信Cmd消息透传时传递当前会话窗口)
+ *  群聊天窗口ID,如果groupID为"",则视为单聊
  */
-@property (nonatomic, copy) NSString *conversationID;
+@property (nonatomic, copy) NSString *groupID;
 
 /**
  *  红包ID
@@ -144,11 +140,6 @@ typedef NS_ENUM(NSInteger, RedpacketStatusType) {
 @property (nonatomic, strong) RedpacketUserInfo *redpacketReceiver;
 
 /**
- *  定向红包接受着消息
- */
-@property (nonatomic, strong) RedpacketUserInfo *toRedpacketReceiver;
-
-/**
  *  红包视图相关信息
  */
 @property (nonatomic, strong) RedpacketViewModel *redpacket;
@@ -179,9 +170,9 @@ typedef NS_ENUM(NSInteger, RedpacketStatusType) {
 /**
  *  是否是红包被抢的消息
  *
- *  @param redpacketDic 红包字典
+ *  @param redpacketDic
  *
- *  @return YES
+ *  @return
  */
 + (BOOL)isRedpacketTakenMessage:(NSDictionary *)redpacketDic;
 

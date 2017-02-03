@@ -8,7 +8,7 @@
 
 #import "AppDelegate+Redpacket.h"
 #import <objc/runtime.h>
-#import <AlipaySDK/AlipaySDK.h>
+#import "AlipaySDK.h"
 #import "RedpacketOpenConst.h"
 
 

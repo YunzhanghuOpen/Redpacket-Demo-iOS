@@ -33,6 +33,7 @@ typedef enum{
     RedpacketVerifyIDCard,               /*应国家监管政策的要求，零钱支付达 %0.2f 元，需要进行身份验证。请上传身份证照片进行验证*/
     RedpacketVerifyIDCarding  = 1023,    /*实名认证中*/
     RedpacketVerifyIDCardFailed,         /*身份证校验失败*/
+    RedpacketVerifyIDCardFailedWithOutCard, /*身份证校验失败, 有密码，无卡，设备变更后的情况*/
     
     RedpacketSubBankNotExisted = 2011,  /*联行不存在*/
     RedpacketCardBinNotExisted,         /*该银行卡不存在*/
