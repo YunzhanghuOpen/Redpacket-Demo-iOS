@@ -115,13 +115,7 @@ static NSString *kRedpacketGroupSaveKey = @"redpacketGroupSaveKey";
         };
     }
     
-    [RedpacketViewControl presentRedpacketViewController:controllerType
-                                         fromeController:self
-                                        groupMemberCount:groupCount
-                                   withRedpacketReceiver:userInfo
-                                         andSuccessBlock:sendSuccessBlock
-                           withFetchGroupMemberListBlock:memeberListBlock];
-
+    [RedpacketViewControl presentRedpacketViewController:controllerType fromeController:self groupMemberCount:groupCount withRedpacketReceiver:userInfo andSuccessBlock:sendSuccessBlock withFetchGroupMemberListBlock:memeberListBlock andGenerateRedpacketIDBlock:nil];
 }
 
 #pragma mark - Redpacket End

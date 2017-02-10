@@ -15,7 +15,7 @@
 #import "RedpacketTakenMessageTipCell.h"
 #import "RedpacketUser.h"
 
-static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/sign?duid=";
+static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/demo-sign?token=1&uid=";
 
 #define WechatPayAppID      @"wx634a5f53be1b66bd"
 
