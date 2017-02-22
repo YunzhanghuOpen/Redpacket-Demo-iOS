@@ -599,14 +599,7 @@
 				INFOPLIST_FILE = RedpacketDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/RedpacketStaticLib/lib",
-					"$(PROJECT_DIR)/WeChat",
-					"$(PROJECT_DIR)/RedpacketSDK/AliPay/AlipayLib",
-					"$(PROJECT_DIR)/RedpacketSDK/WeChat",
-					"$(PROJECT_DIR)/RedpacketSDK/RedpacketStaticLib/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-l\"AFNetworking\"",
@@ -635,14 +628,7 @@
 				INFOPLIST_FILE = RedpacketDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/RedpacketStaticLib/lib",
-					"$(PROJECT_DIR)/WeChat",
-					"$(PROJECT_DIR)/RedpacketSDK/AliPay/AlipayLib",
-					"$(PROJECT_DIR)/RedpacketSDK/WeChat",
-					"$(PROJECT_DIR)/RedpacketSDK/RedpacketStaticLib/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-l\"AFNetworking\"",

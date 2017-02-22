@@ -12,6 +12,4 @@ target 'RedpacketDemo' do
     
     pod 'RedpacketLib' ,'~> 3.4.0'
     
-
-
 end
