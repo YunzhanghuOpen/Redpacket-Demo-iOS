@@ -40,6 +40,8 @@ xcuserdata/
 #
 
 Pods/
+Podfile.lock
+RedpacketDemo.xcworkspace/
 
 # Carthage
 #
