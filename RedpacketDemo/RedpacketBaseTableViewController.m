@@ -120,7 +120,8 @@ static NSString *kRedpacketGroupSaveKey = @"redpacketGroupSaveKey";
                                         groupMemberCount:groupCount
                                    withRedpacketReceiver:userInfo
                                          andSuccessBlock:sendSuccessBlock
-                           withFetchGroupMemberListBlock:memeberListBlock];
+                           withFetchGroupMemberListBlock:memeberListBlock
+                             andGenerateRedpacketIDBlock:nil];
 
 }
 

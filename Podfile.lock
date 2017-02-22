@@ -20,22 +20,19 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - FBRetainCycleDetector (0.1.3)
-  - MLeaksFinder (0.2.1):
-    - FBRetainCycleDetector
-  - PLeakSniffer (0.1.0)
+  - RedPacketAlipay (15.0.2)
+  - RedpacketLib (3.4.3):
+    - RedPacketAlipay
 
 DEPENDENCIES:
   - AFNetworking (= 2.5.4)
-  - MLeaksFinder
-  - PLeakSniffer
+  - RedpacketLib (~> 3.4.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
-  FBRetainCycleDetector: f0c7b290bf48ae77f6ae060843ce34ae341781eb
-  MLeaksFinder: 0850e2f2abc7227adc4d4e2d1992b431264eb4d5
-  PLeakSniffer: f7eb13cd3a36150e0a2fd5fe8a33ca83bd2646d4
+  RedPacketAlipay: a5de6db2e2671fc9255d6d396be869e3ba2f0489
+  RedpacketLib: be90a5fd6b393f122345a916754d313408d512ef
 
-PODFILE CHECKSUM: d519d1fcdf60e1a9911c2cd063d09a9ffe6a346c
+PODFILE CHECKSUM: 6119b60358b078aeb3fc8c70b0627fa0f501d7e5
 
 COCOAPODS: 1.1.1

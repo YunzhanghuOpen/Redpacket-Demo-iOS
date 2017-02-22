@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RedpacketViewControl.h"
+#import <RedpacketViewControl.h>
 
 @interface RedpacketBaseTableViewController : UIViewController <
                                                                 UITableViewDelegate,
