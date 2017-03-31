@@ -8,8 +8,8 @@ target 'RedpacketDemo' do
   # pod 'PLeakSniffer'
   # Pods for RedpacketDemo
 
-    pod 'AFNetworking', '2.5.4'
+    pod 'AFNetworking', '3.1.0'
     
-    pod 'RedpacketLib' ,'~> 3.4.0'
+    pod 'RedpacketLib' ,'~> 3.4.6'
     
 end

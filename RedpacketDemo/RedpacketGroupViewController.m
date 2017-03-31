@@ -32,7 +32,7 @@
 
 - (IBAction)memberRedpacketButtonClicked
 {
-    [self presentRedpacketViewController:RPRedpacketControllerTypeTransfer
+    [self presentRedpacketViewController:RPRedpacketControllerTypeGroup
                 isSupportMemberRedpacket:YES];
 }
 

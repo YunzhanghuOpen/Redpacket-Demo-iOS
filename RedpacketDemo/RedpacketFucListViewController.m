@@ -16,8 +16,6 @@
 #import "RedpacketUserLoginViewController.h"
 #import "RedpacketDefines.h"
 
-#import <AFHTTPRequestOperationManager.h>
-
 
 @interface RedpacketFucListViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *headBackgroundView;
@@ -108,9 +106,7 @@
             
         case 1: controller = [RedpacketGroupViewController controllerWithControllerType:YES]; break;
             
-        case 2: [self alertMessage:systemRedpacketInstruction];
-                [self requestLoader];
-                break;
+        case 2: [self alertMessage:systemRedpacketInstruction]; break;
             
         case 3: [self alertMessage:advertRedpacketInstruction]; break;
             
@@ -126,23 +122,6 @@
     }
 
 }
-
-- (void)requestLoader
-{
-    NSURL *url = [NSURL URLWithString:@"http://localhost:5000"];
-    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:url];
-    [manager POST:@"/signin" parameters:@{@"username":@"admin", @"password":@"123"} success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        NSLog(@"success:%@", responseObject);
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        NSLog(@"%@", error);
-        
-    }];
-    
-}
-
 
 - (void)loginOutClicked
 {

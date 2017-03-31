@@ -15,9 +15,9 @@
 #import "RedpacketTakenMessageTipCell.h"
 #import "RedpacketUser.h"
 
-static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/demo-sign?token=1&uid=";
+static NSString *baseRequestURL = @"https://rpv2.yunzhanghu.com";
+static NSString *tokenRequestURL = @"/api/demo-sign?token=1&uid=";
 
-#define WechatPayAppID      @"wx634a5f53be1b66bd"
 
 @implementation NSDictionary (ValueForKey)
 
@@ -84,25 +84,25 @@ static NSString *requestUrl1 = @"https://rpv2.yunzhanghu.com/api/demo-sign?token
 {
     NSString *userId = [self redpacketUserInfo].userId;
     if (userId) {
-            
-            // 获取应用自己的签名字段。实际应用中需要开发者自行提供相应在的签名计算服务
-            
-            NSString *urlStr = [NSString stringWithFormat:@"%@%@",requestUrl1, userId];
-            NSURL *url = [NSURL URLWithString:urlStr];
-            NSURLRequest *request = [NSURLRequest requestWithURL:url];
-            
-            [[[AFHTTPRequestOperationManager manager] HTTPRequestOperationWithRequest:request
-                                                                              success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                                                                  
-                                                                                  NSLog(@"ResponseSuccess");
-                                                                                  [self configWithSignDict:responseObject andBlock:fetchBlock];
-                                                                                  
-                                                                              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                                                                  
-                                                                                  NSLog(@"request redpacket sign failed:%@", error);
-                                                                                  fetchBlock(nil);
-                                                                                  
-                                                                              }] start];
+        
+        NSString *requestUser = [tokenRequestURL stringByAppendingString:userId];
+        // 获取应用自己的签名字段。实际应用中需要开发者自行提供相应在的签名计算服务
+        
+        AFHTTPSessionManager *manager = [[AFHTTPSessionManager manager] initWithBaseURL:[NSURL URLWithString:baseRequestURL]];
+        
+        [manager GET:requestUser
+          parameters:nil
+            progress:nil
+             success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                 
+                 NSLog(@"ResponseSuccess");
+                 [self configWithSignDict:responseObject andBlock:fetchBlock];
+                 
+             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                 NSLog(@"request redpacket sign failed:%@", error);
+                 fetchBlock(nil);
+                 
+             }];
         }
 }
 
