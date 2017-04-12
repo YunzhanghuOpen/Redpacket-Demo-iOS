@@ -597,9 +597,10 @@
 				DEVELOPMENT_TEAM = PUEB48NTQQ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = RedpacketDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-l\"AFNetworking\"",
@@ -615,6 +616,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-----.RedpacketDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -626,9 +628,10 @@
 				DEVELOPMENT_TEAM = PUEB48NTQQ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = RedpacketDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-l\"AFNetworking\"",
@@ -644,6 +647,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-----.RedpacketDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
