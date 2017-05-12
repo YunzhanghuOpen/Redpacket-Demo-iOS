@@ -35,7 +35,6 @@
 		840433361E9E356E00ACAFAB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1A91D953A6B00A097B1 /* libz.tbd */; };
 		840433371E9E356E00ACAFAB /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1A71D953A6300A097B1 /* libc++.tbd */; };
 		840433381E9E356E00ACAFAB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1A51D953A2A00A097B1 /* CoreTelephony.framework */; };
-		840433391E9E356E00ACAFAB /* libPods-RedpacketDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65565201F48F7A152EF6ACC6 /* libPods-RedpacketDemo.a */; };
 		8404333B1E9E356E00ACAFAB /* demo_right_tip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848D4BEA1DF7D6E500D99957 /* demo_right_tip@2x.png */; };
 		8404333C1E9E356E00ACAFAB /* demo_right@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848D4BE91DF7D6E500D99957 /* demo_right@3x.png */; };
 		8404333D1E9E356E00ACAFAB /* demo_right_tip@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848D4BEB1DF7D6E500D99957 /* demo_right_tip@3x.png */; };
@@ -90,7 +89,6 @@
 		923AA1511D95282400A097B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 923AA1501D95282400A097B1 /* main.m */; };
 		923AA1541D95282400A097B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 923AA1531D95282400A097B1 /* AppDelegate.m */; };
 		923AA15C1D95282400A097B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923AA15B1D95282400A097B1 /* Assets.xcassets */; };
-		923AA15F1D95282400A097B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 923AA15D1D95282400A097B1 /* LaunchScreen.storyboard */; };
 		923AA1A61D953A2A00A097B1 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1A51D953A2A00A097B1 /* CoreTelephony.framework */; };
 		923AA1A81D953A6300A097B1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1A71D953A6300A097B1 /* libc++.tbd */; };
 		923AA1AA1D953A6B00A097B1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1A91D953A6B00A097B1 /* libz.tbd */; };
@@ -157,6 +155,7 @@
 		848D4BEC1DF7D6E500D99957 /* demo_right_tip_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "demo_right_tip_blue@2x.png"; sourceTree = "<group>"; };
 		848D4BED1DF7D6E500D99957 /* demo_right_tip_blue@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "demo_right_tip_blue@3x.png"; sourceTree = "<group>"; };
 		848D4BEE1DF7D6E500D99957 /* errors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = errors.txt; sourceTree = "<group>"; };
+		84BFBC821EA49A18000CBE48 /* libAFNetworking-iOS8.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libAFNetworking-iOS8.0.a"; path = "../../../Library/Developer/Xcode/DerivedData/RedpacketDemo-frrxnwvosxcqatcasftdpndoehwh/Build/Products/Debug-iphoneos/AFNetworking-iOS8.0/libAFNetworking-iOS8.0.a"; sourceTree = "<group>"; };
 		92006F791DE3F5C7004B8299 /* RedpacketBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedpacketBaseTableViewController.h; sourceTree = "<group>"; };
 		92006F7A1DE3F5C7004B8299 /* RedpacketBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedpacketBaseTableViewController.m; sourceTree = "<group>"; };
 		92006F7B1DE3F5C7004B8299 /* RedpacketFucListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedpacketFucListViewController.h; sourceTree = "<group>"; };
@@ -231,7 +230,6 @@
 				840433361E9E356E00ACAFAB /* libz.tbd in Frameworks */,
 				840433371E9E356E00ACAFAB /* libc++.tbd in Frameworks */,
 				840433381E9E356E00ACAFAB /* CoreTelephony.framework in Frameworks */,
-				840433391E9E356E00ACAFAB /* libPods-RedpacketDemo.a in Frameworks */,
 				2C4945A994017807EFFCE3D3 /* libPods-RedpacketDemo-JDpay.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +260,7 @@
 		12F8D2269CF6B050068D7334 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84BFBC821EA49A18000CBE48 /* libAFNetworking-iOS8.0.a */,
 				9242B6DC1DD44BB500FE7C9D /* libsqlite3.tbd */,
 				923AA1B91D953AC700A097B1 /* CoreMotion.framework */,
 				923AA1B71D953ABD00A097B1 /* CFNetwork.framework */,
@@ -536,7 +535,6 @@
 				848D4BF91DF7D6E500D99957 /* demo_right@3x.png in Resources */,
 				848D4BFB1DF7D6E500D99957 /* demo_right_tip@3x.png in Resources */,
 				848D4BEF1DF7D6E500D99957 /* demo_back@2x.png in Resources */,
-				923AA15F1D95282400A097B1 /* LaunchScreen.storyboard in Resources */,
 				848D4BFE1DF7D6E500D99957 /* errors.txt in Resources */,
 				848D4BF51DF7D6E500D99957 /* demo_logo@2x.png in Resources */,
 				848D4BF61DF7D6E500D99957 /* demo_logo@3x.png in Resources */,
@@ -721,7 +719,7 @@
 				DEVELOPMENT_TEAM = PUEB48NTQQ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "RedpacketDemo copy-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
@@ -750,7 +748,7 @@
 				DEVELOPMENT_TEAM = PUEB48NTQQ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "RedpacketDemo copy-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
@@ -870,6 +868,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PUEB48NTQQ;
 				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/RPAlipayLib\"",
+					"\"${PODS_ROOT}/Headers/Public/RedPacketAlipay\"",
+					"\"${PODS_ROOT}/Headers/Public/RedpacketAliAuthLib\"",
+					"\"${PODS_ROOT}/Headers/Public/RedpacketLib\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+				);
 				INFOPLIST_FILE = RedpacketDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -901,6 +908,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PUEB48NTQQ;
 				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/RPAlipayLib\"",
+					"\"${PODS_ROOT}/Headers/Public/RedPacketAlipay\"",
+					"\"${PODS_ROOT}/Headers/Public/RedpacketAliAuthLib\"",
+					"\"${PODS_ROOT}/Headers/Public/RedpacketLib\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+				);
 				INFOPLIST_FILE = RedpacketDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
