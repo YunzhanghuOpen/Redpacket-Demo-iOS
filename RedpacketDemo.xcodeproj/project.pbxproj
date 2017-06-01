@@ -79,7 +79,6 @@
 		1C30C8F7475EDAE8930D2900 /* Pods-RedpacketDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedpacketDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RedpacketDemo/Pods-RedpacketDemo.release.xcconfig"; sourceTree = "<group>"; };
 		242A7183CA1B600649DE808F /* Pods-RedpacketDemo-JDpay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedpacketDemo-JDpay.release.xcconfig"; path = "Pods/Target Support Files/Pods-RedpacketDemo-JDpay/Pods-RedpacketDemo-JDpay.release.xcconfig"; sourceTree = "<group>"; };
 		65565201F48F7A152EF6ACC6 /* libPods-RedpacketDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RedpacketDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8404335A1E9E356E00ACAFAB /* RedpacketDemo copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RedpacketDemo copy-Info.plist"; path = "/Users/admin/Documents/developer/Redpacket-Demo-iOS/RedpacketDemo copy-Info.plist"; sourceTree = "<absolute>"; };
 		848D4BDF1DF7D6E500D99957 /* demo_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "demo_back@2x.png"; sourceTree = "<group>"; };
 		848D4BE01DF7D6E500D99957 /* demo_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "demo_back@3x.png"; sourceTree = "<group>"; };
 		848D4BE11DF7D6E500D99957 /* demo_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "demo_header@2x.png"; sourceTree = "<group>"; };
@@ -280,7 +279,6 @@
 				923AA14D1D95282400A097B1 /* Products */,
 				CF06FFB308AA18E8BD1CBA74 /* Pods */,
 				12F8D2269CF6B050068D7334 /* Frameworks */,
-				8404335A1E9E356E00ACAFAB /* RedpacketDemo copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
