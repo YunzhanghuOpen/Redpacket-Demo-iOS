@@ -52,7 +52,7 @@ static NSString *kRedpacketGroupSaveKey = @"redpacketGroupSaveKey";
         _mutDatas = [NSMutableArray array];
     }
     
-    UIBarButtonItem *changeUserItem = [[UIBarButtonItem alloc] initWithTitle:@"切换用户" style:UIBarButtonItemStyleBordered target:self action:@selector(userChangeItemClick)];
+    UIBarButtonItem *changeUserItem = [[UIBarButtonItem alloc] initWithTitle:@"切换用户" style:UIBarButtonItemStyleDone target:self action:@selector(userChangeItemClick)];
     self.navigationItem.rightBarButtonItem = changeUserItem;
 }
 
