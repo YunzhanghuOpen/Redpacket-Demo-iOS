@@ -94,7 +94,7 @@
     [self.bubbleBackgroundView addSubview:self.typeLable];
 }
 
-- (void)configWithRedpacketMessageModel:(RedpacketMessageModel *)redpacketMessage
+- (void)configWithRedpacketMessageModel:(RPRedpacketModel *)redpacketMessage
                         andRedpacketDic:(NSDictionary *)redpacketDic
 {
     NSString *title;
@@ -103,26 +103,18 @@
     UIImage  *icon;
     NSString *imageName;
     
-    BOOL isSender = redpacketMessage.isRedacketSender;
+    BOOL isSender = redpacketMessage.isSender;
     
-    if (redpacketMessage.messageType == RedpacketMessageTypeTransfer) {
-        imageName = isSender ? @"transfer_sender_bg" : @"transfer_receiver_bg";
-        icon = RedpacketImage(@"redPacket_transferIcon");
-        title = redpacketMessage.isRedacketSender ? RedpacketTransferSeText : RedpacketTransferReceText;
-        subTitle = [NSString stringWithFormat:@"%@元", redpacketDic[@"money_transfer_amount"]];
-        orgTitle = RedpacketTransfer;
+    imageName = isSender ? @"redpacket_sender_bg" : @"redpacket_receiver_bg";
+    icon = RedpacketImage(@"redPacket_redPacktIcon");
+    title = redpacketMessage.greeting;
+    subTitle = RedpacketSubMessageText;
+    orgTitle = redpacketMessage.greeting;
+    if (redpacketMessage.redpacketType == RPRedpacketTypeGoupMember) {
+        self.typeLable.hidden = NO;
+        self.typeLable.text = RedpacketDirectText;
     }else {
-        imageName = isSender ? @"redpacket_sender_bg" : @"redpacket_receiver_bg";
-        icon = RedpacketImage(@"redPacket_redPacktIcon");
-        title = redpacketMessage.redpacket.redpacketGreeting;
-        subTitle = RedpacketSubMessageText;
-        orgTitle = redpacketMessage.redpacket.redpacketOrgName;
-        if (redpacketMessage.redpacketType == RedpacketTypeMember) {
-            self.typeLable.hidden = NO;
-            self.typeLable.text = RedpacketDirectText;
-        }else {
-            self.typeLable.hidden = YES;
-        }
+        self.typeLable.hidden = YES;
     }
     
     self.iconView.image = icon;
@@ -136,17 +128,12 @@
     [self layoutSubviewsWithModel:redpacketMessage];
 }
 
-- (void)layoutSubviewsWithModel:(RedpacketMessageModel *)model
+- (void)layoutSubviewsWithModel:(RPRedpacketModel *)model
 {
     CGRect frame;
     CGSize iconSize;
     
-    if (model.messageType == RedpacketMessageTypeTransfer) {
-        iconSize = CGSizeMake(RedpacketIconHeight, RedpacketIconHeight);
-        
-    }else {
-        iconSize = CGSizeMake(RedpacketIconWidth, RedpacketIconHeight);
-    }
+    iconSize = CGSizeMake(RedpacketIconWidth, RedpacketIconHeight);
     
     self.iconView.frame = CGRectMake(RedpacketLeftMargin,
                                      RedpacketTopMargin,
@@ -174,7 +161,7 @@
                                       RedpacketViewHeight - RedapcketLabelHBottom,
                                       RedpacketViewWidth - RedpacketLeftMargin * 2,
                                       RedapcketLabelHBottom);
-    if (!model.isRedacketSender) {
+    if (!model.isSender) {
         for (UIView *view in self.bubbleBackgroundView.subviews) {
             
             CGRect frame = view.frame;

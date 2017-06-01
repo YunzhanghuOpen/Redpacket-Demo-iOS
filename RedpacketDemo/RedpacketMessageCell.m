@@ -21,7 +21,7 @@
 
 @property (nonatomic, strong) RedpacketView     *redpacketView;
 @property (nonatomic, strong) RedPacketLuckView *redpacketLuckView;
-@property (nonatomic, strong) RedpacketMessageModel *redpacketMessageModel;
+@property (nonatomic, strong) RPRedpacketModel *redpacketMessageModel;
 
 @end
 
@@ -52,10 +52,10 @@
     return self;
 }
 
-- (void)configWithRedpacketMessageModel:(RedpacketMessageModel *)model
+- (void)configWithRedpacketMessageModel:(RPRedpacketModel *)model
                         andRedpacketDic:(NSDictionary *)redpacketDic
 {
-    if (model.redpacketType == RedpacketTypeAmount) {
+    if (model.redpacketType == RPRedpacketTypeAmount) {
         
         [_redpacketView removeFromSuperview];
         if (!_redpacketLuckView) {
@@ -80,27 +80,27 @@
     
     UserInfo *currentUser = [RedpacketUser currentUser].userInfo;
     
-    if (model.isRedacketSender) {
+    if (model.isSender) {
         
         [_headerImageView setImage:[UIImage imageNamed:currentUser.userAvatar]];
         _userNickNameLabel.text = [RedpacketUser currentUser].userInfo.userNickName;
         
     }else {
-     
+        
         [_headerImageView setImage:[UIImage imageNamed:[RedpacketUser currentUser].talkingUserInfo.userAvatar]];
         _userNickNameLabel.text = [RedpacketUser currentUser].talkingUserInfo.userNickName;
         
     }
     
-    [self swapSide:model.isRedacketSender withRedpacketModel:model];
+    [self swapSide:model.isSender withRedpacketModel:model];
     
 }
 
-- (void)swapSide:(BOOL)isSender withRedpacketModel:(RedpacketMessageModel *)model
+- (void)swapSide:(BOOL)isSender withRedpacketModel:(RPRedpacketModel *)model
 {
     UIView *adjustView = _redpacketView;
     
-    if (model.redpacketType == RedpacketTypeAmount) {
+    if (model.redpacketType == RPRedpacketTypeAmount) {
         adjustView = _redpacketLuckView;
     }
     
@@ -147,9 +147,9 @@
     }
 }
 
-+ (CGFloat)heightForRedpacketMessageCell:(RedpacketMessageModel *)model
++ (CGFloat)heightForRedpacketMessageCell:(RPRedpacketModel *)model
 {
-    if (model.redpacketType == RedpacketTypeAmount) {
+    if (model.redpacketType == RPRedpacketTypeAmount) {
         return [RedPacketLuckView heightForRedpacketMessageCell] + 50;
     }
     

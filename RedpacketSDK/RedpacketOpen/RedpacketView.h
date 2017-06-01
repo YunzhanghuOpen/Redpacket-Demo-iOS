@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RedpacketMessageModel.h"
+#import "RPRedpacketModel.h"
 
 /** 默认红包视图 */
 @interface RedpacketView : UIView
@@ -21,7 +21,7 @@
 
 + (CGFloat)redpacketViewHeight;
 
-- (void)configWithRedpacketMessageModel:(RedpacketMessageModel *)redpacketMessage
+- (void)configWithRedpacketMessageModel:(RPRedpacketModel *)redpacketMessage
                         andRedpacketDic:(NSDictionary *)redpacketDic;
 
 @end

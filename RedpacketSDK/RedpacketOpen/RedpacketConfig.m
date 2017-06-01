@@ -7,13 +7,12 @@
 //
 
 #import "RedpacketConfig.h"
-#import "YZHRedpacketBridge.h"
-#import "YZHRedpacketBridgeProtocol.h"
 #import <AFNetworking.h>
 #import "RedpacketLib.h"
 #import "RedpacketMessageCell.h"
 #import "RedpacketTakenMessageTipCell.h"
 #import "RedpacketUser.h"
+#import "RPRedpacketUnionHandle.h"
 
 static NSString *baseRequestURL = @"https://rpv2.yunzhanghu.com";
 static NSString *tokenRequestURL = @"/api/demo-sign?token=1&uid=";
@@ -30,7 +29,7 @@ static NSString *tokenRequestURL = @"/api/demo-sign?token=1&uid=";
 
 @end
 
-@interface RedpacketConfig () <YZHRedpacketBridgeDelegate, YZHRedpacketBridgeDataSource>
+@interface RedpacketConfig () <RPRedpacketBridgeDelegate>
 
 @property (nonatomic, strong)   RedpacketViewControl *viewControl;
 
@@ -60,29 +59,28 @@ static NSString *tokenRequestURL = @"/api/demo-sign?token=1&uid=";
     
     if (self) {
         
-        [YZHRedpacketBridge sharedBridge].delegate = self;
-        [YZHRedpacketBridge sharedBridge].dataSource = self;
-        [YZHRedpacketBridge sharedBridge].isDebug = YES;
+        [RPRedpacketBridge sharedBridge].delegate = self;
+        [RPRedpacketBridge sharedBridge].isDebug = YES;
         
     }
     
     return self;
 }
 
-- (RedpacketUserInfo *)redpacketUserInfo
+- (RPUserInfo *)redpacketUserInfo
 {
-    RedpacketUserInfo *userInfo = [RedpacketUserInfo new];
-    userInfo.userId = [RedpacketUser currentUser].userInfo.userId;
-    userInfo.userNickname = [RedpacketUser currentUser].userInfo.userNickName;
-    userInfo.userAvatar = [RedpacketUser currentUser].userInfo.userAvatarURL;
+    RPUserInfo *userInfo = [RPUserInfo new];
+    userInfo.userID = [RedpacketUser currentUser].userInfo.userId;
+    userInfo.userName = [RedpacketUser currentUser].userInfo.userNickName;
+    userInfo.avatar = [RedpacketUser currentUser].userInfo.userAvatarURL;
     
     return userInfo;
 }
 
 /** 签名接口调用， 签名接口写法见官网文档 */
-- (void)fetchUserSignWithUserID:(FetchRegisitParamBlock)fetchBlock
+- (void)fetchUserSignWithUserID:(RPFetchRegisitParamBlock)fetchBlock
 {
-    NSString *userId = [self redpacketUserInfo].userId;
+    NSString *userId = [self redpacketUserInfo].userID;
     if (userId) {
         
         NSString *requestUser = [tokenRequestURL stringByAppendingString:userId];
@@ -106,14 +104,14 @@ static NSString *tokenRequestURL = @"/api/demo-sign?token=1&uid=";
         }
 }
 
-- (void)configWithSignDict:(NSDictionary *)dict andBlock:(FetchRegisitParamBlock)fetchBlock
+- (void)configWithSignDict:(NSDictionary *)dict andBlock:(RPFetchRegisitParamBlock)fetchBlock
 {
     NSString *partner = [dict stringValueForKey:@"partner"];
     NSString *appUserId = [dict stringValueForKey:@"user_id"];
     NSString *timeStamp = [dict stringValueForKey:@"timestamp"];
     NSString *sign = [dict stringValueForKey:@"sign"];
     
-    RedpacketRegisitModel *model = [RedpacketRegisitModel signModelWithAppUserId:appUserId
+    RPRedpacketRegisitModel *model = [RPRedpacketRegisitModel signModelWithAppUserId:appUserId
                                                                       signString:sign
                                                                          partner:partner
                                                                     andTimeStamp:timeStamp];
@@ -123,7 +121,7 @@ static NSString *tokenRequestURL = @"/api/demo-sign?token=1&uid=";
 
 #pragma mark Redpacket
 /** 红包SDK回调此函数进行注册 */
-- (void)redpacketFetchRegisitParam:(FetchRegisitParamBlock)fetchBlock withError:(NSError *)error
+- (void)redpacketFetchRegisitParam:(RPFetchRegisitParamBlock)fetchBlock withError:(NSError *)error
 {
     NSLog(@"RequestToken");
     [self fetchUserSignWithUserID:fetchBlock];
@@ -140,7 +138,7 @@ static NSString *tokenRequestURL = @"/api/demo-sign?token=1&uid=";
     
     if (redpacketMessageDict) {
         
-        RedpacketMessageModel *redpacketMessageModel = [RedpacketMessageModel redpacketMessageModelWithDic:redpacketMessageDict];
+        RPRedpacketModel *redpacketMessageModel = [RPRedpacketUnionHandle modelWithChannelRedpacketDic:redpacketMessageDict andSender:nil];
         RedpacketMessageCell *cell = [[RedpacketMessageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         [cell configWithRedpacketMessageModel:redpacketMessageModel andRedpacketDic:redpacketMessageDict];
@@ -150,7 +148,7 @@ static NSString *tokenRequestURL = @"/api/demo-sign?token=1&uid=";
     }else {
         
         redpacketMessageDict = [dict valueForKey:@"2"];
-        RedpacketMessageModel *redpacketMessageModel = [RedpacketMessageModel redpacketMessageModelWithDic:redpacketMessageDict];
+        RPRedpacketModel *redpacketMessageModel = [RPRedpacketUnionHandle modelWithChannelRedpacketDic:redpacketMessageDict andSender:nil];
         RedpacketTakenMessageTipCell *tipCell = [[RedpacketTakenMessageTipCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         [tipCell configWithRedpacketMessageModel:redpacketMessageModel];
         tipCell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -164,7 +162,7 @@ static NSString *tokenRequestURL = @"/api/demo-sign?token=1&uid=";
 {
     NSDictionary *redpacketMessageDict = [dict valueForKey:@"1"];
     
-    RedpacketMessageModel *redpacketMessageModel = [RedpacketMessageModel redpacketMessageModelWithDic:redpacketMessageDict];
+    RPRedpacketModel *redpacketMessageModel = [RPRedpacketUnionHandle modelWithChannelRedpacketDic:redpacketMessageDict andSender:nil];
     if (redpacketMessageDict) {
         return [RedpacketMessageCell heightForRedpacketMessageCell:redpacketMessageModel];
         

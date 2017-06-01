@@ -9,9 +9,9 @@
 #import "RedpacketBaseTableViewController.h"
 #import "RedpacketConfig.h"
 #import "RedpacketUser.h"
-#import "RedpacketMessageModel.h"
+#import "RPRedpacketModel.h"
 #import "RedpacketDefines.h"
-
+#import "RPRedpacketUnionHandle.h"
 
 static NSString *kRedpacketsSaveKey     = @"redpacketSaveKey";
 static NSString *kRedpacketGroupSaveKey = @"redpacketGroupSaveKey";
@@ -52,7 +52,7 @@ static NSString *kRedpacketGroupSaveKey = @"redpacketGroupSaveKey";
         _mutDatas = [NSMutableArray array];
     }
     
-    UIBarButtonItem *changeUserItem = [[UIBarButtonItem alloc] initWithTitle:@"切换用户" style:UIBarButtonItemStyleBordered target:self action:@selector(userChangeItemClick)];
+    UIBarButtonItem *changeUserItem = [[UIBarButtonItem alloc] initWithTitle:@"切换用户" style: UIBarButtonItemStyleBordered target:self action:@selector(userChangeItemClick)];
     self.navigationItem.rightBarButtonItem = changeUserItem;
 }
 
@@ -63,66 +63,65 @@ static NSString *kRedpacketGroupSaveKey = @"redpacketGroupSaveKey";
                 isSupportMemberRedpacket:NO];
 }
 
- /** 发红包页面（支持定向红包） */
+/** 发红包页面（支持定向红包） */
 - (void)presentRedpacketViewController:(RPRedpacketControllerType)controllerType
               isSupportMemberRedpacket:(BOOL)isSupport
 {
-    RedpacketUserInfo *userInfo = [RedpacketUserInfo new];
+    RPUserInfo *userInfo = [RPUserInfo new];
     
     NSInteger groupCount = 0;
     if (_isGroup) {
         
         //  当前群会话ID
-        userInfo.userId = @"#ConveritionID#";
+        userInfo.userID = @"#ConveritionID#";
         groupCount = [RedpacketUser currentUser].users.count;
         
     }else {
         
         UserInfo *talkingUser = [RedpacketUser currentUser].talkingUserInfo;
-        userInfo.userId = talkingUser.userId;
-        userInfo.userAvatar = talkingUser.userAvatarURL;
-        userInfo.userNickname = talkingUser.userNickName;
+        userInfo.userID = talkingUser.userId;
+        userInfo.avatar = talkingUser.userAvatarURL;
+        userInfo.userName = talkingUser.userNickName;
         
     }
     
     __weak typeof(self) weakSelf = self;
     /** 发红包成功*/
-    RedpacketSendBlock sendSuccessBlock = ^(RedpacketMessageModel *model) {
+    RedpacketSendBlock sendSuccessBlock = ^(RPRedpacketModel *model) {
         
-        NSDictionary *redpacket = @{@"1": model.redpacketMessageModelToDic};    //  1代表红包消息
+        NSDictionary *redpacket = @{@"1":[RPRedpacketUnionHandle dictWithRedpacketModel:model isACKMessage:NO]};    //  1代表红包消息
         [weakSelf.mutDatas addObject:redpacket];
         [weakSelf.talkTableView reloadData];
         
     };
-
-     /** 定向红包获取群成员列表, 如果不需要指定接收人，可以传nil */
-    RedpacketMemberListBlock memeberListBlock = nil;
-    if(controllerType == RPRedpacketControllerTypeGroup && isSupport) {
     
+    /** 定向红包获取群成员列表, 如果不需要指定接收人，可以传nil */
+    RedpacketMemberListBlock memeberListBlock;
+    if(controllerType == RPRedpacketControllerTypeGroup && isSupport) {
+        
         memeberListBlock = ^(RedpacketMemberListFetchBlock completionHandle) {
-          
-            NSMutableArray <RedpacketUserInfo *> *groupInfos = [NSMutableArray array];
+            
+            NSMutableArray <RPUserInfo *> *groupInfos = [NSMutableArray array];
             for (UserInfo *userInfo in [RedpacketUser currentUser].users) {
                 
-                RedpacketUserInfo *user = [RedpacketUserInfo new];
-                user.userId = userInfo.userId;
-                user.userNickname = userInfo.userNickName;
-                user.userAvatar = userInfo.userAvatarURL;
+                RPUserInfo *user = [RPUserInfo new];
+                user.userID = userInfo.userId;
+                user.userName = userInfo.userNickName;
+                user.avatar = userInfo.userAvatarURL;
                 [groupInfos addObject:user];
             }
             
             completionHandle(groupInfos);
         };
+    } else {
+        memeberListBlock = nil;
     }
     
     [RedpacketViewControl presentRedpacketViewController:controllerType
-                                         fromeController:self
-                                        groupMemberCount:groupCount
+                                         fromeController:self groupMemberCount:groupCount
                                    withRedpacketReceiver:userInfo
-                                         andSuccessBlock:sendSuccessBlock
-                           withFetchGroupMemberListBlock:memeberListBlock
-                             andGenerateRedpacketIDBlock:nil];
-
+                                         andSuccessBlock:sendSuccessBlock withFetchGroupMemberListBlock:memeberListBlock];
+    
 }
 
 #pragma mark - Redpacket End
@@ -195,13 +194,13 @@ static NSString *kRedpacketGroupSaveKey = @"redpacketGroupSaveKey";
 /** 抢红包 */
 - (void)redpacketTouched:(NSDictionary *)redpacketDic
 {
-    RedpacketMessageModel *model = [RedpacketMessageModel redpacketMessageModelWithDic:redpacketDic];
+    RPRedpacketModel *model = [RPRedpacketUnionHandle modelWithChannelRedpacketDic:redpacketDic andSender:nil];
     
     __weak typeof(self) weakSelf = self;
-    [RedpacketViewControl redpacketTouchedWithMessageModel:model fromViewController:self redpacketGrabBlock:^(RedpacketMessageModel *messageModel) {
+    [RedpacketViewControl redpacketTouchedWithMessageModel:model fromViewController:self redpacketGrabBlock:^(RPRedpacketModel *messageModel) {
         
         /** 抢红包成功, 转账成功的回调*/
-        NSDictionary *redpacket = @{@"2": messageModel.redpacketMessageModelToDic};    //  2代表红包被抢的消息
+        NSDictionary *redpacket = @{@"2": [RPRedpacketUnionHandle dictWithRedpacketModel:model isACKMessage:YES]};    //  2代表红包被抢的消息
         [weakSelf.mutDatas addObject:redpacket];
         [weakSelf.talkTableView reloadData];
         

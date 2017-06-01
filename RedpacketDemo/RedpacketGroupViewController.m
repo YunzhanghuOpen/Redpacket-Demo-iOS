@@ -9,7 +9,7 @@
 #import "RedpacketGroupViewController.h"
 #import "RedpacketConfig.h"
 #import "RedpacketUser.h"
-#import "RedpacketMessageModel.h"
+#import "RPRedpacketModel.h"
 #import "RedpacketDefines.h"
 
 @interface RedpacketGroupViewController ()
@@ -42,7 +42,7 @@
     [self.redpacket setTitleColor:rpHexColor(0xd24f44) forState:UIControlStateNormal];
     [self.member setTitleColor:rpHexColor(0xd24f44) forState:UIControlStateNormal];
     self.headerBackImageView.backgroundColor = rpHexColor(0xd24f44);
-
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
