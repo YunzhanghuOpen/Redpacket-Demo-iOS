@@ -59,70 +59,10 @@
 		840433501E9E356E00ACAFAB /* demo_right_tip_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848D4BEC1DF7D6E500D99957 /* demo_right_tip_blue@2x.png */; };
 		840433511E9E356E00ACAFAB /* RedpacketCellResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9273C6A71DF695B7001DAE17 /* RedpacketCellResource.bundle */; };
 		840433521E9E356E00ACAFAB /* demo_right_tip_blue@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848D4BED1DF7D6E500D99957 /* demo_right_tip_blue@3x.png */; };
-		848D4BEF1DF7D6E500D99957 /* demo_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848D4BDF1DF7D6E500D99957 /* demo_back@2x.png */; };
-		848D4BF01DF7D6E500D99957 /* demo_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848D4BE01DF7D6E500D99957 /* demo_back@3x.png */; };
-		848D4BF11DF7D6E500D99957 /* demo_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848D4BE11DF7D6E500D99957 /* demo_header@2x.png */; };
-		848D4BF21DF7D6E500D99957 /* demo_header@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848D4BE21DF7D6E500D99957 /* demo_header@3x.png */; };
-		848D4BF31DF7D6E500D99957 /* demo_header_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848D4BE31DF7D6E500D99957 /* demo_header_small@2x.png */; };
-		848D4BF41DF7D6E500D99957 /* demo_header_small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848D4BE41DF7D6E500D99957 /* demo_header_small@3x.png */; };
-		848D4BF51DF7D6E500D99957 /* demo_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848D4BE51DF7D6E500D99957 /* demo_logo@2x.png */; };
-		848D4BF61DF7D6E500D99957 /* demo_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848D4BE61DF7D6E500D99957 /* demo_logo@3x.png */; };
-		848D4BF71DF7D6E500D99957 /* demo_redpacket_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 848D4BE71DF7D6E500D99957 /* demo_redpacket_icon.png */; };
-		848D4BF81DF7D6E500D99957 /* demo_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848D4BE81DF7D6E500D99957 /* demo_right@2x.png */; };
-		848D4BF91DF7D6E500D99957 /* demo_right@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848D4BE91DF7D6E500D99957 /* demo_right@3x.png */; };
-		848D4BFA1DF7D6E500D99957 /* demo_right_tip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848D4BEA1DF7D6E500D99957 /* demo_right_tip@2x.png */; };
-		848D4BFB1DF7D6E500D99957 /* demo_right_tip@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848D4BEB1DF7D6E500D99957 /* demo_right_tip@3x.png */; };
-		848D4BFC1DF7D6E500D99957 /* demo_right_tip_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848D4BEC1DF7D6E500D99957 /* demo_right_tip_blue@2x.png */; };
-		848D4BFD1DF7D6E500D99957 /* demo_right_tip_blue@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848D4BED1DF7D6E500D99957 /* demo_right_tip_blue@3x.png */; };
-		848D4BFE1DF7D6E500D99957 /* errors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 848D4BEE1DF7D6E500D99957 /* errors.txt */; };
-		92006F881DE3F5C7004B8299 /* RedpacketBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92006F7A1DE3F5C7004B8299 /* RedpacketBaseTableViewController.m */; };
-		92006F891DE3F5C7004B8299 /* RedpacketFucListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92006F7C1DE3F5C7004B8299 /* RedpacketFucListViewController.m */; };
-		92006F8A1DE3F5C7004B8299 /* RedpacketFucListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92006F7D1DE3F5C7004B8299 /* RedpacketFucListViewController.xib */; };
-		92006F8B1DE3F5C7004B8299 /* RedpacketGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92006F7F1DE3F5C7004B8299 /* RedpacketGroupViewController.m */; };
-		92006F8C1DE3F5C7004B8299 /* RedpacketGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92006F801DE3F5C7004B8299 /* RedpacketGroupViewController.xib */; };
-		92006F8D1DE3F5C7004B8299 /* RedpacketMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92006F821DE3F5C7004B8299 /* RedpacketMessageCell.m */; };
-		92006F8E1DE3F5C7004B8299 /* RedpacketSingleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92006F841DE3F5C7004B8299 /* RedpacketSingleViewController.m */; };
-		92006F8F1DE3F5C7004B8299 /* RedpacketSingleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92006F851DE3F5C7004B8299 /* RedpacketSingleViewController.xib */; };
-		92006F901DE3F5C7004B8299 /* RedpacketUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 92006F871DE3F5C7004B8299 /* RedpacketUser.m */; };
-		92006F951DE428B1004B8299 /* AboutMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92006F931DE428B1004B8299 /* AboutMeViewController.m */; };
-		92006F961DE428B1004B8299 /* AboutMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92006F941DE428B1004B8299 /* AboutMeViewController.xib */; };
-		923AA1511D95282400A097B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 923AA1501D95282400A097B1 /* main.m */; };
-		923AA1541D95282400A097B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 923AA1531D95282400A097B1 /* AppDelegate.m */; };
-		923AA15C1D95282400A097B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 923AA15B1D95282400A097B1 /* Assets.xcassets */; };
-		923AA1A61D953A2A00A097B1 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1A51D953A2A00A097B1 /* CoreTelephony.framework */; };
-		923AA1A81D953A6300A097B1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1A71D953A6300A097B1 /* libc++.tbd */; };
-		923AA1AA1D953A6B00A097B1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1A91D953A6B00A097B1 /* libz.tbd */; };
-		923AA1AC1D953A7300A097B1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1AB1D953A7300A097B1 /* SystemConfiguration.framework */; };
-		923AA1AE1D953A7E00A097B1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1AD1D953A7E00A097B1 /* QuartzCore.framework */; };
-		923AA1B01D953A8C00A097B1 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1AF1D953A8C00A097B1 /* CoreText.framework */; };
-		923AA1B21D953A9500A097B1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1B11D953A9500A097B1 /* CoreGraphics.framework */; };
-		923AA1B41D953A9E00A097B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1B31D953A9E00A097B1 /* UIKit.framework */; };
-		923AA1B61D953AB600A097B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1B51D953AB600A097B1 /* Foundation.framework */; };
-		923AA1B81D953ABD00A097B1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1B71D953ABD00A097B1 /* CFNetwork.framework */; };
-		923AA1BA1D953AC700A097B1 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 923AA1B91D953AC700A097B1 /* CoreMotion.framework */; };
-		9242B6DD1DD44BB500FE7C9D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9242B6DC1DD44BB500FE7C9D /* libsqlite3.tbd */; };
-		9273C6B11DF695B7001DAE17 /* AppDelegate+Redpacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9273C6A61DF695B7001DAE17 /* AppDelegate+Redpacket.m */; };
-		9273C6B21DF695B7001DAE17 /* RedpacketCellResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9273C6A71DF695B7001DAE17 /* RedpacketCellResource.bundle */; };
-		9273C6B31DF695B7001DAE17 /* RedpacketConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9273C6A91DF695B7001DAE17 /* RedpacketConfig.m */; };
-		9273C6B41DF695B7001DAE17 /* RedPacketLuckView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9273C6AC1DF695B7001DAE17 /* RedPacketLuckView.m */; };
-		9273C6B51DF695B7001DAE17 /* RedpacketTakenMessageTipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9273C6AE1DF695B7001DAE17 /* RedpacketTakenMessageTipCell.m */; };
-		9273C6B61DF695B7001DAE17 /* RedpacketView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9273C6B01DF695B7001DAE17 /* RedpacketView.m */; };
-		929F11FD1DED6295000C0EE8 /* RedpacketUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929F11FB1DED6295000C0EE8 /* RedpacketUserLoginViewController.m */; };
-		929F11FE1DED6295000C0EE8 /* RedpacketUserLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929F11FC1DED6295000C0EE8 /* RedpacketUserLoginViewController.xib */; };
-		DEB85566268AD075906F3C00 /* libPods-RedpacketDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65565201F48F7A152EF6ACC6 /* libPods-RedpacketDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		840433551E9E356E00ACAFAB /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = RedpacketStaticLib;
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		929A98161DD32BC700C80DD6 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = RedpacketStaticLib;
@@ -174,7 +114,6 @@
 		92006F921DE428B1004B8299 /* AboutMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutMeViewController.h; sourceTree = "<group>"; };
 		92006F931DE428B1004B8299 /* AboutMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutMeViewController.m; sourceTree = "<group>"; };
 		92006F941DE428B1004B8299 /* AboutMeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutMeViewController.xib; sourceTree = "<group>"; };
-		923AA14C1D95282400A097B1 /* RedpacketDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedpacketDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		923AA1501D95282400A097B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		923AA1521D95282400A097B1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		923AA1531D95282400A097B1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -231,26 +170,6 @@
 				840433371E9E356E00ACAFAB /* libc++.tbd in Frameworks */,
 				840433381E9E356E00ACAFAB /* CoreTelephony.framework in Frameworks */,
 				115B442D805159FBFAF3AA5B /* libPods-RedpacketDemo-JDpay.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		923AA1491D95282400A097B1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9242B6DD1DD44BB500FE7C9D /* libsqlite3.tbd in Frameworks */,
-				923AA1BA1D953AC700A097B1 /* CoreMotion.framework in Frameworks */,
-				923AA1B81D953ABD00A097B1 /* CFNetwork.framework in Frameworks */,
-				923AA1B61D953AB600A097B1 /* Foundation.framework in Frameworks */,
-				923AA1B41D953A9E00A097B1 /* UIKit.framework in Frameworks */,
-				923AA1B21D953A9500A097B1 /* CoreGraphics.framework in Frameworks */,
-				923AA1B01D953A8C00A097B1 /* CoreText.framework in Frameworks */,
-				923AA1AE1D953A7E00A097B1 /* QuartzCore.framework in Frameworks */,
-				923AA1AC1D953A7300A097B1 /* SystemConfiguration.framework in Frameworks */,
-				923AA1AA1D953A6B00A097B1 /* libz.tbd in Frameworks */,
-				923AA1A81D953A6300A097B1 /* libc++.tbd in Frameworks */,
-				923AA1A61D953A2A00A097B1 /* CoreTelephony.framework in Frameworks */,
-				DEB85566268AD075906F3C00 /* libPods-RedpacketDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +245,6 @@
 		923AA14D1D95282400A097B1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				923AA14C1D95282400A097B1 /* RedpacketDemo.app */,
 				840433591E9E356E00ACAFAB /* RedpacketDemo-JDpay.app */,
 			);
 			name = Products;
@@ -436,27 +354,6 @@
 			productReference = 840433591E9E356E00ACAFAB /* RedpacketDemo-JDpay.app */;
 			productType = "com.apple.product-type.application";
 		};
-		923AA14B1D95282400A097B1 /* RedpacketDemo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 923AA1631D95282400A097B1 /* Build configuration list for PBXNativeTarget "RedpacketDemo" */;
-			buildPhases = (
-				9AC7CBF8D4198AAC211AF8E3 /* [CP] Check Pods Manifest.lock */,
-				923AA1481D95282400A097B1 /* Sources */,
-				923AA1491D95282400A097B1 /* Frameworks */,
-				923AA14A1D95282400A097B1 /* Resources */,
-				BD5A27184357051644F55376 /* [CP] Embed Pods Frameworks */,
-				56190487E7FA645618885E09 /* [CP] Copy Pods Resources */,
-				929A98161DD32BC700C80DD6 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = RedpacketDemo;
-			productName = RedpacketDemo;
-			productReference = 923AA14C1D95282400A097B1 /* RedpacketDemo.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -468,11 +365,6 @@
 				TargetAttributes = {
 					8404331A1E9E356E00ACAFAB = {
 						DevelopmentTeam = PUEB48NTQQ;
-					};
-					923AA14B1D95282400A097B1 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = PUEB48NTQQ;
-						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -489,7 +381,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				923AA14B1D95282400A097B1 /* RedpacketDemo */,
 				8404331A1E9E356E00ACAFAB /* RedpacketDemo-JDpay */,
 			);
 		};
@@ -527,54 +418,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		923AA14A1D95282400A097B1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				848D4BFA1DF7D6E500D99957 /* demo_right_tip@2x.png in Resources */,
-				848D4BF91DF7D6E500D99957 /* demo_right@3x.png in Resources */,
-				848D4BFB1DF7D6E500D99957 /* demo_right_tip@3x.png in Resources */,
-				848D4BEF1DF7D6E500D99957 /* demo_back@2x.png in Resources */,
-				848D4BFE1DF7D6E500D99957 /* errors.txt in Resources */,
-				848D4BF51DF7D6E500D99957 /* demo_logo@2x.png in Resources */,
-				848D4BF61DF7D6E500D99957 /* demo_logo@3x.png in Resources */,
-				92006F8C1DE3F5C7004B8299 /* RedpacketGroupViewController.xib in Resources */,
-				848D4BF11DF7D6E500D99957 /* demo_header@2x.png in Resources */,
-				848D4BF01DF7D6E500D99957 /* demo_back@3x.png in Resources */,
-				848D4BF41DF7D6E500D99957 /* demo_header_small@3x.png in Resources */,
-				92006F8F1DE3F5C7004B8299 /* RedpacketSingleViewController.xib in Resources */,
-				92006F8A1DE3F5C7004B8299 /* RedpacketFucListViewController.xib in Resources */,
-				92006F961DE428B1004B8299 /* AboutMeViewController.xib in Resources */,
-				923AA15C1D95282400A097B1 /* Assets.xcassets in Resources */,
-				848D4BF81DF7D6E500D99957 /* demo_right@2x.png in Resources */,
-				848D4BF31DF7D6E500D99957 /* demo_header_small@2x.png in Resources */,
-				848D4BF21DF7D6E500D99957 /* demo_header@3x.png in Resources */,
-				848D4BF71DF7D6E500D99957 /* demo_redpacket_icon.png in Resources */,
-				929F11FE1DED6295000C0EE8 /* RedpacketUserLoginViewController.xib in Resources */,
-				848D4BFC1DF7D6E500D99957 /* demo_right_tip_blue@2x.png in Resources */,
-				9273C6B21DF695B7001DAE17 /* RedpacketCellResource.bundle in Resources */,
-				848D4BFD1DF7D6E500D99957 /* demo_right_tip_blue@3x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		56190487E7FA645618885E09 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RedpacketDemo/Pods-RedpacketDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8404331B1E9E356E00ACAFAB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -620,36 +466,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RedpacketDemo-JDpay/Pods-RedpacketDemo-JDpay-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9AC7CBF8D4198AAC211AF8E3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		BD5A27184357051644F55376 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RedpacketDemo/Pods-RedpacketDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -672,28 +488,6 @@
 				840433291E9E356E00ACAFAB /* RedPacketLuckView.m in Sources */,
 				8404332A1E9E356E00ACAFAB /* AboutMeViewController.m in Sources */,
 				8404332B1E9E356E00ACAFAB /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		923AA1481D95282400A097B1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				92006F8E1DE3F5C7004B8299 /* RedpacketSingleViewController.m in Sources */,
-				92006F8D1DE3F5C7004B8299 /* RedpacketMessageCell.m in Sources */,
-				92006F8B1DE3F5C7004B8299 /* RedpacketGroupViewController.m in Sources */,
-				92006F901DE3F5C7004B8299 /* RedpacketUser.m in Sources */,
-				9273C6B11DF695B7001DAE17 /* AppDelegate+Redpacket.m in Sources */,
-				9273C6B31DF695B7001DAE17 /* RedpacketConfig.m in Sources */,
-				92006F891DE3F5C7004B8299 /* RedpacketFucListViewController.m in Sources */,
-				92006F881DE3F5C7004B8299 /* RedpacketBaseTableViewController.m in Sources */,
-				923AA1541D95282400A097B1 /* AppDelegate.m in Sources */,
-				9273C6B51DF695B7001DAE17 /* RedpacketTakenMessageTipCell.m in Sources */,
-				929F11FD1DED6295000C0EE8 /* RedpacketUserLoginViewController.m in Sources */,
-				9273C6B61DF695B7001DAE17 /* RedpacketView.m in Sources */,
-				9273C6B41DF695B7001DAE17 /* RedPacketLuckView.m in Sources */,
-				92006F951DE428B1004B8299 /* AboutMeViewController.m in Sources */,
-				923AA1511D95282400A097B1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -861,86 +655,6 @@
 			};
 			name = Release;
 		};
-		923AA1641D95282400A097B1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F05AD7BB19DECFBD13135DB3 /* Pods-RedpacketDemo.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = PUEB48NTQQ;
-				ENABLE_BITCODE = NO;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${PODS_ROOT}/Headers/Public\"",
-					"\"${PODS_ROOT}/Headers/Public/RPAlipayLib\"",
-					"\"${PODS_ROOT}/Headers/Public/RedPacketAlipay\"",
-					"\"${PODS_ROOT}/Headers/Public/RedpacketAliAuthLib\"",
-					"\"${PODS_ROOT}/Headers/Public/RedpacketLib\"",
-					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
-				);
-				INFOPLIST_FILE = RedpacketDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-l\"AFNetworking\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"MobileCoreServices\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"$(inherited)",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "-----.RedpacketDemo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		923AA1651D95282400A097B1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C30C8F7475EDAE8930D2900 /* Pods-RedpacketDemo.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = PUEB48NTQQ;
-				ENABLE_BITCODE = NO;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${PODS_ROOT}/Headers/Public\"",
-					"\"${PODS_ROOT}/Headers/Public/RPAlipayLib\"",
-					"\"${PODS_ROOT}/Headers/Public/RedPacketAlipay\"",
-					"\"${PODS_ROOT}/Headers/Public/RedpacketAliAuthLib\"",
-					"\"${PODS_ROOT}/Headers/Public/RedpacketLib\"",
-					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
-				);
-				INFOPLIST_FILE = RedpacketDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-l\"AFNetworking\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"MobileCoreServices\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"$(inherited)",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "-----.RedpacketDemo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -958,15 +672,6 @@
 			buildConfigurations = (
 				923AA1611D95282400A097B1 /* Debug */,
 				923AA1621D95282400A097B1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		923AA1631D95282400A097B1 /* Build configuration list for PBXNativeTarget "RedpacketDemo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				923AA1641D95282400A097B1 /* Debug */,
-				923AA1651D95282400A097B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
