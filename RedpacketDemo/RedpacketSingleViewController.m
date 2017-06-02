@@ -41,11 +41,6 @@
     [self presentRedpacketViewController:RPRedpacketControllerTypeRand];
 }
 
-- (IBAction)transferButtonClick:(id)sender
-{
-    //    [self presentRedpacketViewController:RPRedpacketControllerTypeTransfer];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
