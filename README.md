@@ -10,6 +10,6 @@
 * 打开红包  
 
 **具体实现可参考Demo中的方法**
-[支付宝版红包SDK API文档](https://docs.yunzhanghu.com/integration/ios.html)
+[集成文档](https://docs.yunzhanghu.com/integration/ios.html)
 ### ScreenShot
 ![image](https://cloud.githubusercontent.com/assets/8667523/21038143/42c43fc8-be0e-11e6-92b9-5ae2535fbe12.png)
