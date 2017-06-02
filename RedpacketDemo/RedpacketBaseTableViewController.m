@@ -9,9 +9,14 @@
 #import "RedpacketBaseTableViewController.h"
 #import "RedpacketConfig.h"
 #import "RedpacketUser.h"
-#import "RPRedpacketModel.h"
 #import "RedpacketDefines.h"
+
+#ifdef AliAuthPay
 #import "RPRedpacketUnionHandle.h"
+#import "RPRedpacketModel.h"
+#else
+#import "RedpacketMessageModel.h"
+#endif
 
 static NSString *kRedpacketsSaveKey     = @"redpacketSaveKey";
 static NSString *kRedpacketGroupSaveKey = @"redpacketGroupSaveKey";
@@ -67,6 +72,8 @@ static NSString *kRedpacketGroupSaveKey = @"redpacketGroupSaveKey";
 - (void)presentRedpacketViewController:(RPRedpacketControllerType)controllerType
               isSupportMemberRedpacket:(BOOL)isSupport
 {
+#ifdef AliAuthPay
+    
     RPUserInfo *userInfo = [RPUserInfo new];
     
     NSInteger groupCount = 0;
@@ -121,6 +128,64 @@ static NSString *kRedpacketGroupSaveKey = @"redpacketGroupSaveKey";
                                          fromeController:self groupMemberCount:groupCount
                                    withRedpacketReceiver:userInfo
                                          andSuccessBlock:sendSuccessBlock withFetchGroupMemberListBlock:memeberListBlock];
+#else
+    RedpacketUserInfo *userInfo = [RedpacketUserInfo new];
+    
+    NSInteger groupCount = 0;
+    if (_isGroup) {
+        
+        //  当前群会话ID
+        userInfo.userId = @"#ConveritionID#";
+        groupCount = [RedpacketUser currentUser].users.count;
+        
+    }else {
+        
+        UserInfo *talkingUser = [RedpacketUser currentUser].talkingUserInfo;
+        userInfo.userId = talkingUser.userId;
+        userInfo.userAvatar = talkingUser.userAvatarURL;
+        userInfo.userNickname = talkingUser.userNickName;
+        
+    }
+    
+    __weak typeof(self) weakSelf = self;
+    /** 发红包成功*/
+    RedpacketSendBlock sendSuccessBlock = ^(RedpacketMessageModel *model) {
+        
+        NSDictionary *redpacket = @{@"1": model.redpacketMessageModelToDic};    //  1代表红包消息
+        [weakSelf.mutDatas addObject:redpacket];
+        [weakSelf.talkTableView reloadData];
+        
+    };
+    
+    /** 定向红包获取群成员列表, 如果不需要指定接收人，可以传nil */
+    RedpacketMemberListBlock memeberListBlock = nil;
+    if(controllerType == RPRedpacketControllerTypeGroup && isSupport) {
+        
+        memeberListBlock = ^(RedpacketMemberListFetchBlock completionHandle) {
+            
+            NSMutableArray <RedpacketUserInfo *> *groupInfos = [NSMutableArray array];
+            for (UserInfo *userInfo in [RedpacketUser currentUser].users) {
+                
+                RedpacketUserInfo *user = [RedpacketUserInfo new];
+                user.userId = userInfo.userId;
+                user.userNickname = userInfo.userNickName;
+                user.userAvatar = userInfo.userAvatarURL;
+                [groupInfos addObject:user];
+            }
+            
+            completionHandle(groupInfos);
+        };
+    }
+    
+    [RedpacketViewControl presentRedpacketViewController:controllerType
+                                         fromeController:self
+                                        groupMemberCount:groupCount
+                                   withRedpacketReceiver:userInfo
+                                         andSuccessBlock:sendSuccessBlock
+                           withFetchGroupMemberListBlock:memeberListBlock
+                             andGenerateRedpacketIDBlock:nil];
+   
+#endif
     
 }
 
@@ -194,17 +259,17 @@ static NSString *kRedpacketGroupSaveKey = @"redpacketGroupSaveKey";
 /** 抢红包 */
 - (void)redpacketTouched:(NSDictionary *)redpacketDic
 {
+#ifdef AliAuthPay
     RPRedpacketModel *model = [RPRedpacketUnionHandle modelWithChannelRedpacketDic:redpacketDic andSender:nil];
-    
     __weak typeof(self) weakSelf = self;
     [RedpacketViewControl redpacketTouchedWithMessageModel:model fromViewController:self redpacketGrabBlock:^(RPRedpacketModel *messageModel) {
-        
         /** 抢红包成功, 转账成功的回调*/
         NSDictionary *redpacket = @{@"2": [RPRedpacketUnionHandle dictWithRedpacketModel:model isACKMessage:YES]};    //  2代表红包被抢的消息
         [weakSelf.mutDatas addObject:redpacket];
         [weakSelf.talkTableView reloadData];
-        
     } advertisementAction:nil];
+#else
+#endif
 }
 
 @end

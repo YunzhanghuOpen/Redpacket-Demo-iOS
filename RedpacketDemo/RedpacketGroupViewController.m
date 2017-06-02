@@ -9,8 +9,12 @@
 #import "RedpacketGroupViewController.h"
 #import "RedpacketConfig.h"
 #import "RedpacketUser.h"
-#import "RPRedpacketModel.h"
 #import "RedpacketDefines.h"
+#ifdef AliAuthPay
+#import "RPRedpacketModel.h"
+#else
+#import "RedpacketMessageModel.h"
+#endif
 
 @interface RedpacketGroupViewController ()
 
