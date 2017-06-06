@@ -147,8 +147,6 @@
 - (void)alipayCallBack:(NSNotification *)notifaction
 {
     RPDebug(@"红包SDK通知：\n收到支付宝支付回调：%@\n 当前的控制器：%@", notifaction, self);
-    
-    if (self.billRef) {
         if ([notifaction.object isKindOfClass:[NSDictionary class]]) {
             NSInteger code = [[notifaction.object valueForKey:@"resultStatus"] integerValue];
             if (code == 9000) {
@@ -169,12 +167,6 @@
             self.billRef = nil;
             [_payController.view rp_removeHudInManaual];
         }
-        
-    }else {
-
-        //  收到无效Alipay通知
-        
-    }
 }
 
 - (void)showAuthAlert
