@@ -32,12 +32,12 @@ abstract_target 'Abstract' do
     
     target 'RedpacketDemo' do
         pod 'AFNetworking', '3.1.0'
-        pod 'RedPacketAliOpenUILib', :path=>'~/Developer/cocoapods/cocoapods-redpacket-ui-lib/'
+        pod 'RedpacketAliAuthLib'
     end
 
     target 'RedpacketDemo-JDpay' do
         pod 'AFNetworking', '3.1.0'
-        pod 'RedpacketLib', :path=>'~/Developer/cocoapods/cocoapods-RedpacketLib/'
+        pod 'RedpacketLib'
     end
 
 end

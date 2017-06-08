@@ -162,7 +162,6 @@
 		848D4BEE1DF7D6E500D99957 /* errors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = errors.txt; sourceTree = "<group>"; };
 		84BFBC821EA49A18000CBE48 /* libAFNetworking-iOS8.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libAFNetworking-iOS8.0.a"; path = "../../../Library/Developer/Xcode/DerivedData/RedpacketDemo-frrxnwvosxcqatcasftdpndoehwh/Build/Products/Debug-iphoneos/AFNetworking-iOS8.0/libAFNetworking-iOS8.0.a"; sourceTree = "<group>"; };
 		84F97B051EE1413300CB9BDA /* RedpacketDemo-JDpay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RedpacketDemo-JDpay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		84F97B061EE1413400CB9BDA /* RedpacketDemo copy2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RedpacketDemo copy2-Info.plist"; path = "/Users/admin/Documents/developer/Redpacket-Demo-iOS/RedpacketDemo copy2-Info.plist"; sourceTree = "<absolute>"; };
 		92006F791DE3F5C7004B8299 /* RedpacketBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedpacketBaseTableViewController.h; sourceTree = "<group>"; };
 		92006F7A1DE3F5C7004B8299 /* RedpacketBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedpacketBaseTableViewController.m; sourceTree = "<group>"; };
 		92006F7B1DE3F5C7004B8299 /* RedpacketFucListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedpacketFucListViewController.h; sourceTree = "<group>"; };
@@ -363,7 +362,6 @@
 				923AA14E1D95282400A097B1 /* RedpacketDemo */,
 				923AA14D1D95282400A097B1 /* Products */,
 				12F8D2269CF6B050068D7334 /* Frameworks */,
-				84F97B061EE1413400CB9BDA /* RedpacketDemo copy2-Info.plist */,
 				A62E43436A0859B958179155 /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -604,7 +602,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A37BF5116743CFBD48296A01 /* [CP] Embed Pods Frameworks */ = {
@@ -649,7 +647,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EAA7967D410AF35DA7E06549 /* [CP] Embed Pods Frameworks */ = {
