@@ -11,11 +11,7 @@
 #import "RedpacketUser.h"
 #import "RedpacketDefines.h"
 #import  "RedpacketViewControl.h"
-#ifdef AliAuthPay
-#import "RPRedpacketModel.h"
-#else
-#import "RedpacketMessageModel.h"
-#endif
+
 
 @interface RedpacketSingleViewController ()
 
@@ -72,19 +68,12 @@
     
     self.nameLabel.text = [NSString stringWithFormat:@"当前用户：%@",[RedpacketUser currentUser].userInfo.userNickName];
     [self.talkTableView reloadData];
-#ifdef AliAuthPay
+    
     RPUserInfo *userInfo = [RPUserInfo new];
     userInfo.userName = [RedpacketUser currentUser].talkingUserInfo.userNickName;
     userInfo.userID = [RedpacketUser currentUser].talkingUserInfo.userId;
     userInfo.avatar = [RedpacketUser currentUser].talkingUserInfo.userAvatarURL;
-#else
-    RedpacketUserInfo *userInfo = [RedpacketUserInfo new];
-    userInfo.userNickname = [RedpacketUser currentUser].talkingUserInfo.userNickName;
-    userInfo.userId = [RedpacketUser currentUser].talkingUserInfo.userId;
-    userInfo.userAvatar = [RedpacketUser currentUser].talkingUserInfo.userAvatarURL;
-#endif
 
-    
 }
 
 

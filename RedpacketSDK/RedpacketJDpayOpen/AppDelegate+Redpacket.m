@@ -9,7 +9,6 @@
 #import "AppDelegate+Redpacket.h"
 #import <objc/runtime.h>
 #import <AlipaySDK/AlipaySDK.h>
-#import "RedpacketOpenConst.h"
 
 
 BOOL rp_classMethodSwizzle(Class aClass, SEL originalSelector, SEL swizzleSelector, SEL nopSelector) {
@@ -64,7 +63,7 @@ BOOL rp_classMethodSwizzle(Class aClass, SEL originalSelector, SEL swizzleSelect
 
 - (void)rp_applicationDidBecomeActive:(UIApplication *)application
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:RedpacketCancelPayNotifaction object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"fdsf" object:nil];
     [self rp_applicationDidBecomeActive:application];
 }
 
@@ -77,11 +76,11 @@ BOOL rp_classMethodSwizzle(Class aClass, SEL originalSelector, SEL swizzleSelect
     if ([url.host isEqualToString:@"safepay"]) {
         //  支付宝支付
         [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:RedpacketAlipayNotifaction object:resultDic];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"sdf" object:resultDic];
         }];
         
         [[AlipaySDK defaultService] processAuthResult:url standbyCallback:^(NSDictionary *resultDic) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:RedpacketAliAuthNotifaction object:resultDic];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"cocoapods-RedpacketLib" object:resultDic];
         }];
 
     }
@@ -101,11 +100,11 @@ BOOL rp_classMethodSwizzle(Class aClass, SEL originalSelector, SEL swizzleSelect
     if ([url.host isEqualToString:@"safepay"]) {
         //  支付宝支付
         [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:RedpacketAlipayNotifaction object:resultDic];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"sdff" object:resultDic];
         }];
         
         [[AlipaySDK defaultService] processAuthResult:url standbyCallback:^(NSDictionary *resultDic) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:RedpacketAliAuthNotifaction object:resultDic];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"sdf" object:resultDic];
         }];
         
     }

@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RedpacketMessageModel.h"
+#import "RPRedpacketModel.h"
+
 
 @interface RedpacketTakenMessageTipCell : UITableViewCell
 
-- (void)configWithRedpacketMessageModel:(RedpacketMessageModel *)model;
+- (void)configWithRedpacketMessageModel:(RPRedpacketModel*)model;
 
 + (CGFloat)heightForRedpacketMessageTipCell;
 

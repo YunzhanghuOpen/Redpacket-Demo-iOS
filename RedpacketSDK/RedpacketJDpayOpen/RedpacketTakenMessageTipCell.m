@@ -64,14 +64,14 @@
     [self.bgView addSubview:self.iconView];
 }
 
-- (void)configWithRedpacketMessageModel:(RedpacketMessageModel *)redpacketModel
+- (void)configWithRedpacketMessageModel:(RPRedpacketModel *)redpacketModel
 {
     NSString *message;
-    if (redpacketModel.isRedacketSender) {
-        message = [NSString stringWithFormat:@"%@领取了你的红包", redpacketModel.redpacketReceiver.userNickname];
+    if (redpacketModel.isSender) {
+        message = [NSString stringWithFormat:@"%@领取了你的红包", redpacketModel.sender.userName];
        
     }else {
-        message = [NSString stringWithFormat:@"你领取了%@的红包", redpacketModel.redpacketSender.userNickname];
+        message = [NSString stringWithFormat:@"你领取了%@的红包", redpacketModel.receiver.userName];
     }
     
     self.bgView.hidden = NO;

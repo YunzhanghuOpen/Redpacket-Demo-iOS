@@ -8,11 +8,11 @@
 
 #import "RedpacketConfig.h"
 #import <AFNetworking.h>
-#import "RedpacketLib.h"
 #import "RedpacketMessageCell.h"
 #import "RedpacketTakenMessageTipCell.h"
 #import "RedpacketUser.h"
 #import "RPRedpacketUnionHandle.h"
+#import "RPRedpacketBridge.h"
 
 static NSString *baseRequestURL = @"https://rpv2.yunzhanghu.com";
 static NSString *tokenRequestURL = @"/api/demo-sign?token=1&uid=";

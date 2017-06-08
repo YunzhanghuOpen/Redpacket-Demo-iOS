@@ -94,7 +94,7 @@
     [self.bubbleBackgroundView addSubview:self.typeLable];
 }
 
-- (void)configWithRedpacketMessageModel:(RedpacketMessageModel *)redpacketMessage
+- (void)configWithRedpacketMessageModel:(RPRedpacketModel *)redpacketMessage
                         andRedpacketDic:(NSDictionary *)redpacketDic
 {
     NSString *title;
