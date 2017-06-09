@@ -9,7 +9,6 @@
 #import "RedpacketGroupViewController.h"
 #import "RedpacketConfig.h"
 #import "RedpacketUser.h"
-#import "RPRedpacketModel.h"
 #import "RedpacketDefines.h"
 
 @interface RedpacketGroupViewController ()

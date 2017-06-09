@@ -9,9 +9,10 @@
 #import "RedpacketBaseTableViewController.h"
 #import "RedpacketConfig.h"
 #import "RedpacketUser.h"
-#import "RPRedpacketModel.h"
 #import "RedpacketDefines.h"
 #import "RPRedpacketUnionHandle.h"
+#import "RPRedpacketModel.h"
+#import "RPAdvertInfo.h"
 
 static NSString *kRedpacketsSaveKey     = @"redpacketSaveKey";
 static NSString *kRedpacketGroupSaveKey = @"redpacketGroupSaveKey";
@@ -195,16 +196,83 @@ static NSString *kRedpacketGroupSaveKey = @"redpacketGroupSaveKey";
 - (void)redpacketTouched:(NSDictionary *)redpacketDic
 {
     RPRedpacketModel *model = [RPRedpacketUnionHandle modelWithChannelRedpacketDic:redpacketDic andSender:nil];
-    
     __weak typeof(self) weakSelf = self;
     [RedpacketViewControl redpacketTouchedWithMessageModel:model fromViewController:self redpacketGrabBlock:^(RPRedpacketModel *messageModel) {
-        
         /** 抢红包成功, 转账成功的回调*/
         NSDictionary *redpacket = @{@"2": [RPRedpacketUnionHandle dictWithRedpacketModel:model isACKMessage:YES]};    //  2代表红包被抢的消息
         [weakSelf.mutDatas addObject:redpacket];
         [weakSelf.talkTableView reloadData];
-        
-    } advertisementAction:nil];
+    } advertisementAction:^(id info) {
+        [weakSelf advertisementAction:info];
+    }];
 }
+
+- (void)advertisementAction:(id)args
+{
+#ifdef AliAuthPay
+    /** 营销红包事件处理*/
+    RPAdvertInfo *adInfo  =args;
+    switch (adInfo.AdvertisementActionType) {
+        case RedpacketAdvertisementReceive:
+            /** 用户点击了领取红包按钮*/
+            break;
+            
+        case RedpacketAdvertisementAction: {
+            /** 用户点击了去看看按钮，进入到商户定义的网页 */
+            UIWebView *webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
+            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:adInfo.shareURLString]];
+            [webView loadRequest:request];
+            
+            UIViewController *webVc = [[UIViewController alloc] init];
+            [webVc.view addSubview:webView];
+            [(UINavigationController *)self.presentedViewController pushViewController:webVc animated:YES];
+            
+        }
+            break;
+            
+        case RedpacketAdvertisementShare: {
+            /** 点击了分享按钮，开发者可以根据需求自定义，动作。*/
+            [[[UIAlertView alloc]initWithTitle:nil
+                                       message:@"点击「分享」按钮，红包SDK将该红包素材内配置的分享链接传递给商户APP，由商户APP自行定义分享渠道完成分享动作。"
+                                      delegate:nil
+                             cancelButtonTitle:@"我知道了"
+                             otherButtonTitles:nil] show];
+        }
+            break;
+            
+        default:
+            break;
+    }
+#else
+    NSDictionary *dict =args;
+    NSInteger actionType = [args[@"actionType"] integerValue];
+    switch (actionType) {
+        case 0:
+            // 点击了领取红包
+            break;
+        case 1: {
+            // 点击了去看看按钮，此处为演示
+            UIViewController     *VC = [[UIViewController alloc]init];
+            UIWebView *webView = [[UIWebView alloc]initWithFrame:self.view.bounds];
+            [VC.view addSubview:webView];
+            NSString *url = args[@"LandingPage"];
+            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+            [webView loadRequest:request];
+            [(UINavigationController *)self.presentedViewController pushViewController:VC animated:YES];
+        }
+            break;
+        case 2: {
+            // 点击了分享按钮，开发者可以根据需求自定义，动作。
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"点击「分享」按钮，红包SDK将该红包素材内配置的分享链接传递给商户APP，由商户APP自行定义分享渠道完成分享动作。" delegate:nil cancelButtonTitle:@"我知道了" otherButtonTitles:nil];
+            [alert show];
+        }
+            break;
+        default:
+            break;
+    }
+    
+#endif
+}
+
 
 @end

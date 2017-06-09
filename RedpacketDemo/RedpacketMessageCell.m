@@ -22,11 +22,9 @@
 @property (nonatomic, strong) RedpacketView     *redpacketView;
 @property (nonatomic, strong) RedPacketLuckView *redpacketLuckView;
 @property (nonatomic, strong) RPRedpacketModel *redpacketMessageModel;
-
 @end
 
 @implementation RedpacketMessageCell
-
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

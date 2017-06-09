@@ -8,7 +8,6 @@
 
 #import "RedpacketSingleViewController.h"
 #import "RedpacketConfig.h"
-#import "RPRedpacketModel.h"
 #import "RedpacketUser.h"
 #import "RedpacketDefines.h"
 #import  "RedpacketViewControl.h"
@@ -69,10 +68,12 @@
     
     self.nameLabel.text = [NSString stringWithFormat:@"当前用户：%@",[RedpacketUser currentUser].userInfo.userNickName];
     [self.talkTableView reloadData];
+    
     RPUserInfo *userInfo = [RPUserInfo new];
     userInfo.userName = [RedpacketUser currentUser].talkingUserInfo.userNickName;
     userInfo.userID = [RedpacketUser currentUser].talkingUserInfo.userId;
     userInfo.avatar = [RedpacketUser currentUser].talkingUserInfo.userAvatarURL;
+
 }
 
 
