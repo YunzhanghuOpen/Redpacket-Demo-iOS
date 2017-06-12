@@ -244,7 +244,7 @@ static NSString *kRedpacketGroupSaveKey = @"redpacketGroupSaveKey";
             break;
     }
 #else
-    NSDictionary *dict =args;
+
     NSInteger actionType = [args[@"actionType"] integerValue];
     switch (actionType) {
         case 0:

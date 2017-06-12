@@ -324,11 +324,11 @@
 		92315A901EE7FE2C00758264 /* RedpacketOpen */ = {
 			isa = PBXGroup;
 			children = (
+				92315A951EE7FE2C00758264 /* RedpacketHandle */,
 				92315A911EE7FE2C00758264 /* RedpacketCellResource.bundle */,
 				92315A921EE7FE2C00758264 /* RedpacketConfig.h */,
 				92315A931EE7FE2C00758264 /* RedpacketConfig.m */,
 				92315A941EE7FE2C00758264 /* RedpacketDefines.h */,
-				92315A951EE7FE2C00758264 /* RedpacketHandle */,
 				92315A9E1EE7FE2C00758264 /* RedPacketLuckView.h */,
 				92315A9F1EE7FE2C00758264 /* RedPacketLuckView.m */,
 				92315AA01EE7FE2C00758264 /* RedpacketTakenMessageTipCell.h */,
@@ -343,12 +343,12 @@
 		92315A951EE7FE2C00758264 /* RedpacketHandle */ = {
 			isa = PBXGroup;
 			children = (
+				92315A9A1EE7FE2C00758264 /* RPRedpacketConstValues.h */,
+				92315A9B1EE7FE2C00758264 /* RPRedpacketConstValues.m */,
 				92315A961EE7FE2C00758264 /* AnalysisRedpacketModel.h */,
 				92315A971EE7FE2C00758264 /* AnalysisRedpacketModel.m */,
 				92315A981EE7FE2C00758264 /* AppDelegate+Redpacket.h */,
 				92315A991EE7FE2C00758264 /* AppDelegate+Redpacket.m */,
-				92315A9A1EE7FE2C00758264 /* RPRedpacketConstValues.h */,
-				92315A9B1EE7FE2C00758264 /* RPRedpacketConstValues.m */,
 				92315A9C1EE7FE2C00758264 /* RPRedpacketUnionHandle.h */,
 				92315A9D1EE7FE2C00758264 /* RPRedpacketUnionHandle.m */,
 			);
@@ -602,7 +602,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A37BF5116743CFBD48296A01 /* [CP] Embed Pods Frameworks */ = {
@@ -647,7 +647,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EAA7967D410AF35DA7E06549 /* [CP] Embed Pods Frameworks */ = {
