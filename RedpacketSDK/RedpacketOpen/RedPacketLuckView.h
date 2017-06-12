@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RPRedpacketModel.h"
-
+#import "AnalysisRedpacketModel.h"
 @interface RedPacketLuckView : UIView
 
 @property(strong, nonatomic) UILabel *greetingLabel;
@@ -16,6 +15,6 @@
 
 
 + (CGFloat)heightForRedpacketMessageCell;
-- (void)configWithRedpacketMessageModel:(RPRedpacketModel *)model;
+- (void)configWithRedpacketMessageModel:(AnalysisRedpacketModel *)model;
 
 @end

@@ -138,7 +138,7 @@ static NSString *tokenRequestURL = @"/api/demo-sign?token=1&uid=";
     
     if (redpacketMessageDict) {
         
-        RPRedpacketModel *redpacketMessageModel = [RPRedpacketUnionHandle modelWithChannelRedpacketDic:redpacketMessageDict andSender:nil];
+        AnalysisRedpacketModel *redpacketMessageModel = [AnalysisRedpacketModel analysisRedpacketWithDict:redpacketMessageDict andIsSender:nil];
         RedpacketMessageCell *cell = [[RedpacketMessageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         [cell configWithRedpacketMessageModel:redpacketMessageModel andRedpacketDic:redpacketMessageDict];
@@ -148,7 +148,7 @@ static NSString *tokenRequestURL = @"/api/demo-sign?token=1&uid=";
     }else {
         
         redpacketMessageDict = [dict valueForKey:@"2"];
-        RPRedpacketModel *redpacketMessageModel = [RPRedpacketUnionHandle modelWithChannelRedpacketDic:redpacketMessageDict andSender:nil];
+        AnalysisRedpacketModel *redpacketMessageModel = [AnalysisRedpacketModel analysisRedpacketWithDict:redpacketMessageDict andIsSender:nil];
         RedpacketTakenMessageTipCell *tipCell = [[RedpacketTakenMessageTipCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         [tipCell configWithRedpacketMessageModel:redpacketMessageModel];
         tipCell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -162,7 +162,7 @@ static NSString *tokenRequestURL = @"/api/demo-sign?token=1&uid=";
 {
     NSDictionary *redpacketMessageDict = [dict valueForKey:@"1"];
     
-    RPRedpacketModel *redpacketMessageModel = [RPRedpacketUnionHandle modelWithChannelRedpacketDic:redpacketMessageDict andSender:nil];
+    AnalysisRedpacketModel *redpacketMessageModel = [AnalysisRedpacketModel analysisRedpacketWithDict:redpacketMessageDict andIsSender:nil];
     if (redpacketMessageDict) {
         return [RedpacketMessageCell heightForRedpacketMessageCell:redpacketMessageModel];
         

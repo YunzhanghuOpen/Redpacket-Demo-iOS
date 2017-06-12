@@ -27,7 +27,7 @@
 			<string>Alipay</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>-----.RedpacketDemo</string>
+				<string>com.redpacket.demo.UIOpen</string>
 			</array>
 		</dict>
 	</array>

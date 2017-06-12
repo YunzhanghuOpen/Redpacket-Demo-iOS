@@ -64,7 +64,7 @@
     [self.bgView addSubview:self.iconView];
 }
 
-- (void)configWithRedpacketMessageModel:(RPRedpacketModel *)redpacketModel
+- (void)configWithRedpacketMessageModel:(AnalysisRedpacketModel *)redpacketModel
 {
     NSString *message;
     if (redpacketModel.isSender) {

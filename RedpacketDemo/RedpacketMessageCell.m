@@ -50,7 +50,7 @@
     return self;
 }
 
-- (void)configWithRedpacketMessageModel:(RPRedpacketModel *)model
+- (void)configWithRedpacketMessageModel:(AnalysisRedpacketModel *)model
                         andRedpacketDic:(NSDictionary *)redpacketDic
 {
     if (model.redpacketType == RPRedpacketTypeAmount) {
@@ -94,7 +94,7 @@
     
 }
 
-- (void)swapSide:(BOOL)isSender withRedpacketModel:(RPRedpacketModel *)model
+- (void)swapSide:(BOOL)isSender withRedpacketModel:(AnalysisRedpacketModel *)model
 {
     UIView *adjustView = _redpacketView;
     
