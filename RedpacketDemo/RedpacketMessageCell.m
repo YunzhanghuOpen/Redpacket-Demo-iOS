@@ -72,8 +72,7 @@
         
         [self.contentView addSubview:_redpacketView];
         
-        [_redpacketView configWithRedpacketMessageModel:model
-                                        andRedpacketDic:redpacketDic];
+        [_redpacketView configWithRedpacketMessageModel:model];
     }
     
     UserInfo *currentUser = [RedpacketUser currentUser].userInfo;
