@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RPRedpacketModel.h"
-#import "AnalysisRedpacketModel.h"
+#import "RPRedpacketUnionHandle.h"
 
 /** 演示用Cell页面*/
 @interface RedpacketMessageCell : UITableViewCell
